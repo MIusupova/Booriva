@@ -4,6 +4,15 @@
 }
 .block{
     height: 103px;
+    @media (min-width: 768px){
+        width: 738px;
+    }
+    @media (min-width: 1000px){
+        width: 905px;
+    }
+    @media (min-width: 1440px){
+        width: 1140px;
+    }
 }
 .blocktwo{
     display: flex;
