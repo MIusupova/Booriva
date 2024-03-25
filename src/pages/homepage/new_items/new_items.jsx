@@ -9,7 +9,7 @@ import NewItemsButtonText from '../../../assets/img/icons/new_items_buttonText'
 
 const NewItems = () => {
     return(
-        <div className="NewItems-box">
+        <div className="NewItemsBox">
             <Headline/>
             <div className='newItemsCards'>
                 <div className='newItemsCardsBox'>
