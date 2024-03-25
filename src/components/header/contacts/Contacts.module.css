@@ -1,0 +1,26 @@
+.contacts{
+    color: #FDA3C4;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 700;
+    height: 30px;
+    display: flex;
+}
+.adressContact{
+    display: flex;
+    align-items: center;
+    width: 183px;
+}
+.adressText{
+    margin-left: 7px;
+    width: 152px;
+}
+.phoneContact{
+    display: flex;
+    align-items: center;
+}
+.phoneText{
+    margin-left: 10px;
+    width: 121px;
+}

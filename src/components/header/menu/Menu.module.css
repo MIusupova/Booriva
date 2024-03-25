@@ -1,0 +1,14 @@
+.menuli{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    margin-top: 26px;
+}
+.list{
+    color: #1F1F1F;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}

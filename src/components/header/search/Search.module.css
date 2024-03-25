@@ -1,0 +1,14 @@
+.search{
+    display: flex;
+    align-items: center;
+    width: 81px;
+    height: 24px;
+    margin-left: 90px;
+}
+.searchText{
+    margin-left: 16px;
+    color: #1F1F1F;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 700;
+}
