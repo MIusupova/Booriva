@@ -1,0 +1,98 @@
+.cardBox{
+    width: 100%;
+    position: relative;
+}
+.likeBox{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 27px;
+}
+@media (max-width: 1000px) {
+    .likeBox {
+        width: 23px;
+    }
+}
+@media (max-width: 480px) {
+    .likeBox {
+        width: 21px;
+    }
+}
+@media (max-width: 320px) {
+    .likeBox {
+        width: 17px;
+    }
+}
+.cardImg{
+    display: block;
+}
+.cardLine{
+    max-width: 320px;
+    height: 0px;
+    margin: 0 auto;
+    border: 2px solid #FDA3C4;
+}
+.cardDescription{
+    max-width: 320px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    gap: 7px;
+    padding: 27px 0;
+}
+.cardText{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+}
+@media (max-width: 1000px) {
+    .cardText {
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .cardText {
+        font-size: 12px;
+    }
+}
+@media (max-width: 320px) {
+    .cardText {
+        font-size: 10px;
+    }
+}
+.cardPrice{
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.26px;
+    text-align: left;
+    color: #FDA3C4;
+}
+@media (max-width: 1000px) {
+    .cardPrice {
+        font-size: 19.5px;
+    }
+}
+@media (max-width: 480px) {
+    .cardPrice {
+        font-size: 14px;
+    }
+}
+@media (max-width: 320px) {
+    .cardPrice {
+        font-size: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .cardT-shirt {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .cardT-shirt {
+        display: block;
+    }
+}
