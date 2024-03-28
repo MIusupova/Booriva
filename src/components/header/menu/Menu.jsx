@@ -41,10 +41,10 @@ const Menu = () => {
         <nav className={styles.menu}>
             <ul  className={styles.menuli}>
                 {
-                    menu.map(({id, text}) => <li> <a href="" className={styles.list} key={id}>{text}</a></li>)
+                    menu.map(({id, text}) => <li> <a href="" className={styles.list} key={id}>{text}</a> </li>)
                 }
                     <li> <a href="" className={styles.list} >#Boorivagirls</a></li>
-                </ul>        
+                </ul>       
         </nav>       
     )
 };
