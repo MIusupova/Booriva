@@ -1,5 +1,5 @@
 import styles from "./SubMenu.module.sass";
-const SubMenu = ({isShow}) => {
+const SubMenu = (isShow) => {
     return(
         <ul  className={styles.submenu + ' ' + (isShow ? styles.show : styles.hidden)}>
             

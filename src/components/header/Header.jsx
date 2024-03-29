@@ -6,6 +6,7 @@ import Contacts from "./contacts/Contacts";
 import Menu from "./menu/Menu";
 import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
+import SubMenu from "./menu/subMenu/SubMenu";
 
 const Header = () => {
     const [isShow, setIsShow] = useState(false)
@@ -25,6 +26,7 @@ const Header = () => {
                 <div className={styles.menu}>
                     <Menu setIsShow={setIsShow}/>
                 </div>
+                <SubMenu/>
             </div>
         </div>
 

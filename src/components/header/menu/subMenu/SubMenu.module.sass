@@ -2,13 +2,16 @@
     width: 100%
     height: 48px
     background-color: #FDA3C4
-    position: relative
+    position: absolute
     bottom: 0
+    z-index: -1
+
 .hidden
     bottom: 0
+    z-index: -1
     opacity: 0
-    z-index: 0
 .show
-    bottom: 48px
+    bottom: -48px
     z-index: 1
     opacity: 1
+

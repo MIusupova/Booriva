@@ -1,6 +1,7 @@
 .header{
     width: 100%;
     border-bottom: 1px solid #FDA3C4;
+    position: relative;
 }
 .block{
     height: 103px;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Menu.module.css";
-import SubMenu from "./subMenu/SubMenu";
+
 const Menu = ({setIsShow}) => {
     const [menu, setMenu] = useState([
         {
@@ -39,15 +39,14 @@ const Menu = ({setIsShow}) => {
             }
     ])
     return (
-        <nav className={styles.menu} onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)}>
+        <nav className={styles.menu} >
             <ul  className={styles.menuli}>
                 {
-                    menu.map(({id, text}) => <li > <a href="" className={styles.list} key={id}>{text}</a> </li>)
+                    menu.map(({id, text}) => <li> <a href="" className={styles.list} key={id}>{text}</a> </li>)
                     
                 }
-                    <li> <a href="" className={styles.list} >#Boorivagirls</a></li>
+                    <li > <a href="" className={styles.list} >#Boorivagirls</a></li>
                 </ul> 
-                <SubMenu/>
         </nav>   
     )
 };
