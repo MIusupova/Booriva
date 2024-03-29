@@ -1,12 +1,9 @@
-const subMenu = () => {
+import styles from "./SubMenu.module.sass";
+const SubMenu = (isShow) => {
     return(
-        <ul  className={styles.Submenu}>
-            <li> <a href="" className={styles.subList}>Главная</a></li>
-            <li> <a href="" className={styles.subList} >Платья</a></li>
-            <li> <a href="" className={styles.subList} >Верх</a></li>
-            <li> <a href="" className={styles.subList} >Низ</a></li>
+        <ul  className={styles.submenu + ' ' + (isShow ? styles.show : styles.hidden)}>
+            
         </ul>      
-
     )
 }
-export default subMenu;
+export default SubMenu;

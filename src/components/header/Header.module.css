@@ -1,9 +1,12 @@
 .header{
     width: 100%;
     border-bottom: 1px solid #FDA3C4;
+    position: relative;
 }
 .block{
     height: 103px;
+    position: relative;
+    z-index: 2;
     @media (min-width: 768px){
         width: 738px;
         padding-top: 14px;
