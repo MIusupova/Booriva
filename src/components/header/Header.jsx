@@ -1,3 +1,4 @@
+import { useState } from "react";
 import BoorivaLogo from "../../assets/img/icons/BoorivaLogo";
 import styles from "./Header.module.css";
 import Basket from "./basket/Basket";
@@ -7,6 +8,7 @@ import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 
 const Header = () => {
+    const [isShow, setIsShow] = useState(false)
     return (
         <div className={styles.header}>
             <div className={styles.block + ' wrapper'}>
@@ -21,7 +23,7 @@ const Header = () => {
                     
                 </div>
                 <div className={styles.menu}>
-                    <Menu/>
+                    <Menu setIsShow={setIsShow}/>
                 </div>
             </div>
         </div>
