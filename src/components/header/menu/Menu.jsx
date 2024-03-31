@@ -42,10 +42,10 @@ const Menu = ({setIsShow}) => {
         <nav className={styles.menu} >
             <ul  className={styles.menuli}>
                 {
-                    menu.map(({id, text}) => <li> <a href="" className={styles.list} key={id}>{text}</a> </li>)
+                    menu.map(({id, text}) => <li className={styles.li} onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} key={id}> <a href="" className={styles.list}>{text}</a> </li>)
                     
                 }
-                    <li > <a href="" className={styles.list} >#Boorivagirls</a></li>
+                    <li> <a href="" className={styles.list} >#Boorivagirls</a></li>
                 </ul> 
         </nav>   
     )
