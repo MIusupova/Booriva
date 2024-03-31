@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./SubMenu.module.sass";
-const SubMenu = () => {
+const SubMenu = ({isShow, setIsShow}) => {
     const [subMenu, setSubMenu] = useState([
         {
             "id": "000",
@@ -38,7 +38,7 @@ const SubMenu = () => {
             }
     ])
     return(
-        <ul  className={styles.submenu}>
+        <ul  className={styles.submenu + ' ' + (isShow ? styles.show : styles.hidden)} onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)}>
             {
                     subMenu.map(({id, text}) => <li> <a href="" className={styles.subList} key={id}>{text}</a> </li>)
                     

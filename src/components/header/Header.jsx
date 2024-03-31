@@ -1,12 +1,13 @@
 import { useState } from "react";
 import BoorivaLogo from "../../assets/img/icons/BoorivaLogo";
-import styles from "./Header.module.css";
 import Basket from "./basket/Basket";
 import Contacts from "./contacts/Contacts";
 import Menu from "./menu/Menu";
 import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 import SubMenu from "./menu/subMenu/SubMenu";
+
+import styles from "./Header.module.css";
 
 const Header = () => {
     const [isShow, setIsShow] = useState(false)
@@ -21,12 +22,12 @@ const Header = () => {
                         <Wishlist/>
                         <Basket/>
                     </div>
-                    
                 </div>
+                
                 <div className={styles.menu}>
                     <Menu setIsShow={setIsShow}/>
                 </div>
-                <SubMenu/>
+                <SubMenu isShow={isShow} setIsShow={setIsShow}/>
             </div>
         </div>
 
