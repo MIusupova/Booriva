@@ -7,7 +7,6 @@ const CategoryProduct = () => {
         <div className={styles.CategoryProduct}>
             <CategoryTitle/>
             
-
         </div>
     )
 }
