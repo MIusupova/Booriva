@@ -1,10 +1,12 @@
-import Header from "../../components/header/Header";
+
 import styles from "./CategoryProduct.module.sass";
+import CategoryTitle from "./categoryTitle/CategoryTitle";
 
 const CategoryProduct = () => {
     return (
         <div className={styles.CategoryProduct}>
-            <Header/>
+            <CategoryTitle/>
+            
 
         </div>
     )
