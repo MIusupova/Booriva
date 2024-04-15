@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <HomePage/>
-      <CategoryProduct/>
-      <WishListPage/>
+      {/*<HomePage/>*/}
+      {/*<CategoryProduct/>*/}
+      {/*<WishListPage/>*/}
       <WishListEmpty/>
 
     </div>
