@@ -40,13 +40,13 @@ const Menu = ({setIsShow}) => {
     ])
     return (
         <nav className={styles.menu} >
-            <ul  className={styles.menuli}>
+            
                 {
-                    menu.map(({id, text}) => <li className={styles.li} onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} key={id}> <a href="" className={styles.list}>{text}</a> </li>)
+                    menu.map(({id, text}) =>  <a onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} key={id} href="" className={styles.list}>{text}  </a> )
                     
                 }
-                    <li> <a href="" className={styles.list} >#Boorivagirls</a></li>
-                </ul> 
+                     <a href="" className={styles.list} >#Boorivagirls</a>
+                
         </nav>   
     )
 };

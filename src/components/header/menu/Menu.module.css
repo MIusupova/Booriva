@@ -1,9 +1,7 @@
-.menuli{
+.menu{
     height: 100%;
     display: flex;
     justify-content: space-between;
-}
-.menu{
     height: 100%;
     font-size: 14px;
         @media (min-width: 1000px){
