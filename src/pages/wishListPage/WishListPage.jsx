@@ -11,7 +11,6 @@ const WishListPage = () => {
             </div>
             <Delivery/>
                       
-                    
         </div>
     )
 }
