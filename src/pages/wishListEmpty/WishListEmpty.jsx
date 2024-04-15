@@ -1,8 +1,7 @@
 const WishListEmpty = () => {
     return (
         <div className={styles.wishListEmpty}>
-            
-                      
+                    
         </div>
     )
 }

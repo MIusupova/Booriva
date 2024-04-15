@@ -10,9 +10,6 @@ const CategoryProduct = () => {
                 <CategoryTitle/>
                 <div className={styles.filterCards}>
                     <CategoryFilter/>
-
-
-
                 </div>
             </div>
             
