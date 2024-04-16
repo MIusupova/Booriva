@@ -24,7 +24,7 @@ const Delivery = () => {
             <div className={styles.deliveryHeart}>
                 <WishListHeart/>
                 <div className={styles.deliveryHeartBlock}> 
-                    <p className={styles.deliveryText} >Сделано <p>в Москве</p></p>
+                    <p className={styles.deliveryText} >Сделано <p>в России</p></p>
                     <p className={styles.deliverySubtext}>Прям в Москве</p>
                 </div>
             </div>

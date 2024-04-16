@@ -1,13 +1,12 @@
-import NewItemsButton from "../../assets/img/icons/new_items_button";
+
+import ButtonWishlist from "../../assets/img/icons/ButtonWishlist";
 import styles from "./Button.module.sass";
 
 const Button = ({text}) => {
     return (
         <div className={styles.button}>
-            <NewItemsButton/>
-
-            {text}
-                      
+            <ButtonWishlist/>
+            <div className={styles.text}>{text}</div>         
         </div>
                 
     )

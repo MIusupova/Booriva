@@ -20,7 +20,7 @@ const Menu = ({setIsShow}) => {
             },
             {
             "id": "003",
-            "text": "Юбки",
+            "text": "Низ",
             "categories": 5
             },
             {
