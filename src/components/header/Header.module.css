@@ -1,8 +1,13 @@
 .header{
     width: 100%;
     border-bottom: 1px solid #FDA3C4;
-    position: relative;
     background: #FFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    
 }
 .block{
     background: #FFF;
