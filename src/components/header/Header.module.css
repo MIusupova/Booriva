@@ -7,22 +7,30 @@
     left: 0;
     right: 0;
     z-index: 10000;
-    
 }
 .block{
     background: #FFF;
-    height: 103px;
+    height: 35px;
     position: relative;
     z-index: 2;
+    @media (min-width: 320px){
+        height: 35px;
+    }
+    @media (min-width: 480px){
+        height: 50px;
+    }
     @media (min-width: 768px){
+        height: 103px;
         width: 738px;
         padding-top: 14px;
     }
     @media (min-width: 1000px){
+        height: 103px;
         width: 905px;
         padding-top: 18px;
     }
     @media (min-width: 1440px){
+        height: 103px;
         width: 1140px;
         padding-top: 10px;
     }
@@ -61,19 +69,22 @@
 }
 .blockthree{
     background: #FFF;
-    display: flex;
+    display: none;
     justify-content: space-between;
-    @media (min-width: 768px){
-        width: 80px;
+    @media (min-width: 1440px){
+        width: 81px;
+        display: flex;
+        
     }
     @media (min-width: 1000px){
         width: 90px;
+        display: flex;
+        
     }
-
-    @media (min-width: 1440px){
-        width: 81px;
+    @media (min-width: 768px){
+        width: 80px;
+        display: flex;
     }
-
 }
 .wishlistIcon{
     width: 20px;

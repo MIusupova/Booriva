@@ -11,18 +11,23 @@
     }
 }
 .adressContact{
-    display: flex;
+    display: none;
     align-items: center;
     width: 200px;
     @media (min-width: 1440px){
         width: 165px;
+        display: flex;
+    }
+    @media (min-width: 768px){
+        display: flex;
     }
     
-  
 }
 .adressText{
     margin-left: 7px;
     width: 170px;
+    
+
 }
 .phoneContact{
     display: flex;
