@@ -3,15 +3,19 @@
     align-items: center;
     height: 24px;
     margin-left: 100px;
-    @media (min-width: 1440px){
-        margin-left: 90px;
+    @media (min-width: 768px){
+        margin-left: 20px;
+        width: 81px;
+    }
+    @media (min-width: 1000px){
+        margin-left: 65px;
         width: 81px;
     }
     @media (min-width: 1440px){
-        margin-left: 90px;
+        margin-right: 40px;
         width: 81px;
     }
-     
+   
 }
 .searchText{
     display: none;
@@ -20,23 +24,41 @@
     font-family: Montserrat;
     font-size: 11px;
     font-weight: 700;
+    @media (min-width: 768px){
+        display: flex;
+        font-size: 11px;
+        margin-left: 8px;
+    }
+    @media (min-width: 1000px){
+        display: flex;
+        margin-left: 8px;
+    }
     @media (min-width: 1440px){
         margin-left: 16px;
         font-size: 12px;
         display: flex;
     }
-    @media (min-width: 768px){
-        display: flex;
-    }
-
     
 
 }
 .searchIcon{
-    width: 20px;
-    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    @media (min-width: 480px){
+        width: 24px;
+        height: 24px;
+    }
+    @media (min-width: 768px){
+        width: 20px;
+        height: 20px;
+    }
+    @media (min-width: 1000px){
+        width: 24px;
+        height: 24px;
+    }
     @media (min-width: 1440px){
         width: 24px;
         height: 24px;
     }
+    
 }
