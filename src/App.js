@@ -12,7 +12,7 @@ function App() {
       <Header/>
       {/*<HomePage/>*/}
       {/*<CategoryProduct/>*/}
-      <WishListPage/>
+      {/*<WishListPage/>*/}
       {/*<WishListEmpty/>*/}
       <Footer />
 
