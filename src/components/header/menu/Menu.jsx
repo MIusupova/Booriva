@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Menu.module.css";
+import { Link } from "react-router-dom";
 
 const Menu = ({setIsShow}) => {
     const [menu, setMenu] = useState([
@@ -42,10 +43,10 @@ const Menu = ({setIsShow}) => {
         <nav className={styles.menu} >
             
                 {
-                    menu.map(({id, text}) =>  <a onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} key={id} href="" className={styles.list}>{text}  </a> )
+                    menu.map(({id, text}) =>  <Link to="/categoryProduct" onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)} key={id} className={styles.list}>{text}  </Link> )
                     
                 }
-                     <a href="" className={styles.list} >#Boorivagirls</a>
+                     <Link to="/about_us" className={styles.list} >#Boorivagirls</Link>
                 
         </nav>   
     )

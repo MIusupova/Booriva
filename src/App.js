@@ -1,3 +1,5 @@
+import { Route, Routes } from "react-router-dom";
+
 import Header from "./components/header/Header";
 import CategoryProduct from "./pages/categoryProduct/CategoryProduct";
 import HomePage from "./pages/homepage/HomePage";
@@ -7,16 +9,18 @@ import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 
 
+
 function App() {
   return (
     <div className="App">
       <Header/>
-      {/*<HomePage/>*/}
-      {/*<CategoryProduct/>*/}
-      {/*<WishListPage/>*/}
-      {/*<WishListEmpty/>*/}
-      <CardProductPage/>
-
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/categoryProduct" element={<CategoryProduct/>}/>
+          <Route path="/wishlistPage" element={<WishListPage/>}/>
+          <Route path="/wishListEmpty" element={<WishListEmpty/>}/>
+          <Route path="/cardProductPage" element={<CardProductPage/>}/>
+        </Routes>
       <Footer />
 
     </div>

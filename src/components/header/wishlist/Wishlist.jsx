@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import WishlistIcon from "../../../assets/img/icons/WishlistIcon";
 import styles from "./Wishlist.module.css";
 
 const Wishlist = () => {
     return (
-        <a href="" className={styles.wishlist}>
+        <Link to="/wishlistPage" className={styles.wishlist}>
             <WishlistIcon/>
-        </a>
+        </Link>
 
     )
 
