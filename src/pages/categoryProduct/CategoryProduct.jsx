@@ -1,7 +1,7 @@
-
-import styles from "./CategoryProduct.module.sass";
 import CategoryFilter from "./categoryFilter/CategoryFilter";
 import CategoryTitle from "./categoryTitle/CategoryTitle";
+
+import styles from "./CategoryProduct.module.sass";
 
 const CategoryProduct = () => {
     return (
