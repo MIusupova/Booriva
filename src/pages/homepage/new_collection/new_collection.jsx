@@ -1,11 +1,13 @@
-import styles from'./new_collection.module.sass'
 import NewCollection from '../../../assets/img/images/newcol.png'
+import styles from'./new_collection.module.sass'
 
 const NewCollectionBox = () => {
     return (
-        <div className={styles.new_collection}>
-            <img src={NewCollection} alt='new collection'/>
-        </div>
+        <link to='/catalog'>
+            <div className={styles.new_collection}>
+                <img src={NewCollection} alt='new collection'/>
+            </div>
+        </link>
     )
 }
 

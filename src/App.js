@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <Header/>
       <HomePage/>
-      {/*<CategoryProduct/>*/}
-      {/*<WishListPage/>*/}
-      {/*<WishListEmpty/>*/}
+      <CategoryProduct/>
+      <WishListPage/>
+      {/* <WishListEmpty/> */}
       <Footer />
 
     </div>
