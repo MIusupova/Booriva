@@ -1,4 +1,3 @@
-import styles from "./CategoryProduct.module.sass";
 import CategoryFilter from "./categoryFilter/CategoryFilter";
 import CategoryTitle from "./categoryTitle/CategoryTitle";
 import Card from "../../components/cards/card"
