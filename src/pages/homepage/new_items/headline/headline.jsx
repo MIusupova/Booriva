@@ -1,7 +1,7 @@
-import styles from './headline.module.sass'
 import NewItemsPink from '../../../../assets/img/icons/new_items_pink'
 import NewItemsBlack from '../../../../assets/img/icons/new_items_black'
 import Vector from '../../../../assets/img/icons/vector'
+import styles from './headline.module.sass'
 
 const Headline = () => {
     return(

@@ -1,5 +1,5 @@
-import styles from'./card.module.sass'
 import Like from '../../assets/img/icons/like'
+import styles from'./card.module.sass'
 
 const CardBomber = ({image, text, price, boolean}) => {
     const active = false
