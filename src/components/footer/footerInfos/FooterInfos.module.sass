@@ -1,0 +1,59 @@
+*
+    margin: 0
+    padding: 0
+
+body
+    margin: 0
+    padding: 0
+
+.wrapper
+    max-width: 1140px
+    margin: 0 auto
+
+.footer
+    &Infos
+        max-width: 129px
+        @media (max-width: 490px)
+            max-width: 108px
+            @media (max-width: 455px)
+                width: 100%
+    &Info
+        color: #F40000
+        font-family: "Sunday Best"
+        font-size: 12px
+        font-weight: 400
+        @media (max-width: 580px)
+            font-size: 10px
+    &Common
+        color: #F40000
+        font-family: "Sunday Best"
+        font-size: 12px
+        font-weight: 400
+        @media (max-width: 768px)
+            display: none
+    &DataIitems
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+        margin-top: 15px
+    &DataIitem
+        color: #FFFFFF
+        font-size: 12px
+        font-weight: 400
+        font-family: Montserrat
+        @media (max-width: 580px)
+            font-size: 10px
+    &DataIitemContact
+        color: #FFFFFF
+        font-size: 12px
+        font-weight: 400
+        font-family: Montserrat
+        @media (max-width: 768px)
+            display: none
+    &LogoItemsBlocks
+        display: none
+        @media (max-width: 768px)
+            display: block
+            width: 56px
+            display: flex
+            justify-content: space-between

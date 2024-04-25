@@ -7,8 +7,7 @@ import WishListEmpty from "./pages/wishListEmpty/WishListEmpty";
 import WishListPage from "./pages/wishListPage/WishListPage";
 import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
-
-
+import Instagram from "./components/instagram/Instagram";
 
 function App() {
   return (
@@ -21,9 +20,9 @@ function App() {
           <Route path="/wishListEmpty" element={<WishListEmpty/>}/>
           <Route path="/cardProductPage" element={<CardProductPage/>}/>
         </Routes>
+      <Instagram />
       <Footer />
-
-    </div>
+  </div>
   );
 }
 export default App;
