@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./../../../components/header/Header.module.css"
+import styles from "./../../../components/header/Header.module.sass"
 const BoorivaLogo = () => {
     return (
         <Link to="/">

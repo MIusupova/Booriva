@@ -7,7 +7,7 @@ import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 import SubMenu from "./menu/subMenu/SubMenu";
 
-import styles from "./Header.module.css";
+import styles from "./Header.module.sass";
 
 const Header = () => {
     const [isShow, setIsShow] = useState(false)

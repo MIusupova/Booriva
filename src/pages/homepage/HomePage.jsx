@@ -3,7 +3,7 @@ import NewCollectionBox from "./new_collection/new_collection"
 import Ticker from "./ticker/Ticker";
 import Categories from "./categories/categories";
 
-import styles from "./HomePage.module.css";
+import styles from "./HomePage.module.sass";
 
 const HomePage = () => {
     return (

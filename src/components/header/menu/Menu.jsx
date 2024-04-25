@@ -1,6 +1,8 @@
 import { useState } from "react";
-import styles from "./Menu.module.css";
 import { Link } from "react-router-dom";
+
+import styles from "./Menu.module.sass";
+
 
 const Menu = ({setIsShow}) => {
     const [menu, setMenu] = useState([

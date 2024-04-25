@@ -1,4 +1,4 @@
-import styles from "./../../../components/header/basket/Basket.module.css";
+import styles from "./../../../components/header/basket/Basket.module.sass";
 const BasketIcon = () => {
   return (
     <div className={styles.basketIcon}>

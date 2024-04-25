@@ -1,7 +1,7 @@
-
 import AdressHeader from "../../../assets/img/icons/AdressHeader";
 import PhoneContacts from "../../../assets/img/icons/PhoneContacts";
-import styles from "./Contacts.module.css";
+
+import styles from "./Contacts.module.sass";
 
 const Contacts = () => {
     return (

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Ticker.module.css";
+import styles from "./Ticker.module.sass";
 
 const Ticker = () => {
     return (

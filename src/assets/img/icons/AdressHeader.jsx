@@ -1,4 +1,4 @@
-import styles from "./../../../components/header/contacts/Contacts.module.css";
+import styles from "./../../../components/header/contacts/Contacts.module.sass";
 const AdressHeader = () => {
   return (
     <div className={styles.adressHeader}>

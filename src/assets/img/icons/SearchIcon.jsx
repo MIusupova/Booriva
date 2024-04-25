@@ -1,4 +1,4 @@
-import styles from "./../../../components/header/search/Search.module.css";
+import styles from "./../../../components/header/search/Search.module.sass";
 const SearchIcon = () => {
   return (
     <div className={styles.searchIcon}>

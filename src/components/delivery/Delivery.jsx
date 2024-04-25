@@ -1,7 +1,7 @@
-
 import WishListBox from "../../assets/img/icons/WishListBox";
 import WishListCat from "../../assets/img/icons/WishListCat";
 import WishListHeart from "../../assets/img/icons/WishListHeart";
+
 import styles from "./Delivery.module.sass";
 
 const Delivery = () => {
