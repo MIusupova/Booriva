@@ -1,8 +1,7 @@
 import styles from "./../../../components/header/basket/Basket.module.sass";
 const BasketIcon = () => {
   return (
-    <div className={styles.basketIcon}>
-      <svg
+      <svg className={styles.basketIcon}
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -24,7 +23,6 @@ const BasketIcon = () => {
           strokeLinejoin="round"
         />
       </svg>
-    </div>
   );
 };
 export default BasketIcon;

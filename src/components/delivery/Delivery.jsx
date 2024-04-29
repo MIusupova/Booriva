@@ -17,14 +17,14 @@ const Delivery = () => {
             <div className={styles.deliveryBox}>
                 <WishListBox/>
                 <div className={styles.deliveryBoxBlock}> 
-                    <p className={styles.deliveryText} >Легкий <p>возврат/обмен</p></p>
+                    <p className={styles.deliveryText} >Легкий <br /><span>возврат/обмен</span></p>
                     <p className={styles.deliverySubtext}>В течении 14 дней</p>
                 </div>
             </div>
             <div className={styles.deliveryHeart}>
                 <WishListHeart/>
                 <div className={styles.deliveryHeartBlock}> 
-                    <p className={styles.deliveryText} >Сделано <p>в России</p></p>
+                    <p className={styles.deliveryText} >Сделано <br /><span>в России</span></p>
                     <p className={styles.deliverySubtext}>Прям в Москве</p>
                 </div>
             </div>

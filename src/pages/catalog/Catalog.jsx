@@ -1,9 +1,22 @@
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import qs from 'qs';
+
+
 import CategoryFilter from "./categoryFilter/CategoryFilter";
 import CategoryTitle from "./categoryTitle/CategoryTitle";
 
-import styles from "./CategoryProduct.module.sass";
+import styles from "./Catalog.module.sass";
+import { getCatalogData } from "../../services/catalog";
 
-const CategoryProduct = () => {
+
+const Catalog = () => {
+    const location = useLocation()
+    console.log(qs.parse(location.search.substring(1)));
+    useEffect(() => {
+        const data = getCatalogData(qs.parse(location.search.substring(1)).menuId)
+
+    }, [location])
     return (
         <div className={styles.categoryProduct}>
             <div className={styles.categoryProductBlock + ' wrapper'}>
@@ -17,4 +30,4 @@ const CategoryProduct = () => {
         </div>
     )
 }
-export default CategoryProduct
+export default Catalog
