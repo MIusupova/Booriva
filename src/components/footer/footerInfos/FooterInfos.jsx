@@ -1,6 +1,7 @@
-import styles from "./FooterInfos.module.sass";
 import Instagram from "../../../assets/img/icons/Instagram";
 import Facebook from "../../../assets/img/icons/Facebook";
+
+import styles from "./FooterInfos.module.sass";
 
 const FooterInfos = () => {
   return (

@@ -1,5 +1,6 @@
-import styles from "./FooterLogo.module.sass";
 import Booriva from "../../../assets/img/icons/Booriva";
+
+import styles from "./FooterLogo.module.sass";
 
 const FooterLogo = () => {
   return (
