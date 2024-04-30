@@ -1,4 +1,4 @@
-import styles from "./../../../components/header/Header.module.css";
+import styles from "./../../../components/header/Header.module.sass";
 const WishlistIcon = () => {
   return (
     <div className={styles.wishlistIcon}>

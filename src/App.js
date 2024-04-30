@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import Header from "./components/header/Header";
-import CategoryProduct from "./pages/categoryProduct/CategoryProduct";
+import Catalog from "./pages/catalog/Catalog";
 import HomePage from "./pages/homepage/HomePage";
 import WishListEmpty from "./pages/wishListEmpty/WishListEmpty";
 import WishListPage from "./pages/wishListPage/WishListPage";
@@ -15,7 +15,7 @@ function App() {
       <Header/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/categoryProduct" element={<CategoryProduct/>}/>
+          <Route path="/catalog" element={<Catalog/>}/>
           <Route path="/wishlistPage" element={<WishListPage/>}/>
           <Route path="/wishListEmpty" element={<WishListEmpty/>}/>
           <Route path="/cardProductPage" element={<CardProductPage/>}/>

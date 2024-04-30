@@ -1,5 +1,6 @@
 import BasketIcon from "../../../assets/img/icons/BasketIcon";
-import styles from "./Basket.module.css";
+
+import styles from "./Basket.module.sass";
 
 const Basket = () => {
     return (
