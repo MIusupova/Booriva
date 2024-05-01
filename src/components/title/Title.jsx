@@ -6,10 +6,10 @@ const Title = ({title, subtitle}) => {
     return (
         <h1 className={styles.title}>
             {title}
-            <p className={styles.subTitle}>
+            <span className={styles.subTitle}>
                 {subtitle}
                 <Vector/>
-            </p>
+            </span>
         </h1>
     )
 }

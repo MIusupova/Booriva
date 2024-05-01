@@ -1,8 +1,9 @@
 import styles from "./../../../components/header/Header.module.sass";
 const WishlistIcon = () => {
   return (
-    <div className={styles.wishlistIcon}>
-      <svg
+  
+      <svg 
+        className={styles.wishlistIcon}
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -17,7 +18,7 @@ const WishlistIcon = () => {
           strokeLinejoin="round"
         />
       </svg>
-    </div>
+   
   );
 };
 export default WishlistIcon;

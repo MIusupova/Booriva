@@ -1,3 +1,4 @@
+
 import AdressHeader from "../../../assets/img/icons/AdressHeader";
 import PhoneContacts from "../../../assets/img/icons/PhoneContacts";
 
@@ -8,13 +9,13 @@ const Contacts = () => {
         <div className={styles.contacts}>
             <div className={styles.adressContact}>
                 <AdressHeader/>
-                <div className={styles.adressText}>
+                <a href="https://maps.app.goo.gl/5V8HWf6FMfUFKwj26" target=" blank" className={styles.adressText}>
                     Москва, переулок Арбат 21 
-                </div>
+                </a>
             </div>
             <div className={styles.phoneContact}>
                 <PhoneContacts/>
-                <div className={styles.phoneText}>+8(333) 999 99 99</div>
+                <a href="tel:+73339999999" className={styles.phoneText}>+7(333) 999 99 99</a>
             </div>
         </div>
 

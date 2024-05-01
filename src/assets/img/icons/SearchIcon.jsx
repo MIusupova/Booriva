@@ -1,8 +1,9 @@
 import styles from "./../../../components/header/search/Search.module.sass";
 const SearchIcon = () => {
   return (
-    <div className={styles.searchIcon}>
+ 
       <svg
+        className={styles.searchIcon}
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -16,7 +17,7 @@ const SearchIcon = () => {
           fill="#1F1F1F"
         />
       </svg>
-    </div>
+ 
   );
 };
 export default SearchIcon;

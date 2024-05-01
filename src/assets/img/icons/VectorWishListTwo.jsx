@@ -2,8 +2,7 @@ import styles from "./../../../pages/wishListEmpty/WishListEmpty.module.sass"
 
 const VectorWishListTwo = () => {
     return (
-        <div className = {styles.vectorWishListTwo}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="99" height="98" viewBox="0 0 99 98" fill="none">
+            <svg className = {styles.vectorWishListTwo} xmlns="http://www.w3.org/2000/svg" width="99" height="98" viewBox="0 0 99 98" fill="none">
                 <path d="M4.35078 17.7835C1.6305 15.3837 -2.30295 10.4571 3.72548 9.94914C9.75391 9.44114 6.65419 14.9604 4.35078 17.7835Z" fill="#1F1F1F"/>
                 <path d="M17.0182 19.9632C15.6032 17.1442 13.8591 11.6929 18.2028 12.4403L17.0182 19.9632Z" fill="#1F1F1F"/>
                 <path d="M26.6926 29.3557C24.0491 18.5985 21.9604 -1.97921 34.7544 1.76768C50.7469 6.4513 28.1814 37.3395 26.6926 29.3557Z" fill="#1F1F1F"/>
@@ -20,7 +19,6 @@ const VectorWishListTwo = () => {
                 <path d="M65.7531 88.2317C68.7805 92.616 75.375 100.318 77.5336 96.0539C80.2319 90.7231 69.9651 85.0931 65.7531 88.2317Z" stroke="#1F1F1F"/>
             </svg>
 
-        </div>
     )
 };
 export default VectorWishListTwo;

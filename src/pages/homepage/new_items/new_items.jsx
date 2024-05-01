@@ -23,7 +23,7 @@ const NewItems = () => {
                     <Link to='/cardProductPage'><Card image={cardTShirtImg} text='Платье-футболка рыбы в аквариуме' price='899 ₴' boolean='true'/></Link>
                 </div>
             </div>
-            <Link to='/categoryProduct'>
+            <Link to='/catalog'>
             <div className={styles.NewItemsButton}>
                 <div className={styles.NewItemsButtonColor}><NewItemsButton/></div>
                 <div className={styles.NewItemsButtonText}><NewItemsButtonText/></div>

@@ -12,7 +12,6 @@ import { getCatalogData } from "../../services/catalog";
 
 const Catalog = () => {
     const location = useLocation()
-    console.log(qs.parse(location.search.substring(1)));
     useEffect(() => {
         const data = getCatalogData(qs.parse(location.search.substring(1)).menuId)
 
