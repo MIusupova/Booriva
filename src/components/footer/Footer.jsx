@@ -8,14 +8,12 @@ import FooterFeedback from "./footerFeedback/FooterFeedback";
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      <div className={styles.wrapper}>
-        <div className={styles.footerWrap}>
-          <FooterLogo />
-          <FooterInfos />
-          <FooterOurAddress />
-          <FooterNetworks />
-          <FooterFeedback />
-        </div>
+      <div className={styles.footerWrap + " wrapper"}>
+        <FooterLogo />
+        <FooterInfos />
+        <FooterOurAddress />
+        <FooterNetworks />
+        <FooterFeedback />
       </div>
     </div>
   );

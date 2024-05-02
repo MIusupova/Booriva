@@ -1,4 +1,4 @@
-const Heart = () => {
+const HeartBooriva = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,4 +14,5 @@ const Heart = () => {
     </svg>
   );
 };
-export default Heart;
+
+export default HeartBooriva;
