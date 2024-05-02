@@ -24,13 +24,14 @@
 
 .cardImg
     display: block
-    height: 100%
-    width: 350px
     object-fit: cover
+    width: 100%
+    height: 100%
+    position: absolute
+    top:0
 
 .cardLine
     height: 0px
-    margin: 0 15px
     border: 2px solid #FDA3C4
 
 .cardDescription
@@ -85,12 +86,13 @@
         font-size: 10px   
 
 @media (max-width: 768px) 
-    .cardTshirt 
+    .deleteCard 
         display: none    
 
 @media (max-width: 480px) 
-    .cardTshirt 
+    .deleteCard 
         display: block
 
-.cardImage
-    max-width: 360px
+.boxImg
+    padding-top: 135%
+    position: relative

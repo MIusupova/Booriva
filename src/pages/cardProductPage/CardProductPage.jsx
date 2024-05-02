@@ -41,7 +41,7 @@ const CardProductPage = () => {
             </main>    
             <div className={styles.textBox}>
                 <h1 className={styles.textTitle}>Бомбер Gone Crazy хаки</h1>
-                <div className={styles.textPrice}>2 499 P</div>
+                <div className={styles.textPrice}>2 499 ₽</div>
                 <div className={styles.textSize}>Выбрать размер:</div>
                 <div className={styles.sizeImages}>
                     <SizeXSS></SizeXSS>
@@ -50,7 +50,7 @@ const CardProductPage = () => {
                     <SizeLXL></SizeLXL>
                 </div>
                 <div className={styles.ButtonBasket}><ButtonBasket></ButtonBasket></div>
-                <p className={styles.textDescription}>Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается.</p>
+                <div className={styles.textDescription}>Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается.</div>
                 <div className={styles.textLine}><DotLine></DotLine></div>
                 <div className={styles.textCompositionBox}>
                     <div className={styles.textComposition}>Состав:</div>
