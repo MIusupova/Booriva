@@ -15,7 +15,7 @@ const Menu = ({setIsShow, setMenuId}) => {
                 {menu.map(({id, name}) =>  
                 <Link 
                     to={`/catalog?menuId=${id}`} 
-                    onMouseEnter={() => {setIsShow(true); setMenuId(id)}} 
+                    onMouseEnter={() => {setIsShow(true); setMenuId(id) }} 
                     onMouseLeave={() => setIsShow(false)} 
                     key={id} 
                     className={styles.list}>
