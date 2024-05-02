@@ -1,5 +1,7 @@
-import styles from "./FooterFeedback.module.sass";
+import { Link } from "react-router-dom";
 import girl from "../../../assets/img/images/girl.png";
+
+import styles from "./FooterFeedback.module.sass";
 
 const FooterFeedback = () => {
   return (
@@ -13,7 +15,7 @@ const FooterFeedback = () => {
             Нам важно знать, что ты думаешь про нас! Просто напиши мне!
           </div>
           <div className={styles.footerFeedbackLink}>
-            <a href="#">Написать Иванке</a>
+            <Link to="ivan">Написать Иванке</Link>
             <div className={styles.footerFeedbackLine}></div>
           </div>
         </div>
