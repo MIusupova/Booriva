@@ -14,7 +14,6 @@ const Catalog = () => {
     const location = useLocation()
     useEffect(() => {
         const data = getCatalogData(qs.parse(location.search.substring(1)).menuId)
-        console.log(qs.parse(location.search.substring(1)).menuId);
     }, [location])
     return (
         <div className={styles.categoryProduct}>

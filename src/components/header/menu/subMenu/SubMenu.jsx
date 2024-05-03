@@ -11,10 +11,11 @@ const SubMenu = ({isShow, setIsShow, menuId}) => {
         data.then((res) => setSubMenu(res))
     }, [menuId])
     return(
+        subMenu.length > 0 &&
         <ul  className={styles.submenu + ' ' + (isShow ? styles.show : styles.hidden)} onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)}>
             <div className={styles.submenuBlock}>
             {
-                    subMenu.map(({id, name}) => <li key={id}> <Link to="/catalog" className={styles.subList}>{name}</Link> </li>)
+                    subMenu.map(({id, name}) => <li key={id}> <Link to={`/catalog?menuId=${id}`}  className={styles.subList}>{name}</Link> </li>)
 
                 }
                 </div>
