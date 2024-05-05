@@ -24,7 +24,18 @@ const Catalog = () => {
     }, [location])
     return (
         <div className={styles.categoryProduct}>
-                       
+            <div className={styles.categoryProductBlock + ' wrapper'}>
+                <CategoryTitle/>
+                <div className={styles.filterCards}>
+                <CategoryFilter/>
+                {card.map(({images, name, price}) => {
+                    return(
+                        <div className={styles.newItemsCards}>
+                            <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={images[0]} text={name} price={price}/></Link>
+                        </div>
+                    )})}
+                </div>
+            </div>        
         </div>
     )
 }
