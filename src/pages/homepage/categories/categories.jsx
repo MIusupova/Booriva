@@ -17,18 +17,18 @@ const Categories = () => {
     return(
         <div className={styles.categories}>
             <div className={styles.categoriesBox}>
-                <div className={styles.categoriesImgRelative}><img className={styles.imgBig} src={Tshirt} alt='Tshirt' /><div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}><Link to='/categoryProduct'><TshirtText/></Link></div></div>
+                <div className={styles.categoriesImgRelative}><img className={styles.imgBig} src={Tshirt} alt='Tshirt' /><div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}><Link to='/catalog'><TshirtText/></Link></div></div>
                 <div className={styles.categoriesBoxSmall}>
-                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Bottom} alt='Bottom' /><div className={`${styles.categoriesImgAbsolute} ${styles.Bottom}`}><Link to='/categoryProduct'><BottomText/></Link></div></div>
-                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Up} alt='Up' /><div className={`${styles.categoriesImgAbsolute} ${styles.Up}`}><Link to='/categoryProduct'><UpText/></Link></div></div>
+                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Bottom} alt='Bottom' /><div className={`${styles.categoriesImgAbsolute} ${styles.Bottom}`}><Link to='/catalog'><BottomText/></Link></div></div>
+                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Up} alt='Up' /><div className={`${styles.categoriesImgAbsolute} ${styles.Up}`}><Link to='/catalog'><UpText/></Link></div></div>
                 </div>
             </div>
             <div className={styles.categoriesBox}>
                 <div className={styles.categoriesBoxSmall}>
-                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Dress} alt='Dress' /><div className={`${styles.categoriesImgAbsolute} ${styles.Dress}`}><Link to='/categoryProduct'><DressText/></Link></div></div>
-                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Costume} alt='Costume' /><div className={`${styles.categoriesImgAbsolute} ${styles.Costume}`}><Link to='/categoryProduct'><CostumeText/></Link></div></div>
+                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Dress} alt='Dress' /><div className={`${styles.categoriesImgAbsolute} ${styles.Dress}`}><Link to='/catalog'><DressText/></Link></div></div>
+                    <div className={styles.categoriesImgRelative}><img className={styles.imgSmall} src={Costume} alt='Costume' /><div className={`${styles.categoriesImgAbsolute} ${styles.Costume}`}><Link to='/catalog'><CostumeText/></Link></div></div>
                 </div>
-                <div className={styles.categoriesImgRelative}><img className={styles.imgBig} src={Hoodie} alt='Hoodie' /><div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}><Link to='/categoryProduct'><HoodieText/></Link></div></div>
+                <div className={styles.categoriesImgRelative}><img className={styles.imgBig} src={Hoodie} alt='Hoodie' /><div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}><Link to='/catalog'><HoodieText/></Link></div></div>
             </div>
         </div>
     )

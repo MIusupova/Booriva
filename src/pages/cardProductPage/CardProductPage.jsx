@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Thumbs } from 'swiper/modules';
 import Like from '../../assets/img/icons/like';
-import SizeXSS from '../../assets/img/icons/SizeXSS';
+import SizeXSS from '../../assets/img/icons/SizeXS';
 import SizeSM from '../../assets/img/icons/SizeSM';
 import SizeML from '../../assets/img/icons/SizeML';
 import SizeLXL from '../../assets/img/icons/SizeLXL';
@@ -44,10 +44,10 @@ const CardProductPage = () => {
                 <div className={styles.textPrice}>2 499 ₽</div>
                 <div className={styles.textSize}>Выбрать размер:</div>
                 <div className={styles.sizeImages}>
-                    <SizeXSS></SizeXSS>
-                    <SizeSM></SizeSM>
-                    <SizeML></SizeML>
-                    <SizeLXL></SizeLXL>
+                    <div className={styles.size}><SizeXSS></SizeXSS></div>
+                    <div className={styles.size}><SizeSM></SizeSM></div>
+                    <div className={styles.size}><SizeML></SizeML></div>
+                    <div className={styles.size}><SizeLXL></SizeLXL></div>
                 </div>
                 <div className={styles.ButtonBasket}><ButtonBasket></ButtonBasket></div>
                 <div className={styles.textDescription}>Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые карманы и капюшон, который отстёгивается.</div>
