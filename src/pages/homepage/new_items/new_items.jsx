@@ -14,10 +14,10 @@ const NewItems = () => {
         <div className={styles.NewItemsBox}>
             <Headline/>
             <div className={styles.newItemsCards}>
-                <Link to='/cardProductPage'><Card image={cardSweatshirtImg} boxImg={`boxImg`} sizeImg={`cardImg`} text='Cвитшот вставка клетка' price='1 099 ₴'/></Link>
-                <Link to='/cardProductPage'><Card image={cardDressImg} boxImg={`boxImg`} sizeImg={`cardImg`} text='Платье прозрачное в цветочек черное' price='1 299 ₴'/></Link>
-                <Link to='/cardProductPage'><Card image={cardBomberImg} boxImg={`boxImg`} sizeImg={`cardImg`} text='Бомбер Gone Crazy хаки' price='2 499 ₴'/></Link>
-                <Link to='/cardProductPage'><Card image={cardTShirtImg} boxImg={`boxImg`} sizeImg={`cardImg`} deleteCard={'deleteCard'}text='Платье-футболка рыбы в аквариуме' price='899 ₴'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card image={cardSweatshirtImg} text='Cвитшот вставка клетка' price='1 099 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card image={cardDressImg} text='Платье прозрачное в цветочек черное' price='1 299 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card image={cardBomberImg} text='Бомбер Gone Crazy хаки' price='2 499 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard + ' ' + styles.deleteCard}><Card image={cardTShirtImg} text='Платье-футболка рыбы в аквариуме' price='899 ₽'/></Link>
             </div>
             <Link to='/catalog'>
             <div className={styles.NewItemsButton}>
