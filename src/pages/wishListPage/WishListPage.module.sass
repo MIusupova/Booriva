@@ -13,7 +13,24 @@
         width: 1148px
         margin-top: 160px
 
+.sizeCard
+    width: 320px
 
-    
+@media (max-width: 480px) 
+    .sizeCard 
+        width: calc( 50% - 10px )
 
-    
+.newItemsCards
+    max-width: 1440px
+    margin: 0 auto
+    justify-content: space-between
+    display: flex
+    gap: 15px
+
+@media (max-width: 480px) 
+    .newItemsCards 
+        flex-wrap: wrap
+
+@media (max-width: 768px) 
+    .deleteCard
+        display: none    
