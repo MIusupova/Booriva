@@ -4,12 +4,17 @@
     height: 609px
     flex-direction: row-reverse
 
+// @media (max-width: 768px) 
+//     .slideBox
+//         display: block 
+
 .cardProductPage
-    width: 1140px
+    max-width: 1170px
     margin: 0 auto
     display: flex
     margin-top: 200px
     margin-bottom: 70px
+    padding: 0 15px
     justify-content: space-between
 
 .slide
@@ -47,9 +52,19 @@
     font-family: Montserrat
     font-size: 36px
     font-weight: 600
-    line-height: 43.88px
+    line-height: 44px
     text-align: left
     margin-bottom: 5px
+
+@media (max-width: 1000px) 
+    .textTitle
+        font-size: 25px
+        line-height: 30px
+
+@media (max-width: 320px) 
+    .textTitle
+        font-size: 20px
+        line-height: 24px
 
 .textPrice
     font-family: Montserrat
@@ -59,6 +74,20 @@
     text-align: left
     color: #FDA3C4
     margin-bottom: 10px
+
+@media (max-width: 1000px) 
+    .textPrice
+        font-size: 36px
+        line-height: 43px
+
+@media (max-width: 768px) 
+    .textPrice
+        margin-bottom: 7px
+
+@media (max-width: 320px) 
+    .textPrice
+        font-size: 32px
+        line-height: 39px
 
 .textSize
     font-family: Montserrat
@@ -73,9 +102,34 @@
     display: flex
     justify-content: space-between
     margin-bottom: 20px
+    gap: 10px
+
+@media (max-width: 1000px) 
+    .sizeImages
+        margin-bottom: 15px
+
+@media (max-width: 768px) 
+    .sizeImages
+        margin-bottom: 20px
+
+@media (max-width: 320px) 
+    .sizeImages
+        margin-bottom: 34px
 
 .ButtonBasket
     margin-bottom: 30px
+
+@media (max-width: 1000px) 
+    .ButtonBasket
+        margin-bottom: 15px
+
+@media (max-width: 768px) 
+    .ButtonBasket
+        margin-bottom: 30px
+
+@media (max-width: 320px) 
+    .ButtonBasket
+        margin-bottom: 20px
 
 .textDescription
     font-family: Montserrat
@@ -85,8 +139,29 @@
     text-align: left
     margin-bottom: 10px
 
+@media (max-width: 1000px) 
+    .textDescription
+        margin-bottom: 12px
+
+@media (max-width: 768px) 
+    .textDescription
+        margin-bottom: 15px
+
+@media (max-width: 320px) 
+    .textDescription
+        font-size: 12px
+        line-height: 14px
+
 .textLine
-    margin-bottom: 13px
+    margin-bottom: 14px
+
+@media (max-width: 768px) 
+    .textLine
+        margin-bottom: 19px
+
+@media (max-width: 320px) 
+    .textLine
+        margin-bottom: 14px
 
 .textCompositionBox
     display: flex
@@ -99,9 +174,22 @@
     line-height: 17.07px
     text-align: left
 
+@media (max-width: 320px) 
+    .textComposition
+        font-size: 12px
+        line-height: 14px
+
 .textCompositionSmall
     font-family: Montserrat
     font-size: 14px
     font-weight: 400
     line-height: 20px
     text-align: left
+
+@media (max-width: 320px) 
+    .textCompositionSmall
+        font-size: 12px
+        line-height: 20px
+
+.size
+    min-width: 50px
