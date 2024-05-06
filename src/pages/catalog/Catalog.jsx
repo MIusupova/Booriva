@@ -24,7 +24,6 @@ const Catalog = () => {
     }, [location])
     return (
         <div className={styles.categoryProduct}>
-                       
         </div>
     )
 }
