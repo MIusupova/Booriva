@@ -14,11 +14,9 @@ import styles from "./Catalog.module.sass";
 const Catalog = () => {
     const location = useLocation()
     const [card, setCard] = useState([])
-    console.log(qs.parse(location.search.substring(1)))
     useEffect(() => {
         const data = getCatalogData(qs.parse(location.search.substring(1)).menuId)
         data.then((res) => {
-            console.log(location);
             setCard(res.card)
         })
     }, [location])
