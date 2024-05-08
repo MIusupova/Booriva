@@ -8,10 +8,12 @@ import WishListPage from "./pages/wishListPage/WishListPage";
 import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 import Instagram from "./components/instagram/Instagram";
+import Basket from "./components/basket/Basket";
 
 function App() {
   return (
     <div className="App">
+      <Basket/>
       <Header/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
