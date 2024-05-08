@@ -4,7 +4,7 @@ export const getCatalogData = async (id) => {
     return res[0];
 } 
 export const getCatalogAllData = async (id) => {
-    let res  = await fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product?categoryId=${id}`)
+    let res  = await fetch('https://6569c6cede53105b0dd7a33a.mockapi.io/product')
     res = await res.json()
-    return res;
+    return res
 }                     

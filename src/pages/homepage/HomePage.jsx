@@ -13,7 +13,7 @@ const HomePage = () => {
       <NewItems />
       <NewCollectionBox />
       <BoorivaStore />
-      <Ticker />
+      <Ticker/>
     </div>
   );
 };
