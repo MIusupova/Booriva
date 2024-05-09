@@ -8,13 +8,15 @@ import WishListPage from "./pages/wishListPage/WishListPage";
 import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 import Instagram from "./components/instagram/Instagram";
-import Basket from "./components/basket/Basket";
+import Basket from "./components/basket/BasketPage";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [isBasketOpen, setIsBasketOpen] = useState(false)
   return (
     <div className="App">
-      <Basket/>
-      <Header/>
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
+      <Header setIsBasketOpen={setIsBasketOpen}/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/catalog" element={<Catalog/>}/>
