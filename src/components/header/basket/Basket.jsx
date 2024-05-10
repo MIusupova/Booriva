@@ -2,11 +2,11 @@ import BasketIcon from "../../../assets/img/icons/BasketIcon";
 
 import styles from "./Basket.module.sass";
 
-const Basket = () => {
+const Basket = ({setIsBasketOpen}) => {
     return (
-        <a href="" className={styles.basket}>
+        <span className={styles.basket} onClick={() => setIsBasketOpen(true)}>
             <BasketIcon/>
-        </a>
+        </span>
 
     )
 

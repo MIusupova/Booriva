@@ -9,7 +9,7 @@ import SubMenu from "./menu/subMenu/SubMenu";
 
 import styles from "./Header.module.sass";
 
-const Header = () => {
+const Header = ({setIsBasketOpen}) => {
     const [isShow, setIsShow] = useState(false)
     const [menuId, setMenuId] = useState(0) //для сабменю
     return (
@@ -21,7 +21,7 @@ const Header = () => {
                     <Search/>
                     <div className={styles.blockthree}>
                         <Wishlist/>
-                        <Basket/>
+                        <Basket setIsBasketOpen={setIsBasketOpen}/>
                     </div>
                 </div>
                 
