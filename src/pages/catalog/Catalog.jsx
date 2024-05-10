@@ -14,17 +14,31 @@ import styles from "./Catalog.module.sass";
 const Catalog = () => {
     const location = useLocation()
     const [card, setCard] = useState([])
-    console.log(qs.parse(location.search.substring(1)))
     useEffect(() => {
         const data = getCatalogData(qs.parse(location.search.substring(1)).menuId)
         data.then((res) => {
-            console.log(location);
-            setCard(res.card)
+            res.products ? setCard(res.products) : setCard([])
         })
     }, [location])
     return (
         <div className={styles.categoryProduct}>
-                   
+            <div className={styles.categoryProductBlock + ' wrapper'}>
+                <CategoryTitle/>
+                <div className={styles.filterCards}>
+                    <CategoryFilter/>
+                    <div className={styles.newItemsCards}>
+                        {card.length > 0 ? (
+                            card.map(({id, images, name, price}) => {
+                                return(
+                                    <div className={styles.sizeCard}>
+                                        <Link to={`/cardProductPage?id=${id}`}><Card textSize={`cardText`} priceSize={`cardPrice`} image={images[0]} text={name} price={`${price} ₽`}/></Link>
+                                    </div>
+                                )
+                            })
+                        ) : (<div className={styles.textDelete}>Товаров данной категории нет~</div>)}
+                    </div>
+                </div>
+            </div>     
         </div>
     )
 }

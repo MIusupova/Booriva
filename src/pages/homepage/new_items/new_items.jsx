@@ -6,7 +6,6 @@ import cardDressImg from '../../../assets/img/images/card-dress.png'
 import cardBomberImg from '../../../assets/img/images/card-bomber.png'
 import cardTShirtImg from '../../../assets/img/images/card-t-shirt.png'
 import NewItemsButton from '../../../assets/img/icons/new_items_button'
-import NewItemsButtonText from '../../../assets/img/icons/new_items_buttonText'
 import styles from './new_items.module.sass'
 
 const NewItems = () => {        
@@ -19,12 +18,11 @@ const NewItems = () => {
                 <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardBomberImg} text='Бомбер Gone Crazy хаки' price='2 499 ₽'/></Link>
                 <Link to='/cardProductPage' className={styles.sizeCard + ' ' + styles.deleteCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardTShirtImg} text='Платье-футболка рыбы в аквариуме' price='899 ₽'/></Link>
             </div>
-            <Link to='/catalog'>
             <div className={styles.NewItemsButton}>
-                <div className={styles.NewItemsButtonColor}><NewItemsButton/></div>
-                <div className={styles.NewItemsButtonText}><NewItemsButtonText/></div>
+                <Link to={`/catalog?menuId=000`}>
+                    <NewItemsButton/>
+                </Link>
             </div>
-            </Link>
         </div>
     )
 }

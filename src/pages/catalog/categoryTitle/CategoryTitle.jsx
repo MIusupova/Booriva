@@ -1,4 +1,3 @@
-
 import Title from "../../../components/title/Title"
 
 import styles from "./CategoryTitle.module.sass";

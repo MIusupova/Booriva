@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import qs from 'qs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Thumbs } from 'swiper/modules';
+import { getProductData } from "../../services/product";
 import Like from '../../assets/img/icons/like';
 import SizeXSS from '../../assets/img/icons/SizeXS';
 import SizeSM from '../../assets/img/icons/SizeSM';
@@ -18,15 +21,22 @@ import styles from "./CardProductPage.module.sass";
 
 const CardProductPage = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const active = false
+    const location = useLocation()
+    const [products, setProducts] = useState()
+    useEffect(() => {
+        const data = getProductData(qs.parse(location.search.substring(1)).id)
+        data.then((res) => {
+            setProducts(res)
+        })
+    }, [location])
     return (
         <div className={styles.cardProductPage}>
             <main className={styles.slideBox}>
                 <Swiper className={styles.slideBigBox} modules={[Thumbs]} thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}>
-                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall1} alt=''/><div className={styles.likeBox}><Like active={active}/></div></SwiperSlide>
-                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall2} alt=''/><div className={styles.likeBox}><Like active={active}/></div></SwiperSlide>
-                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall3} alt=''/><div className={styles.likeBox}><Like active={active}/></div></SwiperSlide>
-                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall4} alt=''/><div className={styles.likeBox}><Like active={active}/></div></SwiperSlide>
+                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall1} alt=''/><div className={styles.likeBox}><Like active={false}/></div></SwiperSlide>
+                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall2} alt=''/><div className={styles.likeBox}><Like active={false}/></div></SwiperSlide>
+                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall3} alt=''/><div className={styles.likeBox}><Like active={false}/></div></SwiperSlide>
+                    <SwiperSlide className={styles.slideBig}><img className={styles.slideImg} src={CardBomberSmall4} alt=''/><div className={styles.likeBox}><Like active={false}/></div></SwiperSlide>
                 </Swiper>
                 <Swiper
                     modules={[Thumbs]}
@@ -39,10 +49,10 @@ const CardProductPage = () => {
                         <SwiperSlide className={styles.slide}><img className={styles.slideImg} src={CardBomberSmall3} alt=''/></SwiperSlide>
                         <SwiperSlide className={styles.slideEnd}><img className={styles.slideImg} src={CardBomberSmall4} alt=''/></SwiperSlide>
                 </Swiper>
-            </main>    
+            </main>     
             <div className={styles.textBox}>
-                <h1 className={styles.textTitle}>Бомбер Gone Crazy хаки</h1>
-                <div className={styles.textPrice}>2 499 ₽</div>
+                <h1 className={styles.textTitle}>{products.name}</h1>
+                <div className={styles.textPrice}>{`${products.price} ₽`}</div>
                 <div className={styles.textSize}>Выбрать размер:</div>
                 <div className={styles.sizeImages}>
                     <div className={styles.size}><SizeXSS></SizeXSS></div>
@@ -55,10 +65,10 @@ const CardProductPage = () => {
                 <div className={styles.textLine}><DotLine></DotLine></div>
                 <div className={styles.textCompositionBox}>
                     <div className={styles.textComposition}>Состав:</div>
-                    <div className={styles.textCompositionSmall}>50% вискоза, 50% полиэстер</div>
+                    <div className={styles.textCompositionSmall}>{products.details}</div>
                 </div>
-            </div> 
-          </div> )
+            </div>
+        </div> )
 }
 
 export default CardProductPage;

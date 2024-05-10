@@ -5,7 +5,7 @@ import styles from'./new_collection.module.sass'
 const NewCollectionBox = () => {
     return (
         <div className={styles.new_collection}>
-            <Link to='/catalog'><img src={NewCollection} alt='new collection'/></Link>
+            <Link to={`/catalog?menuId=000`}><img src={NewCollection} alt='new collection' className={styles.image}/></Link>
         </div>
     )
 }
