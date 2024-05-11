@@ -1,20 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./Ticker.module.sass";
-import { getCatalogAllData } from "../../../services/catalog";
-import { useEffect, useState } from "react";
 
-const Ticker = ({id}) => {
-    const [ticker, setTicker] = useState([])
-    useEffect(() => {  
-        getCatalogAllData().then((res) => setTicker(res));
-        
-    }, [])
-
+const Ticker = () => {
     return (
-        <Link to={`/catalog`}
-        onClick={() => setTicker(id)}
-        key={id}
-         > 
+        <Link to="/catalog">
             <div className = {styles.ticker}>
                 <ul className = {styles.blockticker}>
                     <li className = {styles.text}>топовые товары</li>
