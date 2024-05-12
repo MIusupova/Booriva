@@ -18,7 +18,7 @@ const Catalog = () => {
     const data = getCatalogData(qs.parse(location.search.substring(1)).menuId);
     data.then((res) => {
       res.products ? setCard(res.products) : setCard([]);
-      setTitle(res.menuName);
+      res.menuName ? setTitle(res.menuName) : setTitle("пусто");
     });
   }, [location]);
   return (
