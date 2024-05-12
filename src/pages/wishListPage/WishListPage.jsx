@@ -15,9 +15,9 @@ const WishListPage = () => {
                 <div className={styles.categoryTitleSvg}></div>
             </div>
             <div className={styles.newItemsCards}>
-                <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardSweatshirtImg} active={true} text='Cвитшот вставка клетка' price='1 099 ₽'/></Link>
-                <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardDressImg} active={true} text='Платье прозрачное в цветочек черное' price='1 299 ₽'/></Link>
-                <Link to='/cardProductPage' className={styles.sizeCard + ' ' + styles.deleteCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardBomberImg} active={true} text='Бомбер Gone Crazy хаки' price='2 499 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardSweatshirtImg} active={true} text='Cвитшот вставка клетка' price='1 099 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardDressImg} active={true} text='Платье прозрачное в цветочек черное' price='1 299 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard + ' ' + styles.deleteCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardBomberImg} active={true} text='Бомбер Gone Crazy хаки' price='2 499 ₽'/></Link>
             </div>
             <Delivery/>                     
         </div>

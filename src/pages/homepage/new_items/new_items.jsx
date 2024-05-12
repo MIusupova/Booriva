@@ -13,10 +13,10 @@ const NewItems = () => {
         <div className={styles.NewItemsBox}>
             <Headline/>
             <div className={styles.newItemsCards}>
-                <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardSweatshirtImg} text='Cвитшот вставка клетка' price='1 099 ₽'/></Link>
-                <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardDressImg} text='Платье прозрачное в цветочек черное' price='1 299 ₽'/></Link>
-                <Link to='/cardProductPage' className={styles.sizeCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardBomberImg} text='Бомбер Gone Crazy хаки' price='2 499 ₽'/></Link>
-                <Link to='/cardProductPage' className={styles.sizeCard + ' ' + styles.deleteCard}><Card textSize={`cardText`} priceSize={`cardPrice`} image={cardTShirtImg} text='Платье-футболка рыбы в аквариуме' price='899 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardSweatshirtImg} text='Cвитшот вставка клетка' price='1 099 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardDressImg} text='Платье прозрачное в цветочек черное' price='1 299 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardBomberImg} text='Бомбер Gone Crazy хаки' price='2 499 ₽'/></Link>
+                <Link to='/cardProductPage' className={styles.sizeCard + ' ' + styles.deleteCard}><Card cardBox={`cardBox`} textSize={`cardText`} priceSize={`cardPrice`} image={cardTShirtImg} text='Платье-футболка рыбы в аквариуме' price='899 ₽'/></Link>
             </div>
             <div className={styles.NewItemsButton}>
                 <Link to={`/catalog?menuId=000`}>
