@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import ButtonBasketPink from '../../assets/img/icons/ButtonBasketPink'
 import CrossButtonBasket from '../../assets/img/icons/СrossButtonBasket'
 import styles from './BasketPage.module.sass'
@@ -27,8 +28,11 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                             <span className={styles.basketTextBigPrice}>4 998 ₴</span>
                         </div>
                     </div>
-                    <ButtonBasketPink/>
-                    <div className={styles.text}>{'Оформить заказ'}</div> 
+                    <Link  to="/" className={styles.basketBtn}>
+                        <ButtonBasketPink/>
+                        <div className={styles.text}>{'Оформить заказ'}</div>
+                    </Link>
+                     
             
                 </div>
             
