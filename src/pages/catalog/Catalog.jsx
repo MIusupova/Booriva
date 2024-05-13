@@ -26,7 +26,7 @@ const Catalog = () => {
       <div className={styles.categoryProductBlock + " wrapper"}>
         <CategoryTitle title={title} subtitle={title} />
         <div className={styles.filterCards}>
-          <CategoryFilter />.
+          <CategoryFilter />
           <div className={styles.newItemsCards}>
             {card.length > 0 ? (
               card.map(({ id, images, name, price }) => {
