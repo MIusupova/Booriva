@@ -7,5 +7,6 @@ export const getCatalogData = async (id) => {
     }else{
         return []
     }
-}                           
+}  
+                         
 
