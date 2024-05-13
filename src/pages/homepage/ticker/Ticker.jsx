@@ -4,7 +4,6 @@ import styles from "./Ticker.module.sass";
 
 const Ticker = () => {
     
-
     return (
         <Link to={`/catalog`}
          > 
