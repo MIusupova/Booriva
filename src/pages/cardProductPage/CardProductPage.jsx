@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import qs from "qs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
@@ -23,15 +23,20 @@ const CardProductPage = () => {
   const [desc, setDesc] = useState();
   const [details, setDetails] = useState();
   const [images, setImages] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    const data = getProductData(qs.parse(location.search.substring(1)).id);
-    data.then((res) => {
-      setName(res.name);
-      setPrice(res.price);
-      setDesc(res.desc);
-      setDetails(res.details);
-      setImages(res.images);
-    });
+    if (location.search) {
+      const data = getProductData(qs.parse(location.search.substring(1)).id);
+      data.then((res) => {
+        setName(res.name);
+        setPrice(res.price);
+        setDesc(res.desc);
+        setDetails(res.details);
+        setImages(res.images);
+      });
+    } else {
+      navigate("/");
+    }
   }, [location]);
   return (
     <div className={styles.cardProductPage}>
@@ -44,38 +49,16 @@ const CardProductPage = () => {
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
           }}
         >
-          <SwiperSlide className={styles.slideBig}>
-            <img className={styles.slideImg} src={images[0]} alt="" />
-            <div className={styles.likeBox}>
-              <Link to="/wishlistPage">
-                <Like active={false} />
-              </Link>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.slideBig}>
-            <img className={styles.slideImg} src={images[1]} alt="" />
-            <div className={styles.likeBox}>
-              <Link to="/wishlistPage">
-                <Like active={false} />
-              </Link>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.slideBig}>
-            <img className={styles.slideImg} src={images[2]} alt="" />
-            <div className={styles.likeBox}>
-              <Link to="/wishlistPage">
-                <Like active={false} />
-              </Link>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.slideBig}>
-            <img className={styles.slideImg} src={images[3]} alt="" />
-            <div className={styles.likeBox}>
-              <Link to="/wishlistPage">
-                <Like active={false} />
-              </Link>
-            </div>
-          </SwiperSlide>
+          {images.map((image) => (
+            <SwiperSlide className={styles.slideBig} key={image}>
+              <img className={styles.slideImg} src={image} alt="" />
+              <div className={styles.likeBox}>
+                <Link to="/wishlistPage">
+                  <Like active={false} />
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
         <Swiper
           modules={[Thumbs]}
@@ -84,18 +67,11 @@ const CardProductPage = () => {
           slidesPerView={4}
           direction={"vertical"}
         >
-          <SwiperSlide className={styles.slide}>
-            <img className={styles.slideImg} src={images[0]} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
-            <img className={styles.slideImg} src={images[1]} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
-            <img className={styles.slideImg} src={images[2]} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slideEnd}>
-            <img className={styles.slideImg} src={images[3]} alt="" />
-          </SwiperSlide>
+          {images.map((image) => (
+            <SwiperSlide className={styles.slide} key={image}>
+              <img className={styles.slideImg} src={image} alt="" />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </main>
       <div className={styles.textBox}>
@@ -104,24 +80,24 @@ const CardProductPage = () => {
         <div className={styles.textSize}>Выбрать размер:</div>
         <div className={styles.sizeImages}>
           <div className={styles.size}>
-            <SizeXSS></SizeXSS>
+            <SizeXSS />
           </div>
           <div className={styles.size}>
-            <SizeSM></SizeSM>
+            <SizeSM />
           </div>
           <div className={styles.size}>
-            <SizeML></SizeML>
+            <SizeML />
           </div>
           <div className={styles.size}>
-            <SizeLXL></SizeLXL>
+            <SizeLXL />
           </div>
         </div>
         <div className={styles.ButtonBasket}>
-          <ButtonBasket></ButtonBasket>
+          <ButtonBasket />
         </div>
         <div className={styles.textDescription}>{desc}</div>
         <div className={styles.textLine}>
-          <DotLine></DotLine>
+          <DotLine />
         </div>
         <div className={styles.textCompositionBox}>
           <div className={styles.textComposition}>Состав:</div>
