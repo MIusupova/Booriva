@@ -14,7 +14,7 @@ import { useState } from "react";
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)
   return (
-    <div className="App">
+    <div className={`${isBasketOpen && 'no-scroll'}`}>
       <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
       <Header setIsBasketOpen={setIsBasketOpen}/>
         <Routes>

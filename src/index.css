@@ -12,7 +12,13 @@ body h1, h2, h3, h4, h5, h6, p, ul, li {
   padding: 0;
 }
 body {
+  &::-webkit-scrollbar {
+    background-color: #ffe6ef;
+  }
+  
   overflow-x: hidden;
+  
+    
 }
 
 .wrapper{
@@ -76,5 +82,12 @@ label {
 legend {
 	display: block;
 }
+
+.no-scroll {
+  height: 100vh;
+  overflow: hidden; 
+
+} 
+
 
 

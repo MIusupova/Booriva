@@ -33,9 +33,8 @@
     margin-top: 40px
 
 .basketBox
-    width: 410px
-    height: 453px
     margin-left: 20px
+    margin-bottom: 20px
     
 .basketTitle
     color: #000
@@ -45,6 +44,7 @@
     text-transform: uppercase
     width: 134px
     margin: 0 auto
+    margin-bottom: 40px
 .crossButtonBasket
     cursor: pointer
     margin-left: 410px
@@ -93,6 +93,19 @@
     display: flex
     justify-content: center
     position: relative
+.products
+    height: calc( 100vh - 420px )
+    overflow-y: scroll
+    &::-webkit-scrollbar
+        width: 2px
+    &::-webkit-scrollbar-track
+        background: #f4d0dd
+    &::-webkit-scrollbar-thumb
+        background: #f880ac
+        height: 40px
+        
+    
+        
 
     
 
