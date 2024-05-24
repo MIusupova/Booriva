@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import qs from "qs";
 
 import cardSweatshirtImg from '../../../src/assets/img/images/card-sweatshirt.png'
 import ButtonBasketPink from '../../assets/img/icons/ButtonBasketPink'
@@ -10,6 +11,7 @@ import { getProductData } from '../../services/product'
 
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     const [products, setProducts] = useState([])
+    const [price, setPrice] = useState();
 
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
@@ -22,6 +24,19 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
             }
         }
     }
+    useEffect(() => {
+        if (location.search) {
+          const data = getProductData(qs.parse(location.search.substring(1)).id);
+          
+          data.then((res) => {
+            setPrice(res.price);
+            
+          });
+        } 
+      }, [location]);
+
+
+
 
     useEffect(() => {
         const items = sendData(cart, 0, []);
@@ -51,7 +66,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                             <div className={styles.productsCardText}>
                                 <p className={styles.productsName} >Бомбер Gone Crazy <br /> хаки</p>
                                 <p className={styles.productsSize}>S—M</p>
-                                <p className={styles.productsPrice}>2 499 ₴</p>
+                                <p className={styles.productsPrice}>{`${price} ₽`}</p>
                             </div>
                             </div>
                         </div>
