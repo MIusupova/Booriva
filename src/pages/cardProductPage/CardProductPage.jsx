@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import qs from "qs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
@@ -15,7 +15,7 @@ import "swiper/css";
 
 import styles from "./CardProductPage.module.sass";
 
-const CardProductPage = () => {
+const CardProductPage = ({ select, setSelect }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
   const [name, setName] = useState();
@@ -23,6 +23,7 @@ const CardProductPage = () => {
   const [desc, setDesc] = useState();
   const [details, setDetails] = useState();
   const [images, setImages] = useState([]);
+  console.log("asdsaas", select);
   const navigate = useNavigate();
   useEffect(() => {
     if (location.search) {
@@ -38,6 +39,15 @@ const CardProductPage = () => {
       navigate("/");
     }
   }, [location]);
+  const addProductSelect = () => {
+    if (location.search) {
+      const id = qs.parse(location.search.substring(1)).id;
+      if (!select.includes(id)) {
+        setSelect([...select, id]);
+      }
+    }
+  };
+
   return (
     <div className={styles.cardProductPage}>
       <main className={styles.slideBox}>
@@ -52,10 +62,8 @@ const CardProductPage = () => {
           {images.map((image) => (
             <SwiperSlide className={styles.slideBig} key={image}>
               <img className={styles.slideImg} src={image} alt="" />
-              <div className={styles.likeBox}>
-                <Link to="/wishlistPage">
-                  <Like active={false} />
-                </Link>
+              <div className={styles.likeBox} onClick={addProductSelect}>
+                <Like active={false} />
               </div>
             </SwiperSlide>
           ))}

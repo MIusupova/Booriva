@@ -10,7 +10,7 @@ import Card from "../../components/cards/card";
 
 import styles from "./Catalog.module.sass";
 
-const Catalog = () => {
+const Catalog = ({ select, setSelect }) => {
   const location = useLocation();
   const [card, setCard] = useState([]);
   const [title, setTitle] = useState([]);
