@@ -12,6 +12,13 @@ import Basket from "./components/basket/BasketPage";
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)
+  const [cart, setCart] = useState(
+    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+  )
+useEffect(() => {
+  localStorage.setItem('cart', JSON.stringify(cart))
+}, [cart]);
+
   const [ select, setSelect ] = useState(
     localStorage.getItem('select') ? JSON.parse(localStorage.getItem('select')) : []
   )
