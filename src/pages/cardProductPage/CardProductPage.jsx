@@ -100,8 +100,9 @@ const CardProductPage = ({ select, setSelect }) => {
             <SizeLXL />
           </div>
         </div>
-        <div className={styles.ButtonBasket}>
+      <div className={styles.ButtonBasket}>
           <ButtonBasket />
+
         </div>
         <div className={styles.textDescription}>{desc}</div>
         <div className={styles.textLine}>

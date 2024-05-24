@@ -16,9 +16,10 @@ const App = () => {
     localStorage.getItem('select') ? JSON.parse(localStorage.getItem('select')) : []
   )
   useEffect(() => {localStorage.setItem('select', JSON.stringify(select))}, [select])
+
   return (
-    <div className="App">
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
+    <div className={`${isBasketOpen && 'no-scroll'}`}>
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} cart={cart} setCart={setCart}/>
       <Header setIsBasketOpen={setIsBasketOpen}/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
