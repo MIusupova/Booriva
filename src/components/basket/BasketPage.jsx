@@ -1,13 +1,33 @@
 import { Link } from 'react-router-dom'
 
-import Card from '../cards/card'
 import cardSweatshirtImg from '../../../src/assets/img/images/card-sweatshirt.png'
 import ButtonBasketPink from '../../assets/img/icons/ButtonBasketPink'
 import CrossButtonBasket from '../../assets/img/icons/СrossButtonBasket'
 
 import styles from './BasketPage.module.sass'
+import { useEffect, useState } from 'react'
+import { getProductData } from '../../services/product'
 
-const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
+const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
+    const [products, setProducts] = useState([])
+
+    const sendData = async (cart, i, products) => {
+        if(i < cart.length) {
+            const data = await getProductData(cart[i])
+            products.push(data);
+            if (i < cart.length - 1){
+                return sendData(cart, i +1, products);
+            } else {
+                return [];
+            }
+        }
+    }
+
+    useEffect(() => {
+        const items = sendData(cart, 0, []);
+        items.then((res) => setProducts(res))
+        }, [cart])
+    console.log(products);
     return(
         <div className={styles.basket__wrap}>
             <div className={styles.backdrop + ' ' + (isBasketOpen && styles.backdrop_open)} onClick={() =>  setIsBasketOpen(false)}></div>
@@ -18,22 +38,22 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                 <div className={styles.basketBox}> 
                         <h1 className={styles.basketTitle}>Корзина</h1>
                         <div className={styles.products}>
+                        
                             <div className={styles.productsBlock} >
                                 <div className={styles.productsCard} >
                             <Link to='/cardProductPage' className={styles.sizeCard}>
                             <img className={styles.slid} src={cardSweatshirtImg} alt="" />
                         </Link>
                             </div>
+                            {
+                                products.map((item) => item.name)
+                            }
                             <div className={styles.productsCardText}>
                                 <p className={styles.productsName} >Бомбер Gone Crazy <br /> хаки</p>
                                 <p className={styles.productsSize}>S—M</p>
                                 <p className={styles.productsPrice}>2 499 ₴</p>
                             </div>
                             </div>
-                            
-                    
-                        
-                        
                         </div>
 
                 </div>
@@ -56,15 +76,9 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                         <div className={styles.text}>{'Оформить заказ'}</div>
                     </Link>
                      
-            
                 </div>
-            
-                    
             </div>
-
         </div>
-        
-        
     )
 }
 
