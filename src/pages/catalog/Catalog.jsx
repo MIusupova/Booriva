@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import qs from "qs";
 import { Link } from "react-router-dom";
@@ -10,16 +10,23 @@ import Card from "../../components/cards/card";
 
 import styles from "./Catalog.module.sass";
 
-const Catalog = () => {
+const Catalog = ({ select, setSelect }) => {
   const location = useLocation();
   const [card, setCard] = useState([]);
   const [title, setTitle] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    const data = getCatalogData(qs.parse(location.search.substring(1)).menuId);
-    data.then((res) => {
-      res.products ? setCard(res.products) : setCard([]);
-      res.menuName ? setTitle(res.menuName) : setTitle("пусто");
-    });
+    if (location.search) {
+      const data = getCatalogData(
+        qs.parse(location.search.substring(1)).menuId
+      );
+      data.then((res) => {
+        res.products ? setCard(res.products) : setCard([]);
+        res.menuName ? setTitle(res.menuName) : setTitle("пусто");
+      });
+    } else {
+      navigate("/");
+    }
   }, [location]);
   return (
     <div className={styles.categoryProduct}>
