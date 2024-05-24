@@ -4,9 +4,6 @@ import { getProductData } from "../../services/product";
 import Card from "../../components/cards/card";
 import Delivery from "../../components/delivery/Delivery";
 import Title from "../../components/title/Title";
-import cardSweatshirtImg from "../../assets/img/images/card-sweatshirt.png";
-import cardDressImg from "../../assets/img/images/card-dress.png";
-import cardBomberImg from "../../assets/img/images/card-bomber.png";
 import styles from "./WishListPage.module.sass";
 
 const WishListPage = ({ select, setSelect }) => {
