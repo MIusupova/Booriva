@@ -9,16 +9,19 @@ import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 import Instagram from "./components/instagram/Instagram";
 import Basket from "./components/basket/BasketPage";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)
-  const [ select, setSelect ] = useState(
-    localStorage.getItem('select') ? JSON.parse(localStorage.getItem('select')) : []
+  const [cart, setCart] = useState(
+    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
   )
-  useEffect(() => {localStorage.setItem('select', JSON.stringify(select))}, [select])
+useEffect(() => {
+  localStorage.setItem('cart', JSON.stringify(cart))
+}, [cart]);
   return (
-    <div className="App">
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
+    <div className={`${isBasketOpen && 'no-scroll'}`}>
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} cart={cart} setCart={setCart}/>
       <Header setIsBasketOpen={setIsBasketOpen}/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
