@@ -11,7 +11,7 @@ import { getProductData } from '../../services/product'
 
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     const [products, setProducts] = useState([])
-    const [price, setPrice] = useState();
+    
 
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
@@ -24,16 +24,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
             }
         }
     }
-    useEffect(() => {
-        if (location.search) {
-          const data = getProductData(qs.parse(location.search.substring(1)).id);
-          
-          data.then((res) => {
-            setPrice(res.price);
-            
-          });
-        } 
-      }, [location]);
+    
 
 
 
@@ -66,7 +57,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                             <div className={styles.productsCardText}>
                                 <p className={styles.productsName} >Бомбер Gone Crazy <br /> хаки</p>
                                 <p className={styles.productsSize}>S—M</p>
-                                <p className={styles.productsPrice}>{`${price} ₽`}</p>
+                                <p className={styles.productsPrice}></p>
                             </div>
                             </div>
                         </div>
