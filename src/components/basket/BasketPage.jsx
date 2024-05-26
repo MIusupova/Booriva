@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
-import qs from "qs";
 
-import cardSweatshirtImg from '../../../src/assets/img/images/card-sweatshirt.png'
 import ButtonBasketPink from '../../assets/img/icons/ButtonBasketPink'
 import CrossButtonBasket from '../../assets/img/icons/СrossButtonBasket'
 
@@ -13,17 +11,17 @@ import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     const [products, setProducts] = useState([])
   
-    
-
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
             const data = await getProductData(cart[i])
             products.push(data);
             if (i < cart.length - 1){
-                return sendData(cart, i +1, products);
+                return sendData(cart, i + 1, products);
             } else {
-                return [];
+                return products;
             }
+        } else {
+            return[]
         }
     }
     
@@ -31,7 +29,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
         const items = sendData(cart, 0, []);
         items.then((res) => setProducts(res))
         }, [cart])
-    console.log(products);
+    
     return(
         <div className={styles.basket__wrap}>
             <div className={styles.backdrop + ' ' + (isBasketOpen && styles.backdrop_open)} onClick={() =>  setIsBasketOpen(false)}></div>
@@ -42,28 +40,29 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                 <div className={styles.basketBox}> 
                         <h1 className={styles.basketTitle}>Корзина</h1>
                         
-                       
                         <div className={styles.products}>
+                            {
+                                products.map((item) =>
+                                <div className={styles.productsBlock} >
+                                <div className={styles.productsCard} >
+                                <img  src={item.images[0]} alt="" />
+                            </div>
+                            <div className={styles.productsCardText}>
+                                <div className={styles.basketBtnText}>
+                                    <p className={styles.productsName} >{item.name} <br /> </p>
+                                    <div className={styles.basketSmallBtn}>
+                                        <BasketBtnSmall/>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <p className={styles.productsSize}>S—M</p>
+                                <p className={styles.productsPrice}>{item.price}</p>
+                            </div>
+                            </div>
+                                )
+                            }
 
-                        
-                        
-                        <div className={styles.productsBlock} >
-                        <div className={styles.productsCard} >
-                        <img  src={cardSweatshirtImg} alt="" />
-                    </div>
-                    <div className={styles.productsCardText}>
-                        <div className={styles.basketBtnText}>
-                            <p className={styles.productsName} >Бомбер Gone Crazy <br /> хаки</p>
-                            <BasketBtnSmall/>
-                        </div>
-                        
-                        <p className={styles.productsSize}>S—M</p>
-                        <p className={styles.productsPrice}></p>
-                    </div>
-                    </div>
-                            
-                      
-                            
                         </div>
 
                 </div>
