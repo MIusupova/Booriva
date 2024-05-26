@@ -8,9 +8,11 @@ import CrossButtonBasket from '../../assets/img/icons/СrossButtonBasket'
 import styles from './BasketPage.module.sass'
 import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
+import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     const [products, setProducts] = useState([])
+    const [price, setPrice] = useState();
     
 
     const sendData = async (cart, i, products) => {
@@ -25,10 +27,6 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
         }
     }
     
-
-
-
-
     useEffect(() => {
         const items = sendData(cart, 0, []);
         items.then((res) => setProducts(res))
@@ -43,23 +41,30 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                 <CrossButtonBasket setIsBasketOpen={setIsBasketOpen} />
                 <div className={styles.basketBox}> 
                         <h1 className={styles.basketTitle}>Корзина</h1>
-                        <div className={styles.products}>
                         
-                            <div className={styles.productsBlock} >
-                                <div className={styles.productsCard} >
-                            <Link to='/cardProductPage' className={styles.sizeCard}>
-                            <img className={styles.slid} src={cardSweatshirtImg} alt="" />
-                        </Link>
-                            </div>
-                            {
-                                products.map((item) => item.name)
-                            }
-                            <div className={styles.productsCardText}>
-                                <p className={styles.productsName} >Бомбер Gone Crazy <br /> хаки</p>
-                                <p className={styles.productsSize}>S—M</p>
-                                <p className={styles.productsPrice}></p>
-                            </div>
-                            </div>
+                       
+                        <div className={styles.products}>
+
+                        {products.map(({item}) =>
+                        
+                        <div className={styles.productsBlock} >
+                        <div className={styles.productsCard} >
+                        <img  src={cardSweatshirtImg} alt="" />
+                    </div>
+                    <div className={styles.productsCardText}>
+                        <div className={styles.basketBtnText}>
+                            <p className={styles.productsName} >Бомбер Gone Crazy <br /> хаки</p>
+                            <BasketBtnSmall/>
+                        </div>
+                        
+                        <p className={styles.productsSize}>S—M</p>
+                        <p className={styles.productsPrice}>{item.price}</p>
+                    </div>
+                    </div>
+                            
+                            )
+                        }
+                            
                         </div>
 
                 </div>
