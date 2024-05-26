@@ -47,7 +47,7 @@ const CardProductPage = ({ select, setSelect }) => {
       }
     }
   };
-
+ 
   return (
     <div className={styles.cardProductPage}>
       <main className={styles.slideBox}>
@@ -100,7 +100,7 @@ const CardProductPage = ({ select, setSelect }) => {
             <SizeLXL />
           </div>
         </div>
-      <div className={styles.ButtonBasket}>
+      <div className={styles.ButtonBasket} >
           <ButtonBasket />
 
         </div>
