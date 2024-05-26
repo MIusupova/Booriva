@@ -12,7 +12,7 @@ import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     const [products, setProducts] = useState([])
-    const [price, setPrice] = useState();
+  
     
 
     const sendData = async (cart, i, products) => {
@@ -45,7 +45,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                        
                         <div className={styles.products}>
 
-                        {products.map(({item}) =>
+                        
                         
                         <div className={styles.productsBlock} >
                         <div className={styles.productsCard} >
@@ -58,12 +58,11 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                         </div>
                         
                         <p className={styles.productsSize}>S—M</p>
-                        <p className={styles.productsPrice}>{item.price}</p>
+                        <p className={styles.productsPrice}></p>
                     </div>
                     </div>
                             
-                            )
-                        }
+                      
                             
                         </div>
 
