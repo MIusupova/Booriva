@@ -8,10 +8,10 @@ import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
 import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 
-const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
+const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
+    const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
     const [products, setProducts] = useState([])
   
-    
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
             const data = await getProductData(cart[i])
@@ -25,7 +25,6 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
             return[]
         }
     }
-    
     useEffect(() => {
         const items = sendData(cart, 0, []);
         items.then((res) => setProducts(res))
@@ -42,7 +41,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                         
                         <div className={styles.products}>
                             {
-                                products.map((item) =>
+                            products.map((item) =>
                                 <div className={styles.productsBlock} >
                                 <div className={styles.productsCard} >
                                 <img  src={item.images[0]} alt="" />

@@ -15,7 +15,7 @@ import "swiper/css";
 
 import styles from "./CardProductPage.module.sass";
 
-const CardProductPage = ({ select, setSelect, cart, setCart }) => {
+const CardProductPage = ({ select, setSelect, cart,setCart }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
   const [name, setName] = useState();
@@ -48,8 +48,7 @@ const CardProductPage = ({ select, setSelect, cart, setCart }) => {
       }
     }
   };
-
-
+  
   const addProductInCart = () => {
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;
