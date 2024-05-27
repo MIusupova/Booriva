@@ -26,14 +26,14 @@ useEffect(() => {
 
   return (
     <div className={`${isBasketOpen && 'no-scroll'}`}>
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} cart={cart} setCart={setCart}/>
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
       <Header setIsBasketOpen={setIsBasketOpen}/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/catalog" element={<Catalog select={select} setSelect={setSelect}/>} />
           <Route path="/wishlistPage" element={<WishListPage select={select} setSelect={setSelect}/>}/>
           <Route path="/wishListEmpty" element={<WishListEmpty/>}/>
-          <Route path="/cardProductPage" element={<CardProductPage select={select} setSelect={setSelect}/>}/>
+          <Route path="/cardProductPage" element={<CardProductPage select={select} setSelect={setSelect} cart={cart} setCart={setCart}/>}/>
         </Routes>
       <Instagram />
       <Footer />

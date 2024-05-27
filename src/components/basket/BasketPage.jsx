@@ -50,11 +50,14 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                             <div className={styles.productsCardText}>
                                 <div className={styles.basketBtnText}>
                                     <p className={styles.productsName} >{item.name} <br /> </p>
-                                    <div className={styles.basketSmallBtn}>
-                                        <BasketBtnSmall/>
+                                    
+                                        {
+                                            products.map((item) => (<div className={styles.basketSmallBtn} onClick={() =>cart.filter(data => data !==item.id)}><BasketBtnSmall/></div>))
+                                        }
+                                        
                                     </div>
                                     
-                                </div>
+                                
                                 
                                 <p className={styles.productsSize}>S—M</p>
                                 <p className={styles.productsPrice}>{item.price}</p>
