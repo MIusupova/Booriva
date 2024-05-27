@@ -11,6 +11,7 @@ import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     const [products, setProducts] = useState([])
   
+    
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
             const data = await getProductData(cart[i])
@@ -29,7 +30,6 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
         const items = sendData(cart, 0, []);
         items.then((res) => setProducts(res))
         }, [cart])
-    
     return(
         <div className={styles.basket__wrap}>
             <div className={styles.backdrop + ' ' + (isBasketOpen && styles.backdrop_open)} onClick={() =>  setIsBasketOpen(false)}></div>
@@ -50,15 +50,9 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                             <div className={styles.productsCardText}>
                                 <div className={styles.basketBtnText}>
                                     <p className={styles.productsName} >{item.name} <br /> </p>
-                                    
-                                        {
-                                            products.map((item) => (<div className={styles.basketSmallBtn} onClick={() =>cart.filter(data => data !==item.id)}><BasketBtnSmall/></div>))
-                                        }
-                                        
+                                        <BasketBtnSmall/>
                                     </div>
                                     
-                                
-                                
                                 <p className={styles.productsSize}>S—M</p>
                                 <p className={styles.productsPrice}>{item.price}</p>
                             </div>

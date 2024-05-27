@@ -15,7 +15,7 @@ import "swiper/css";
 
 import styles from "./CardProductPage.module.sass";
 
-const CardProductPage = ({ select, setSelect }) => {
+const CardProductPage = ({ select, setSelect, cart, setCart }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
   const [name, setName] = useState();
@@ -23,7 +23,7 @@ const CardProductPage = ({ select, setSelect }) => {
   const [desc, setDesc] = useState();
   const [details, setDetails] = useState();
   const [images, setImages] = useState([]);
-  console.log("asdsaas", select);
+ 
   const navigate = useNavigate();
   useEffect(() => {
     if (location.search) {
@@ -39,6 +39,7 @@ const CardProductPage = ({ select, setSelect }) => {
       navigate("/");
     }
   }, [location]);
+
   const addProductSelect = () => {
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;
@@ -47,7 +48,18 @@ const CardProductPage = ({ select, setSelect }) => {
       }
     }
   };
- 
+
+
+  const addProductInCart = () => {
+    if (location.search) {
+      const id = qs.parse(location.search.substring(1)).id;
+      if (!cart.includes(id)) {
+        setCart([...cart, id]);
+      }
+     
+    }
+  };
+
   return (
     <div className={styles.cardProductPage}>
       <main className={styles.slideBox}>
@@ -100,7 +112,7 @@ const CardProductPage = ({ select, setSelect }) => {
             <SizeLXL />
           </div>
         </div>
-      <div className={styles.ButtonBasket} >
+      <div className={styles.ButtonBasket} onClick={addProductInCart} >
           <ButtonBasket />
 
         </div>
