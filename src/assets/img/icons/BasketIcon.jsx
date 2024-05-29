@@ -1,7 +1,7 @@
 import styles from "./../../../components/header/basket/Basket.module.sass";
 const BasketIcon = () => {
   return (
-      <svg className={styles.basketIcon}
+      <svg className={styles.basketIcon} 
         width="24"
         height="24"
         viewBox="0 0 24 24"
