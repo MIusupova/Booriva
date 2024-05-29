@@ -18,8 +18,10 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
             products.push(data);
             if (i < cart.length - 1){
                 return sendData(cart, i + 1, products);
+                
             } else {
                 return products;
+                
             }
         } else {
             return[]
