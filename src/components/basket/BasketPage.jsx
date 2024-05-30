@@ -27,6 +27,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
             return[]
         }
     }
+   
     useEffect(() => {
         const items = sendData(cart, 0, []);
         items.then((res) => setProducts(res))

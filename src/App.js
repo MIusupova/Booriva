@@ -28,7 +28,7 @@ useEffect(() => {
 
   return (
     <div className={`${isBasketOpen && 'no-scroll'}`}>
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} cart={cart} setCart={setCart}/>
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
       <Header setIsBasketOpen={setIsBasketOpen}/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
