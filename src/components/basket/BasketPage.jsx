@@ -11,6 +11,7 @@ import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
     const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
     const [products, setProducts] = useState([])
+    console.log(products);
   
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
