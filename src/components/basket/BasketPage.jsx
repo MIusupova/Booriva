@@ -15,13 +15,11 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
     const sendData = async (cart, i, products) => {
         if(i < cart.length) {
             const data = await getProductData(cart[i])
-            products.push(data);
+            products.push(data)
             if (i < cart.length - 1){
                 return sendData(cart, i + 1, products);
-                
             } else {
                 return products;
-                
             }
         } else {
             return[]
@@ -41,7 +39,6 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                 <CrossButtonBasket setIsBasketOpen={setIsBasketOpen} />
                 <div className={styles.basketBox}> 
                         <h1 className={styles.basketTitle}>Корзина</h1>
-                        
                         <div className={styles.products}>
                             {
                             products.map((item) =>
@@ -52,18 +49,15 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                             <div className={styles.productsCardText}>
                                 <div className={styles.basketBtnText}>
                                     <p className={styles.productsName} >{item.name} <br /> </p>
-                                        <BasketBtnSmall/>
+                                        <BasketBtnSmall />
                                     </div>
-                                    
                                 <p className={styles.productsSize}>S—M</p>
                                 <p className={styles.productsPrice}>{item.price}</p>
                             </div>
                             </div>
                                 )
                             }
-
                         </div>
-
                 </div>
                     <div className={styles.basketPrice}>
                         <div className={styles.basketPriceOne}>
@@ -82,8 +76,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                     <Link  to="/" className={styles.basketBtn}>
                         <ButtonBasketPink/>
                         <div className={styles.text}>{'Оформить заказ'}</div>
-                    </Link>
-                     
+                    </Link> 
                 </div>
             </div>
         </div>
