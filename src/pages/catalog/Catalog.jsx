@@ -2,29 +2,51 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import qs from "qs";
 import { Link } from "react-router-dom";
-import { getCatalogData } from "../../services/catalog";
+import { getCatalogData, getCategoryData } from "../../services/catalog";
 
 import CategoryFilter from "./categoryFilter/CategoryFilter";
 import CategoryTitle from "./categoryTitle/CategoryTitle";
 import Card from "../../components/cards/card";
 
 import styles from "./Catalog.module.sass";
+import { getProductData } from "../../services/product";
 
 const Catalog = () => {
   const location = useLocation();
   const [card, setCard] = useState([]);
   const [title, setTitle] = useState([]);
+  const [subTitle, setSubTitle] = useState([]);
   useEffect(() => {
-    const data = getCatalogData(qs.parse(location.search.substring(1)).menuId);
-    data.then((res) => {
-      res.products ? setCard(res.products) : setCard([]);
-      res.menuName ? setTitle(res.menuName) : setTitle("пусто");
-    });
+    let data = getProductData();
+    if (location.search.length > 0) {
+      const params = qs.parse(location.search.substring(1));
+      if (params.menuId) {
+        const data = getCatalogData(params.menuId);
+        data.then((res) => {
+          res.products ? setCard(res.products) : setCard([]);
+          res.menuName ? setTitle(res.menuName) : setTitle("пусто");
+          res.menuName ? setSubTitle(res.menuName) : setSubTitle("пусто");
+        });
+      } else if (params.categoryId) {
+        data = getCategoryData(params.categoryId);
+        data.then((res) => {
+          res[0].products ? setCard(res[0].products) : setCard([]);
+          setSubTitle(res[0].categoryName);
+          setTitle(res[0].menuName);
+        });
+      }
+    } else {
+      data.then((res) => {
+        setCard(res);
+        setTitle("пусто");
+        setSubTitle("пусто");
+      });
+    }
   }, [location]);
   return (
     <div className={styles.categoryProduct}>
       <div className={styles.categoryProductBlock + " wrapper"}>
-        <CategoryTitle title={title} subtitle={title} />
+        <CategoryTitle title={title} subTitle={subTitle} />
         <div className={styles.filterCards}>
           <CategoryFilter />
           <div className={styles.newItemsCards}>
@@ -37,7 +59,7 @@ const Catalog = () => {
                         cardBox={`cardBox`}
                         textSize={`cardText`}
                         priceSize={`cardPrice`}
-                        image={images[0]}
+                        image={images}
                         text={name}
                         price={`${price} ₽`}
                       />

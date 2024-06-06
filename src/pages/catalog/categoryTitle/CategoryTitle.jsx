@@ -2,10 +2,10 @@ import Title from "../../../components/title/Title";
 
 import styles from "./CategoryTitle.module.sass";
 
-const CategoryTitle = ({ title, subtitle }) => {
+const CategoryTitle = ({ title, subTitle }) => {
   return (
     <div className={styles.categoryTitle}>
-      <Title title={title} subtitle={subtitle} />
+      <Title title={title} subTitle={subTitle} />
       <div className={styles.categoryTitleSvg}></div>
     </div>
   );
