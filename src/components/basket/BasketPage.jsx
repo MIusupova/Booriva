@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
 import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 
-const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
-    const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+const BasketPage = ({isBasketOpen, setIsBasketOpen, cart}) => {
+    
     const [products, setProducts] = useState([])
     console.log(products);
   
