@@ -1,0 +1,88 @@
+.modal
+    height: 100vh
+    width: 100vw
+    position: fixed
+    background: #FDA3C482
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+    pointer-events: none
+    transition: 0.5s
+
+.modal.active
+    opacity: 1
+    pointer-events: all
+    z-index: 30
+
+.modalContent
+    height: 600px
+    width: 600px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background-color: white
+    transform: scale(0.5)
+    transition: 0.4s all
+
+.modalContent.active
+    transform: scale(1)
+
+.modalDisp
+    max-width: 401px
+
+.contactInfaTitle
+    position: relative
+
+.contactInfaTitleOne
+    font-family: Sunday Best
+    font-size: 54px
+    color: #FDA3C4
+
+.contactInfaSubtitle
+    font-family: Montserrat
+    max-width: 352px
+    font-size: 25px
+    font-weight: 600
+    margin-top: -34px
+    margin-bottom: 40px
+
+.contactInfaVector
+    position: absolute
+    top: 42px
+    right: -3px
+
+.modalSubtitle
+    text-align: center
+    max-width: 399px
+    font-family: Montserrat
+    font-size: 14px
+
+.span
+    color: red
+    cursor: pointer
+
+.text
+    position: absolute
+    color: #FFF
+    font-family: "Sunday Best"
+    font-size: 11px
+    font-weight: 400
+    text-transform: uppercase
+    margin-top: 6px
+
+.basketBtn
+    margin-top: 50px
+    display: flex
+    justify-content: center
+    position: relative
+    cursor: pointer
+
+.cancel
+    cursor: pointer
+    position: relative
+    bottom: 92px
+    left: 242px
