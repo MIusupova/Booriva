@@ -5,6 +5,7 @@ import Categories from "./categories/categories";
 import BoorivaStore from "./boorivaStore/boorivaStore";
 
 import styles from "./HomePage.module.sass";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -13,7 +14,9 @@ const HomePage = () => {
       <NewItems />
       <NewCollectionBox />
       <BoorivaStore />
-      <Ticker/>
+      <Link to={`/catalog`}>
+        <Ticker text={`топовые товары`} />
+      </Link>
     </div>
   );
 };
