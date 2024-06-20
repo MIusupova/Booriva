@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
 import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 
-const BasketPage = ({isBasketOpen, setIsBasketOpen, cart}) => {
+const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     
     const [products, setProducts] = useState([])
     console.log(products);
@@ -49,7 +49,10 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart}) => {
                             <div className={styles.productsCardText}>
                                 <div className={styles.basketBtnText}>
                                     <p className={styles.productsName} >{item.name} <br /> </p>
+                                    <div className={styles.basketBtnsmall} onClick={()=> setCart(cart.filter((id) => id !== item.id))}>
                                         <BasketBtnSmall />
+                                        </div>
+                                        
                                     </div>
                                 <p className={styles.productsSize}>S—M</p>
                                 <p className={styles.productsPrice}>{item.price}</p>
@@ -73,14 +76,13 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart}) => {
                             <span className={styles.basketTextBigPrice}>4 998 ₴</span>
                         </div>
                     </div>
-                    <Link  to="/placingOrder" className={styles.basketBtn}>
+                    <Link  to="/" className={styles.basketBtn}>
                         <ButtonBasketPink/>
                         <div className={styles.text}>{'Оформить заказ'}</div>
                     </Link> 
-
-                </div>
-              </div>
-            </div>    
+        </div>
+      </div>
+    </div>
   );
 };
 
