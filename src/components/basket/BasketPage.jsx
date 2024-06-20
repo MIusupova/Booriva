@@ -73,7 +73,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart}) => {
                             <span className={styles.basketTextBigPrice}>4 998 ₴</span>
                         </div>
                     </div>
-                    <Link  to="/" className={styles.basketBtn}>
+                    <Link  to="/placingOrder" className={styles.basketBtn}>
                         <ButtonBasketPink/>
                         <div className={styles.text}>{'Оформить заказ'}</div>
                     </Link> 
