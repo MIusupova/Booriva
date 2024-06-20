@@ -1,41 +1,55 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import qs from "qs";
-import { getCatalogData } from "../../services/catalog";
+import { Link } from "react-router-dom";
+import { getCatalogData, getCategoryData } from "../../services/catalog";
 
 import CategoryFilter from "./categoryFilter/CategoryFilter";
 import CategoryTitle from "./categoryTitle/CategoryTitle";
 import Card from "../../components/cards/card";
 
 import styles from "./Catalog.module.sass";
+import { getProductData } from "../../services/product";
 
 const Catalog = () => {
   const location = useLocation();
   const [card, setCard] = useState([]);
   const [title, setTitle] = useState([]);
-  const [subTitle, setSubTitle] = useState([]);
-  const navigate = useNavigate();
+const [subTitle, setSubTitle] = useState([]);
+
   useEffect(() => {
-    if (location.search) {
-      const data = getCatalogData(
-        qs.parse(location.search.substring(1)).menuId
-      );
-      data.then((res) => {
-        res.products ? setCard(res.products) : setCard([]);
-        res.menuName ? setTitle(res.menuName) : setTitle("пусто");
-        res.categoryName
-          ? setSubTitle(res.categoryName)
-          : setSubTitle(res.menuName);
-      });
+  let data = getProductData();
+    if (location.search.length > 0) {
+      const params = qs.parse(location.search.substring(1));
+      if (params.menuId) {
+        const data = getCatalogData(params.menuId);
+        data.then((res) => {
+          res.products ? setCard(res.products) : setCard([]);
+          res.menuName ? setTitle(res.menuName) : setTitle("пусто");
+          res.menuName ? setSubTitle(res.menuName) : setSubTitle("пусто");
+        });
+      } else if (params.categoryId) {
+        data = getCategoryData(params.categoryId);
+        data.then((res) => {
+          res[0].products ? setCard(res[0].products) : setCard([]);
+          setSubTitle(res[0].categoryName);
+          setTitle(res[0].menuName);
+        });
+      }
     } else {
-      navigate("/mistake");
+      data.then((res) => {
+        setCard(res);
+        setTitle("пусто");
+        setSubTitle("пусто");
+      });
     }
-    console.log(card);
+
   }, [location]);
   return (
     <div className={styles.categoryProduct}>
       <div className={styles.categoryProductBlock + " wrapper"}>
-        <CategoryTitle title={title} subtitle={subTitle} />
+        <CategoryTitle title={title} subTitle={subTitle} />
+
         <div className={styles.filterCards}>
           <CategoryFilter />
           <div className={styles.newItemsCards}>
@@ -43,15 +57,17 @@ const Catalog = () => {
               card.map(({ id, images, name, price }) => {
                 return (
                   <div className={styles.sizeCard}>
-                    <Card
-                      id={id}
-                      cardBox={`cardBox`}
-                      textSize={`cardText`}
-                      priceSize={`cardPrice`}
-                      image={images[0]}
-                      text={name}
-                      price={`${price} ₽`}
-                    />
+                    <Link to={`/cardProductPage?id=${id}`}>
+                      <Card
+                        cardBox={`cardBox`}
+                        textSize={`cardText`}
+                        priceSize={`cardPrice`}
+                        image={images}
+                        text={name}
+                        price={`${price} ₽`}
+                      />
+                    </Link>
+
                   </div>
                 );
               })

@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { SelectOpen } from "../../App";
 import Like from "../../assets/img/icons/like";
-import styles from "./card.module.sass";
-
-const Card = ({ id, image, text, price, textSize, priceSize, cardBox }) => {
+import styles from "./card.module.sass";const Card = ({ id, image, text, price, textSize, priceSize, cardBox }) => {
   const { select, setSelect } = useContext(SelectOpen);
   const [active, setActive] = useState();
   const addProductSelect = () => {
@@ -40,3 +38,5 @@ const Card = ({ id, image, text, price, textSize, priceSize, cardBox }) => {
 };
 
 export default Card;
+
+
