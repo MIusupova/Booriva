@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 
 import ButtonBasketPink from '../../assets/img/icons/ButtonBasketPink'
 import CrossButtonBasket from '../../assets/img/icons/СrossButtonBasket'
-
 import styles from './BasketPage.module.sass'
 import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
@@ -78,10 +77,11 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart}) => {
                         <ButtonBasketPink/>
                         <div className={styles.text}>{'Оформить заказ'}</div>
                     </Link> 
-                </div>
-            </div>
-        </div>
-    )
-}
 
-export default BasketPage
+                </div>
+              </div>
+            </div>    
+  );
+};
+
+export default BasketPage;

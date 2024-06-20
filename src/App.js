@@ -9,20 +9,27 @@ import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 import Instagram from "./components/instagram/Instagram";
 import Basket from "./components/basket/BasketPage";
+import PlacingOrder from "./pages/placingOrder/PlacingOrder";
+import Checkout from "./components/checkout/Checkout";
 
 const App = () => {
-  const [isBasketOpen, setIsBasketOpen] = useState(false)
-  const [cart, setCart] = useState(
-    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
-  )
-useEffect(() => {
-  localStorage.setItem('cart', JSON.stringify(cart))
-}, [cart]);
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
 
-  const [ select, setSelect ] = useState(
-    localStorage.getItem('select') ? JSON.parse(localStorage.getItem('select')) : []
-  )
-  useEffect(() => {localStorage.setItem('select', JSON.stringify(select))}, [select])
+  const [cart, setCart] = useState(
+    localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+  );
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  const [select, setSelect] = useState(
+    localStorage.getItem("select")
+      ? JSON.parse(localStorage.getItem("select"))
+      : []
+  );
+  useEffect(() => {
+    localStorage.setItem("select", JSON.stringify(select));
+  }, [select]);
 
 
 
@@ -39,7 +46,7 @@ useEffect(() => {
         </Routes>
       <Instagram />
       <Footer />
-  </div>
+    </div>
   );
-}
+};
 export default App;
