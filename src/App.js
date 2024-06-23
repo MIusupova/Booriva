@@ -13,6 +13,7 @@ import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import Checkout from "./components/checkout/Checkout";
 
 const App = () => {
+  const [products, setProducts] = useState([]);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
 
   const [cart, setCart] = useState(
@@ -31,19 +32,55 @@ const App = () => {
     localStorage.setItem("select", JSON.stringify(select));
   }, [select]);
 
-
-
   return (
-    <div className={`${isBasketOpen && 'no-scroll'}`}>
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} cart={cart} setCart={setCart}/>
-      <Header setIsBasketOpen={setIsBasketOpen}/>
-        <Routes>
-          <Route path="/" element={<HomePage/>}/>
-          <Route path="/catalog" element={<Catalog select={select} setSelect={setSelect}/>} />
-          <Route path="/wishlistPage" element={<WishListPage select={select} setSelect={setSelect}/>}/>
-          <Route path="/wishListEmpty" element={<WishListEmpty/>}/>
-          <Route path="/cardProductPage" element={<CardProductPage select={select} setSelect={setSelect} cart={cart} setCart={setCart}/>}/>
-        </Routes>
+    <div className={`${isBasketOpen && "no-scroll"}`}>
+      <Basket
+        isBasketOpen={isBasketOpen}
+        setIsBasketOpen={setIsBasketOpen}
+        cart={cart}
+        setCart={setCart}
+        products={products}
+        setProducts={setProducts}
+      />
+      <Header setIsBasketOpen={setIsBasketOpen} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/catalog"
+          element={<Catalog select={select} setSelect={setSelect} />}
+        />
+        <Route
+          path="/wishlistPage"
+          element={<WishListPage select={select} setSelect={setSelect} />}
+        />
+        <Route path="/wishListEmpty" element={<WishListEmpty />} />
+        <Route
+          path="/cardProductPage"
+          element={
+            <CardProductPage
+              select={select}
+              setSelect={setSelect}
+              cart={cart}
+              setCart={setCart}
+            />
+          }
+        />
+        <Route
+          path="/placingOrder"
+          element={
+            <PlacingOrder
+              select={select}
+              setSelect={setSelect}
+              isBasketOpen={isBasketOpen}
+              setIsBasketOpen={setIsBasketOpen}
+              cart={cart}
+              setCart={setCart}
+              products={products}
+              setProducts={setProducts}
+            />
+          }
+        />
+      </Routes>
       <Instagram />
       <Footer />
     </div>

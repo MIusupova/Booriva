@@ -10,6 +10,18 @@ const ContactInfaInput = ({
   tel,
   email,
 }) => {
+  function handleEmail(event) {
+    let inputValue = event.target.value;
+    setEmail(inputValue);
+
+    let emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+    if (!emailRegex.test(inputValue)) {
+      console.log("Пишите правильно!!");
+    } else {
+      console.log("Правильно!!");
+    }
+  }
+
   return (
     <div className={styles.contactInfaInput}>
       <form>
@@ -47,7 +59,7 @@ const ContactInfaInput = ({
           name="email"
           placeholder="Email"
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={handleEmail}
         />
       </form>
     </div>

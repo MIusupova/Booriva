@@ -1,6 +1,7 @@
 .placingOrder
-    max-width: 1088px
+    display: flex
     margin: 150px auto
+    justify-content: space-between
     @media (max-width: 1200px)
         padding-left: 50px
 
@@ -14,16 +15,139 @@
     margin-top: 6px
 
 .basketBtn
-    width: 160px
-    margin-left: 230px
-    margin-top: 50px
     display: flex
     justify-content: center
-    position: relative
     cursor: pointer
     border: none
+    margin-top: 10px
+    margin-left: 33px
+    svg
+        width: 235px
+        height: 50px
 
 .infa
     display: flex
     flex-direction: column
     gap: 41px
+
+/////////////
+
+.basketBoxOne
+    margin-left: -54px
+
+.productsCardText
+    width: 205px
+
+.basketBox
+    margin-left: 20px
+    margin-bottom: 20px
+
+.basketTitle
+    color: #000
+    font-family: Montserrat
+    text-align: center
+    font-size: 25px
+    text-transform: uppercase
+    margin-bottom: 40px
+
+.basketPrice
+    margin: 0 auto
+    width: 313px
+    height: 118px
+
+.basketPriceOne
+    font-family: Montserrat
+    display: flex
+    color: #FDA3C4
+    justify-content: space-between
+    margin-bottom: 8px
+
+.basketTextSmall
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+
+.basketTextPrice
+    color: #000
+    font-family: Montserrat
+    font-size: 25px
+    font-weight: 400
+    line-height: normal
+
+.basketTextBig
+    font-size: 16px
+
+.basketTextBigPrice
+    font-size: 25px
+
+.basketTextPriceOne
+    text-align: right
+    font-variant-numeric: lining-nums tabular-nums
+    margin-top: 32px
+    font-weight: 700
+    font-family: Montserrat
+    color: #000
+
+.text
+    position: absolute
+    color: #FFF
+    font-family: "Sunday Best"
+    font-size: 12px
+    font-weight: 400
+    text-transform: uppercase
+    margin-top: 6px
+
+.products
+    height: calc( 100vh - 420px )
+    overflow-y: scroll
+    &::-webkit-scrollbar
+        width: 2px
+    &::-webkit-scrollbar-track
+        background: #ffe6ef
+    &::-webkit-scrollbar-thumb
+        background: #f880ac
+        height: 40px
+
+.productsCard
+    width: 155px
+    height: 188px
+
+.productsBlock
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 394px
+    margin-bottom: 10px
+
+.productsName
+    color: #000
+    font-family: Montserrat
+    font-size: 16px
+    font-weight: 600
+    margin-bottom: 8px
+
+.productsSize
+    color: #1F1F1F
+    font-family: Montserrat
+    font-size: 14px
+    font-weight: 400
+    margin-bottom: 26px
+
+.productsPrice
+    color: #FDA3C4
+    font-variant-numeric: lining-nums tabular-nums
+    font-family: Montserrat
+    font-size: 16px
+    font-weight: 700
+
+.basketSmallBtn
+    width: 12px
+    height: 12px
+
+.mg
+    margin-right: 10px
+
+.basketBtnText
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
