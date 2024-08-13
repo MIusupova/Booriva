@@ -4,7 +4,6 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState: {
     cart: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [],
-    isBasketOpen: false
   },
   reducers: {
     setCart: (state, { payload }) => {

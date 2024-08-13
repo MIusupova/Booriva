@@ -9,10 +9,14 @@ import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 import Instagram from "./components/instagram/Instagram";
 import Basket from "./components/basket/BasketPage";
+import { useSelector } from "react-redux"
+
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)
-  const [cart, setCart] = useState(
+  
+  const cart = useSelector(state => state.cart.cart)
+  const [setCart] = useState(
     localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
   )
 useEffect(() => {

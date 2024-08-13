@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+
 import ButtonBasketPink from '../../assets/img/icons/ButtonBasketPink'
 import CrossButtonBasket from '../../assets/img/icons/СrossButtonBasket'
 
@@ -8,9 +9,11 @@ import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
 import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 
+
 const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
     
     const [products, setProducts] = useState([])
+    
     console.log(products);
   
     const sendData = async (cart, i, products) => {
