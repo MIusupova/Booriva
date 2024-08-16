@@ -8,11 +8,15 @@ import styles from './BasketPage.module.sass'
 import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
 import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
+import { useDispatch, useSelector } from 'react-redux'
+import { setCart } from "../../redux/cartSlice/cartSlice";
 
 
-const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
+const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
     
     const [products, setProducts] = useState([])
+    const cart = useSelector(state => state.cart.cart)
+    const dispatch = useDispatch()
     
     console.log(products);
   
@@ -53,7 +57,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen, cart, setCart}) => {
                             <div className={styles.productsCardText}>
                                 <div className={styles.basketBtnText}>
                                     <p className={styles.productsName} >{item.name} <br /> </p>
-                                    <div className={styles.basketBtnsmall} onClick={()=> setCart(cart.filter((id) => id !== item.id))}>
+                                    <div className={styles.basketBtnsmall} onClick={()=> dispatch(setCart(cart.filter((id) => id !== item.id)))}>
                                         <BasketBtnSmall />
                                         </div>
                                         

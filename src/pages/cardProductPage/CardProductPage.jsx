@@ -12,10 +12,15 @@ import SizeLXL from "../../assets/img/icons/SizeLXL";
 import ButtonBasket from "../../assets/img/icons/ButtonBasket";
 import DotLine from "../../assets/img/icons/DotLine";
 import "swiper/css";
+import { setCart } from "../../redux/cartSlice/cartSlice";
+
 
 import styles from "./CardProductPage.module.sass";
+import { useDispatch, useSelector } from "react-redux";
 
-const CardProductPage = ({ select, setSelect, cart,setCart }) => {
+
+
+const CardProductPage = ({ select, setSelect}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const location = useLocation();
   const [name, setName] = useState();
@@ -23,6 +28,9 @@ const CardProductPage = ({ select, setSelect, cart,setCart }) => {
   const [desc, setDesc] = useState();
   const [details, setDetails] = useState();
   const [images, setImages] = useState([]);
+  const dispatch = useDispatch()
+  const cart = useSelector(state => state.cart.cart)
+
  
   const navigate = useNavigate();
   useEffect(() => {
@@ -53,9 +61,8 @@ const CardProductPage = ({ select, setSelect, cart,setCart }) => {
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;
       if (!cart.includes(id)) {
-        setCart([...cart, id]);
+        dispatch (setCart([...cart, id]));
       }
-     
     }
   };
 

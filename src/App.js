@@ -28,8 +28,6 @@ useEffect(() => {
   )
   useEffect(() => {localStorage.setItem('select', JSON.stringify(select))}, [select])
 
-
-
   return (
     <div className={`${isBasketOpen && 'no-scroll'}`}>
       <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} cart={cart} setCart={setCart}/>
@@ -39,7 +37,7 @@ useEffect(() => {
           <Route path="/catalog" element={<Catalog select={select} setSelect={setSelect}/>} />
           <Route path="/wishlistPage" element={<WishListPage select={select} setSelect={setSelect}/>}/>
           <Route path="/wishListEmpty" element={<WishListEmpty/>}/>
-          <Route path="/cardProductPage" element={<CardProductPage select={select} setSelect={setSelect} cart={cart} setCart={setCart}/>}/>
+          <Route path="/cardProductPage" element={<CardProductPage select={select} setSelect={setSelect}/>}/>
         </Routes>
       <Instagram />
       <Footer />
