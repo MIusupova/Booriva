@@ -15,6 +15,7 @@ import { setCart } from "../../redux/cartSlice/cartSlice";
 const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
     
     const [products, setProducts] = useState([])
+    const [allSum, setAllSum] = useState([0])
     const cart = useSelector(state => state.cart.cart)
     const dispatch = useDispatch()
     
@@ -33,6 +34,14 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
             return[]
         }
     }
+
+    useEffect(() => {
+        let productsAllSum = 0;
+        for(let i =0; i < products.length; i++){
+            productsAllSum += Number(products[i].price)
+        }
+        setAllSum(productsAllSum)
+    }, [products])
    
     useEffect(() => {
         const items = sendData(cart, 0, []);
@@ -73,7 +82,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                     <div className={styles.basketPrice}>
                         <div className={styles.basketPriceOne}>
                             <span className={styles.basketTextSmall}>Cумма заказа:</span>
-                            <span className={styles.basketTextBig}>4 998 ₴</span>
+                            <span className={styles.basketTextBig}>{allSum} ₴</span>
                         </div>
                         <div className={styles.basketPriceOne}>
                             <span className={styles.basketTextSmall}>Стоимость доставки:</span>
@@ -81,7 +90,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
                         </div>
                         <div className={styles.basketTextPriceOne}>   
                             <span className={styles.basketTextPrice}>К оплате: . . . . . . .</span>
-                            <span className={styles.basketTextBigPrice}>4 998 ₴</span>
+                            <span className={styles.basketTextBigPrice}>{allSum} ₴</span>
                         </div>
                     </div>
                     <Link  to="/" className={styles.basketBtn}>
