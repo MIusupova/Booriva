@@ -9,9 +9,10 @@ import SubMenu from "./menu/subMenu/SubMenu";
 
 import styles from "./Header.module.sass";
 
-const Header = ({setIsBasketOpen}) => {
+const Header = ({setIsBasketOpen, allProductBasket}) => {
     const [isShow, setIsShow] = useState(false)
     const [menuId, setMenuId] = useState(0) //для сабменю
+   
     return (
         <div className={styles.header}>
             <div className={styles.block + ' wrapper'}>
@@ -21,7 +22,7 @@ const Header = ({setIsBasketOpen}) => {
                     <Search/>
                     <div className={styles.blockthree}>
                         <Wishlist/>
-                        <Basket setIsBasketOpen={setIsBasketOpen}/>
+                        <Basket setIsBasketOpen={setIsBasketOpen} allProductBasket={allProductBasket}/>
                     </div>
                 </div>
                 

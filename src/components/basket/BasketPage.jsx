@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import { getProductData } from '../../services/product'
 import BasketBtnSmall from '../../assets/img/icons/BasketBtnSmall';
 import { useDispatch, useSelector } from 'react-redux'
-import { setCart } from "../../redux/cartSlice/cartSlice";
+import { setAllProductBasket, setCart } from "../../redux/cartSlice/cartSlice";
 
 
 const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
@@ -41,6 +41,7 @@ const BasketPage = ({isBasketOpen, setIsBasketOpen}) => {
             productsAllSum += Number(products[i].price)
         }
         setAllSum(productsAllSum)
+        dispatch(setAllProductBasket(products.length))
     }, [products])
    
     useEffect(() => {
