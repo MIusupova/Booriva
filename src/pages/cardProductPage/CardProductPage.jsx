@@ -4,6 +4,7 @@ import qs from "qs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
 import { getProductData } from "../../services/product";
+import { SelectOpen } from "../../App";
 import Like from "../../assets/img/icons/like";
 import SizeXSS from "../../assets/img/icons/SizeXS";
 import SizeSM from "../../assets/img/icons/SizeSM";
@@ -16,9 +17,6 @@ import { setCart } from "../../redux/cartSlice/cartSlice";
 
 
 import styles from "./CardProductPage.module.sass";
-import { useDispatch, useSelector } from "react-redux";
-
-
 
 const CardProductPage = ({ select, setSelect}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -30,9 +28,8 @@ const CardProductPage = ({ select, setSelect}) => {
   const [images, setImages] = useState([]);
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cart.cart)
-
- 
   const navigate = useNavigate();
+  const [active, setActive] = useState();
   useEffect(() => {
     if (location.search) {
       const data = getProductData(qs.parse(location.search.substring(1)).id);
@@ -53,6 +50,8 @@ const CardProductPage = ({ select, setSelect}) => {
       const id = qs.parse(location.search.substring(1)).id;
       if (!select.includes(id)) {
         setSelect([...select, id]);
+      } else {
+        setSelect(select.filter((data) => data !== id));
       }
     }
   };
@@ -65,6 +64,11 @@ const CardProductPage = ({ select, setSelect}) => {
       }
     }
   };
+
+  useEffect(() => {
+    const id = qs.parse(location.search.substring(1)).id;
+    setActive(select.some((item) => item === id));
+  }, [select]);
 
   return (
     <div className={styles.cardProductPage}>
@@ -81,7 +85,7 @@ const CardProductPage = ({ select, setSelect}) => {
             <SwiperSlide className={styles.slideBig} key={image}>
               <img className={styles.slideImg} src={image} alt="" />
               <div className={styles.likeBox} onClick={addProductSelect}>
-                <Like active={false} />
+                <Like active={active} />
               </div>
             </SwiperSlide>
           ))}

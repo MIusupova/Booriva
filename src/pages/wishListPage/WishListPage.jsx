@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProductData } from "../../services/product";
+import { SelectOpen } from "../../App";
 import Card from "../../components/cards/card";
 import Delivery from "../../components/delivery/Delivery";
 import Title from "../../components/title/Title";
 import styles from "./WishListPage.module.sass";
 
-const WishListPage = ({ select, setSelect }) => {
+const WishListPage = () => {
   const [product, setProducts] = useState([]);
-
+  const { select, setSelect } = useContext(SelectOpen);
   const setData = async (select, i, product) => {
     if (i < select.length) {
       const data = await getProductData(select[i]);
@@ -27,7 +27,6 @@ const WishListPage = ({ select, setSelect }) => {
     const item = setData(select, 0, []);
     item.then((res) => setProducts(res));
   }, [select]);
-  console.log(product);
   return (
     <div className={styles.wishListPage + " wrapper"}>
       <div className={styles.wishListTitle}>
@@ -35,19 +34,19 @@ const WishListPage = ({ select, setSelect }) => {
         <div className={styles.categoryTitleSvg}></div>
       </div>
       <div className={styles.newItemsCards}>
-        {product.map(({ images, name, price }) => {
+        {product.map(({ id, images, name, price }) => {
           return (
-            <Link to="/cardProductPage" className={styles.sizeCard}>
+            <div className={styles.sizeCard}>
               <Card
+                id={id}
                 cardBox={`cardBox`}
                 textSize={`cardText`}
                 priceSize={`cardPrice`}
-                active={true}
                 image={images[0]}
                 text={name}
                 price={`${price} ₽`}
               />
-            </Link>
+            </div>
           );
         })}
       </div>
