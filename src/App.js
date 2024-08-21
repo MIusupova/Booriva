@@ -8,15 +8,14 @@ import WishListPage from "./pages/wishListPage/WishListPage";
 import Footer from "./components/footer/Footer";
 import CardProductPage from "./pages/cardProductPage/CardProductPage";
 import Instagram from "./components/instagram/Instagram";
-import Basket from "./components/basket/BasketPage";import Mistake from "./components/mistake/Mistake";
+import Basket from "./components/basket/BasketPage";
+import Mistake from "./components/mistake/Mistake";
 import BoorivaGirls from "./pages/BoorivaGirls/BoorivaGirls";
-
-export const SelectOpen = createContext()
 import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import Checkout from "./components/checkout/Checkout";
-
 import { useSelector } from "react-redux"
 
+export const SelectOpen = createContext()
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)

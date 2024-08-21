@@ -17,6 +17,7 @@ import { setCart } from "../../redux/cartSlice/cartSlice";
 
 
 import styles from "./CardProductPage.module.sass";
+import { useDispatch, useSelector } from "react-redux";
 
 const CardProductPage = ({ select, setSelect}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
