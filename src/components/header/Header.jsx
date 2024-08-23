@@ -6,8 +6,9 @@ import Menu from "./menu/Menu";
 import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 import SubMenu from "./menu/subMenu/SubMenu";
-
+import SearchIcon from "../../assets/img/icons/SearchIcon";
 import styles from "./Header.module.sass";
+
 
 const Header = ({setIsBasketOpen, allProductBasket}) => {
     const [isShow, setIsShow] = useState(false)
@@ -15,7 +16,11 @@ const Header = ({setIsBasketOpen, allProductBasket}) => {
    
     return (
         <div className={styles.header}>
+            <div className={styles.searcdiv}><input placeholder="Поиск товаров" className={styles.searcinput} /> 
+            <div className={styles.searchIcons}><SearchIcon/></div> </div>
+           
             <div className={styles.block + ' wrapper'}>
+            
                 <div className={styles.blocktwo}>
                     <Contacts/>
                     <BoorivaLogo/>
