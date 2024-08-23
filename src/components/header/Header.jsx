@@ -28,6 +28,7 @@ const Header = ({setIsBasketOpen, allProductBasket}) => {
                     <div className={styles.blockthree}>
                         <Wishlist/>
                         <Basket setIsBasketOpen={setIsBasketOpen} allProductBasket={allProductBasket}/>
+                        
                     </div>
                 </div>
                 
