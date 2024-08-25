@@ -2,12 +2,13 @@ import SearchIcon from "../../../assets/img/icons/SearchIcon";
 
 import styles from "./Search.module.sass";
 
-const Search = () => {
+const Search = ({setSearchOpen}) => {
     return (
-        <a href="" className={styles.search}>
+        <span   className={styles.search} onClick={() => setSearchOpen(true)}>
             <SearchIcon/>
+            
         <div className={styles.searchText}>Поиск</div>
-        </a>
+        </span>
 
     )
 
