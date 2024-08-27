@@ -18,7 +18,7 @@ const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen}) 
     return ( 
         
         <div className={styles.header}>
-            <SearchProduct setSearchOpen={setSearchOpen} searchOpen={searchOpen} />
+            <SearchProduct setSearchOpen={setSearchOpen} searchOpen={searchOpen}/>
             
            
             <div className={styles.block + ' wrapper'}>

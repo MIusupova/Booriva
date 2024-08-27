@@ -14,13 +14,13 @@ import BoorivaGirls from "./pages/BoorivaGirls/BoorivaGirls";
 import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import Checkout from "./components/checkout/Checkout";
 import { useSelector } from "react-redux"
-import SearchProduct from "./components/searchProduct/SearchProduct";
 
 export const SelectOpen = createContext()
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+ 
   
 
   
@@ -42,6 +42,10 @@ useEffect(() => {
     localStorage.setItem("select", JSON.stringify(select));
   }, [select]);
 
+  
+ 
+
+  
   return (
     <div className={`${isBasketOpen && "no-scroll"}`}>
       <SelectOpen.Provider value={{select, setSelect}}>
@@ -52,9 +56,7 @@ useEffect(() => {
         setCart={setCart}
       />
       
-
-
-        <Header setIsBasketOpen={setIsBasketOpen} searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
+        <Header setIsBasketOpen={setIsBasketOpen} searchOpen={searchOpen} setSearchOpen={setSearchOpen}/>
         <Routes>
         <Route path="/" element={<HomePage/>}/>
           <Route path="/catalog" element={<Catalog select={select} setSelect={setSelect}/>} />
