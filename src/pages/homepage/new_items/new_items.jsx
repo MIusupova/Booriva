@@ -12,34 +12,33 @@ const NewItems = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.search) {
-      const data = getCatalogDataNew(qs.parse(location.search.substring(1)));
-      data.then((res) => {
-        setProducts(res.products);
-      });
-    }
-    console.log(product);
+    const data = getCatalogDataNew(qs.parse(location.search.substring(1)));
+    data.then((res) => {
+      setProducts(res.products);
+    });
   }, [location]);
 
   return (
     <div className={styles.NewItemsBox}>
       <Headline />
       <div className={styles.newItemsCards}>
-        {product.map(({ id, images, name, price }) => {
-          return (
-            <div className={styles.sizeCard}>
-              <Card
-                id={id}
-                cardBox={`cardBox`}
-                textSize={`cardText`}
-                priceSize={`cardPrice`}
-                image={images[0]}
-                text={name}
-                price={`${price} ₽`}
-              />
-            </div>
-          );
-        })}
+        {product
+          .map(({ id, images, name, price }) => {
+            return (
+              <div className={styles.sizeCard} key={id}>
+                <Card
+                  id={id}
+                  cardBox={`cardBox`}
+                  textSize={`cardText`}
+                  priceSize={`cardPrice`}
+                  image={images[0]}
+                  text={name}
+                  price={`${price} ₽`}
+                />
+              </div>
+            );
+          })
+          .slice(0, 4)}
       </div>
       <div className={styles.NewItemsButton}>
         <Link to={`/catalog?menuId=000`}>

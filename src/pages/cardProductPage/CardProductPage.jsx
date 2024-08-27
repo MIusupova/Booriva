@@ -56,7 +56,7 @@ const CardProductPage = ({ select, setSelect}) => {
       }
     }
   };
-  
+
   const addProductInCart = () => {
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;
@@ -97,6 +97,7 @@ const CardProductPage = ({ select, setSelect}) => {
           onSwiper={setThumbsSwiper}
           slidesPerView={4}
           direction={"vertical"}
+          className={styles.swiperSmallBox}
         >
           {images.map((image) => (
             <SwiperSlide className={styles.slide} key={image}>
@@ -123,9 +124,8 @@ const CardProductPage = ({ select, setSelect}) => {
             <SizeLXL />
           </div>
         </div>
-      <div className={styles.ButtonBasket} onClick={addProductInCart} >
+        <div className={styles.ButtonBasket} onClick={addProductInCart}>
           <ButtonBasket />
-
         </div>
         <div className={styles.textDescription}>{desc}</div>
         <div className={styles.textLine}>

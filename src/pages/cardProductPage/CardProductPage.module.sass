@@ -1,9 +1,23 @@
 .slideBox
     display: flex
-    width: 559px
+    max-width: 559px
     height: 609px
     gap: 15px
     flex-direction: row-reverse
+
+@media (max-width: 1000px)
+    .slideBox
+        height: 530px
+
+@media (max-width: 768px)
+    .slideBox
+        height: 476px
+        display: block
+
+@media (max-width: 320px)
+    .slideBox
+        height: 380px
+        display: flex
 
 // @media (max-width: 768px) 
 //     .slideBox
@@ -13,15 +27,41 @@
     max-width: 1170px
     margin: 0 auto
     display: flex
-    margin-top: 200px
+    margin-top: 154px
     margin-bottom: 70px
     padding: 0 15px
+    gap: 14px
     justify-content: space-between
+
+@media (max-width: 767px)
+    .cardProductPage
+        margin-top: 80px
+
+@media (max-width: 320px)
+    .cardProductPage
+        display: block
+        margin-top: 70px
 
 .slide
     width: 96px
     height: 125px !important
     margin-bottom: 36px
+
+@media (max-width: 1000px)
+    .slide
+        width: 84px
+        height: 110px !important
+        margin-bottom: 30px
+
+@media (max-width: 768px)
+    .slide
+        width: 65px
+        height: 85px !important
+        margin-bottom: 34px
+
+@media (max-width: 320px)
+    .swiperSmallBox
+        display: none
 
 .slideEnd
     width: 96px
@@ -38,7 +78,18 @@
 
 .slideBigBox
     width: 463px
-    height: 609px
+
+@media (max-width: 1000px)
+    .slideBigBox
+        width: 388px
+
+@media (max-width: 768px)
+    .slideBigBox
+        width: 360px
+
+@media (max-width: 320px)
+    .slideBigBox
+        width: 290px
 
 .likeBox
     position: absolute
@@ -49,6 +100,7 @@
 
 .textBox
     max-width: 470px
+    margin-top: 30px
 
 .textTitle
     font-family: Montserrat
@@ -132,6 +184,8 @@
 @media (max-width: 320px)
     .ButtonBasket
         margin-bottom: 20px
+        display: flex
+        justify-content: center
 
 .textDescription
     font-family: Montserrat
