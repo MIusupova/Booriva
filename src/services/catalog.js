@@ -18,3 +18,4 @@ export const getCategoryData = async (Id) => {
   res = await res.json();
   return res;
 };
+
