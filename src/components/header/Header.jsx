@@ -19,6 +19,7 @@ const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen}) 
         
         <div className={styles.header}>
             <SearchProduct setSearchOpen={setSearchOpen} searchOpen={searchOpen} />
+            
            
             <div className={styles.block + ' wrapper'}>
             
@@ -39,7 +40,9 @@ const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen}) 
                     <Menu setIsShow={setIsShow} setMenuId={setMenuId}/>
                 </div>
                 <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId}/>
+                
             </div>
+            
         </div>
 
     )
