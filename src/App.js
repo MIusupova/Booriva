@@ -14,6 +14,7 @@ import BoorivaGirls from "./pages/BoorivaGirls/BoorivaGirls";
 import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import Checkout from "./components/checkout/Checkout";
 import { useSelector } from "react-redux"
+import Results from "./components/results/Results";
 
 export const SelectOpen = createContext()
 
@@ -66,7 +67,9 @@ useEffect(() => {
 
             <Route path="/mistake" element={<Mistake/>}/>
             <Route path="/boorivagirls" element={<BoorivaGirls />}
+            
         />
+         <Route path="/results" element={<Results/>}/>
         <Route
           path="/placingOrder"
           element={
@@ -77,6 +80,7 @@ useEffect(() => {
             />
           }
         />
+       
         </Routes>
         <Instagram />
         <Footer />
