@@ -15,6 +15,7 @@ import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import Checkout from "./components/checkout/Checkout";
 import { useSelector } from "react-redux"
 import Results from "./components/results/Results";
+import MobileMenu from "./components/mobileMenu/MobileMenu";
 
 export const SelectOpen = createContext()
 
@@ -84,6 +85,7 @@ useEffect(() => {
         <Instagram />
         <Footer />
       </SelectOpen.Provider>
+      <MobileMenu/>
     </div>
   );
 };
