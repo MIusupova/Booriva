@@ -1,17 +1,22 @@
 .mobileMenu
     @media (max-width: 320px)
-        width: 320px
-        display: flex
-     
+        position: fixed
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 10000
         background-color: #FFFFFF
-
-        
 
     @media (min-width: 320px)
         display: none
 
 .mobileMenuItem
-    width: 32px
+    width: 41px
+.mobileMenuItems
+    display: flex
+    justify-content: space-between
+    width: 284px
+    margin: 0 auto
     
 
     
