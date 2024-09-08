@@ -22,14 +22,10 @@ const PlacingOrder = () => {
 
   const contactDetails = () => {
     let data = { name: name, surname: surname, tel: tel, email: email };
-
-    console.log(data);
   };
 
   const deliveryMethod = () => {
     let data2 = { email: adress, delivery: delivery, pickup: pickup };
-
-    console.log(data2);
   };
 
   const confirmOrder = () => {

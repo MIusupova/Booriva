@@ -30,7 +30,6 @@ const Catalog = () => {
     } else {
       navigate("/mistake");
     }
-    console.log(card);
   }, [location]);
   return (
     <div className={styles.categoryProduct}>
