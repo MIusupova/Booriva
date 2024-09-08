@@ -14,8 +14,10 @@ const FooterFeedback = () => {
             Нам важно знать, что ты думаешь про нас! Просто напиши мне!
           </div>
           <div>
-            <Link className={styles.footerFeedbackLink} to="/ivan">Написать Иванке</Link>
-          <div className={styles.footerFeedbackLine}></div>
+            <Link className={styles.footerFeedbackLink} to="/booriva/ivan">
+              Написать Иванке
+            </Link>
+            <div className={styles.footerFeedbackLine}></div>
           </div>
         </div>
       </div>

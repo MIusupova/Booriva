@@ -103,7 +103,7 @@ const BasketPage = ({ isBasketOpen, setIsBasketOpen }) => {
               <span className={styles.basketTextBigPrice}>{allSum} ₴</span>
             </div>
           </div>
-          <Link to="/" className={styles.basketBtn}>
+          <Link to="/booriva//" className={styles.basketBtn}>
             <ButtonBasketPink />
             <div className={styles.text}>{"Оформить заказ"}</div>
           </Link>

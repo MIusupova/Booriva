@@ -20,7 +20,7 @@ const Card = ({ id, image, text, price, textSize, priceSize, cardBox }) => {
   return (
     <div className={styles[cardBox]}>
       <div className={styles.boxImg}>
-        <Link to={`/cardProductPage?id=${id}`}>
+        <Link to={`/booriva/cardProductPage?id=${id}`}>
           <img src={image} alt="" className={styles.cardImg} />
         </Link>
         <div className={styles.likeBox} onClick={addProductSelect}>
@@ -29,7 +29,7 @@ const Card = ({ id, image, text, price, textSize, priceSize, cardBox }) => {
       </div>
 
       <div className={styles.cardLine}></div>
-      <Link to={`/cardProductPage?id=${id}`}>
+      <Link to={`/booriva/cardProductPage?id=${id}`}>
         <div className={styles.cardDescription}>
           <div className={styles[textSize]}>{text}</div>
           <div className={styles[priceSize]}>{price}</div>

@@ -14,7 +14,7 @@ const HomePage = () => {
       <NewItems />
       <NewCollectionBox />
       <BoorivaStore />
-      <Link to={`/catalog`}>
+      <Link to={`/booriva/catalog`}>
         <Ticker text={`топовые товары`} />
       </Link>
     </div>

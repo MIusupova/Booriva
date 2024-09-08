@@ -13,7 +13,7 @@ const Menu = ({ setIsShow, setMenuId }) => {
     <nav className={styles.menu}>
       {menu.map(({ id, name }) => (
         <Link
-          to={`/catalog?menuId=${id}`}
+          to={`/booriva/catalog?menuId=${id}`}
           onMouseEnter={() => {
             setIsShow(true);
             setMenuId(id);
@@ -25,7 +25,7 @@ const Menu = ({ setIsShow, setMenuId }) => {
           {name}
         </Link>
       ))}
-      <Link to="/boorivagirls" className={styles.list}>
+      <Link to="/booriva/boorivagirls" className={styles.list}>
         #Boorivagirls
       </Link>
     </nav>

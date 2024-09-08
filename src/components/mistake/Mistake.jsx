@@ -15,7 +15,7 @@ const Mistake = () => {
         Страница не найдена, но у нас есть еще много всего интересного
       </div>
       <div className={styles.mistakeButton}>
-        <Link to="/">
+        <Link to="/booriva/">
           <MistakeButton />
         </Link>
       </div>

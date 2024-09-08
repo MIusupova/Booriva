@@ -36,14 +36,14 @@ const Checkout = ({ active, setModalActive, modalActive }) => {
             Мы обожаем встречать booriva на улице. Так как всех не встретишь,
             отмечай нас в соц.сетях и мы внутри взорвемся и закричим УРА! Ставь
             тэг{" "}
-            <Link to="/about_us" className={styles.span}>
+            <Link to="/booriva/about_us" className={styles.span}>
               {" "}
               #boorivagirls
             </Link>{" "}
             чтобы быть в нашей тусовке.
           </div>
           <Link
-            to="/"
+            to="/booriva/"
             className={styles.basketBtn}
             onClick={() => setModalActive(true)}
           >

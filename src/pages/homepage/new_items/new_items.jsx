@@ -41,7 +41,7 @@ const NewItems = () => {
           .slice(0, 4)}
       </div>
       <div className={styles.NewItemsButton}>
-        <Link to={`/catalog?menuId=000`}>
+        <Link to={`/booriva/catalog?menuId=000`}>
           <NewItemsButton />
         </Link>
       </div>

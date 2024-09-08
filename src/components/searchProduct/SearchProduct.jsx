@@ -22,7 +22,7 @@ const SearchProduct = ({ setSearchOpen, searchOpen, setValue, value }) => {
         onKeyDown={openResultPage}
         value={value}
       />
-      <Link to={`/results?search=${value}`}>
+      <Link to={`/booriva/results?search=${value}`}>
         <div className={styles.searchIcons}>
           <SearchProductIcon />
         </div>

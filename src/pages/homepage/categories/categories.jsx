@@ -20,7 +20,7 @@ const Categories = () => {
         <div className={styles.categoriesImgRelative}>
           <img className={styles.imgBig} src={Tshirt} alt="Tshirt" />
           <div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}>
-            <Link to={`/catalog?menuId=ab0005`}>
+            <Link to={`/booriva/catalog?menuId=ab0005`}>
               <TshirtText />
             </Link>
           </div>
@@ -29,7 +29,7 @@ const Categories = () => {
           <div className={styles.categoriesImgRelative}>
             <img className={styles.imgSmall} src={Bottom} alt="Bottom" />
             <div className={`${styles.categoriesImgAbsolute} ${styles.Bottom}`}>
-              <Link to={`/catalog?menuId=003`}>
+              <Link to={`/booriva/catalog?menuId=003`}>
                 <BottomText />
               </Link>
             </div>
@@ -37,7 +37,7 @@ const Categories = () => {
           <div className={styles.categoriesImgRelative}>
             <img className={styles.imgSmall} src={Up} alt="Up" />
             <div className={`${styles.categoriesImgAbsolute} ${styles.Up}`}>
-              <Link to={`/catalog?menuId=002`}>
+              <Link to={`/booriva/catalog?menuId=002`}>
                 <UpText />
               </Link>
             </div>
@@ -49,7 +49,7 @@ const Categories = () => {
           <div className={styles.categoriesImgRelative}>
             <img className={styles.imgSmall} src={Dress} alt="Dress" />
             <div className={`${styles.categoriesImgAbsolute} ${styles.Dress}`}>
-              <Link to={`/catalog?menuId=001`}>
+              <Link to={`/booriva/catalog?menuId=001`}>
                 <DressText />
               </Link>
             </div>
@@ -59,7 +59,7 @@ const Categories = () => {
             <div
               className={`${styles.categoriesImgAbsolute} ${styles.Costume}`}
             >
-              <Link to={`/catalog?menuId=006`}>
+              <Link to={`/booriva/catalog?menuId=006`}>
                 <CostumeText />
               </Link>
             </div>
@@ -68,7 +68,7 @@ const Categories = () => {
         <div className={styles.categoriesImgRelative}>
           <img className={styles.imgBig} src={Hoodie} alt="Hoodie" />
           <div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}>
-            <Link to={`/catalog?menuId=ab003`}>
+            <Link to={`/booriva/catalog?menuId=ab003`}>
               <HoodieText />
             </Link>
           </div>

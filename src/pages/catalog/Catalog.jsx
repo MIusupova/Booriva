@@ -4,7 +4,6 @@ import qs from "qs";
 import { Link } from "react-router-dom";
 import { getCatalogData, getCategoryData } from "../../services/catalog";
 
-
 import CategoryFilter from "./categoryFilter/CategoryFilter";
 import CategoryTitle from "./categoryTitle/CategoryTitle";
 import Card from "../../components/cards/card";
@@ -16,10 +15,10 @@ const Catalog = () => {
   const location = useLocation();
   const [card, setCard] = useState([]);
   const [title, setTitle] = useState([]);
-const [subTitle, setSubTitle] = useState([]);
+  const [subTitle, setSubTitle] = useState([]);
 
   useEffect(() => {
-  let data = getProductData();
+    let data = getProductData();
     if (location.search.length > 0) {
       const params = qs.parse(location.search.substring(1));
       if (params.menuId) {
@@ -57,7 +56,7 @@ const [subTitle, setSubTitle] = useState([]);
               card.map(({ id, images, name, price }) => {
                 return (
                   <div className={styles.sizeCard}>
-                    <Link to={`/cardProductPage?id=${id}`}>
+                    <Link to={`/booriva/cardProductPage?id=${id}`}>
                       <Card
                         cardBox={`cardBox`}
                         textSize={`cardText`}
@@ -67,7 +66,6 @@ const [subTitle, setSubTitle] = useState([]);
                         price={`${price} ₽`}
                       />
                     </Link>
-
                   </div>
                 );
               })
