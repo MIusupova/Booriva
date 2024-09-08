@@ -7,7 +7,7 @@ const SearchProduct = ({ setSearchOpen, searchOpen, setValue, value }) => {
   const navigate = useNavigate();
   const openResultPage = (e) => {
     if (e.key === "Enter") {
-      navigate(`/results?search=${value}`);
+      navigate(`/booriva/results?search=${value}`);
       setSearchOpen(false);
     }
   };
