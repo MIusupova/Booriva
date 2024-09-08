@@ -1,6 +1,6 @@
 import BoorivaStoreImg from "./boorivaStoreImg/boorivaStoreImg";
 import BoorivaStoreText from "./boorivaStoreText/boorivaStoreText";
-import BoorivaStoreTextSub from "./boorivaStoreTextSubtitle/boorivaStoreTextSubtitle";
+import Subtitle from "./Subtitle/subtitle";
 import BoorivaStoreBigText from "./boorivaStoreBigText/boorivaStoreBigText";
 import BoorivaStoreIcons from "./boorivaStoreIcons/boorivaStoreIcons";
 
@@ -12,7 +12,7 @@ const BoorivaStore = () => {
       <div className={styles.boorivaStoreCommon}>
         <BoorivaStoreText />
         <div className={styles.boorivaStoreCommon2}>
-          <BoorivaStoreTextSub />
+          <Subtitle />
           <BoorivaStoreIcons />
         </div>
       </div>
