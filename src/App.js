@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import Catalog from "./pages/catalog/Catalog";
@@ -12,7 +12,6 @@ import Basket from "./components/basket/BasketPage";
 import Mistake from "./components/mistake/Mistake";
 import BoorivaGirls from "./pages/BoorivaGirls/BoorivaGirls";
 import PlacingOrder from "./pages/placingOrder/PlacingOrder";
-import Checkout from "./components/checkout/Checkout";
 import { useSelector } from "react-redux";
 import Results from "./components/results/Results";
 import MobileMenu from "./components/mobileMenu/MobileMenu";
@@ -23,7 +22,7 @@ const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [value, setValue] = useState("");
-
+  const location = useLocation();
   const cart = useSelector((state) => state.cart.cart);
   const [setCart] = useState(
     localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
@@ -37,7 +36,9 @@ const App = () => {
       ? JSON.parse(localStorage.getItem("select"))
       : []
   );
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   useEffect(() => {
     localStorage.setItem("select", JSON.stringify(select));
   }, [select]);
@@ -66,20 +67,20 @@ const App = () => {
             element={<Catalog select={select} setSelect={setSelect} />}
           />
           <Route
-            path="/booriva//wishlistPage"
+            path="/booriva/wishlistPage"
             element={<WishListPage select={select} setSelect={setSelect} />}
           />
-          <Route path="/booriva//wishListEmpty" element={<WishListEmpty />} />
+          <Route path="/booriva/wishListEmpty" element={<WishListEmpty />} />
           <Route
-            path="/booriva//cardProductPage"
+            path="/booriva/cardProductPage"
             element={<CardProductPage select={select} setSelect={setSelect} />}
           />
 
-          <Route path="/booriva//mistake" element={<Mistake />} />
-          <Route path="/booriva//boorivagirls" element={<BoorivaGirls />} />
-          <Route path="/booriva//results" element={<Results />} value={value} />
+          <Route path="/booriva/mistake" element={<Mistake />} />
+          <Route path="/booriva/boorivagirls" element={<BoorivaGirls />} />
+          <Route path="/booriva/results" element={<Results />} value={value} />
           <Route
-            path="/booriva//placingOrder"
+            path="/booriva/placingOrder"
             element={
               <PlacingOrder
                 setIsBasketOpen={setIsBasketOpen}

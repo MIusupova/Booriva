@@ -18,7 +18,7 @@ const Catalog = () => {
   const [subTitle, setSubTitle] = useState([]);
 
   useEffect(() => {
-    let data = getProductData();
+    let data;
     if (location.search.length > 0) {
       const params = qs.parse(location.search.substring(1));
       if (params.menuId) {
@@ -53,22 +53,20 @@ const Catalog = () => {
           <CategoryFilter />
           <div className={styles.newItemsCards}>
             {card.length > 0 ? (
-              card.map(({ id, images, name, price }) => {
-                return (
-                  <div className={styles.sizeCard}>
-                    <Link to={`/booriva/cardProductPage?id=${id}`}>
-                      <Card
-                        cardBox={`cardBox`}
-                        textSize={`cardText`}
-                        priceSize={`cardPrice`}
-                        image={images}
-                        text={name}
-                        price={`${price} ₽`}
-                      />
-                    </Link>
-                  </div>
-                );
-              })
+              card.map(({ id, images, name, price }) => (
+                <div className={styles.sizeCard} key={id}>
+                  <Link to={`/booriva/cardProductPage?id=${id}`}>
+                    <Card
+                      cardBox={`cardBox`}
+                      textSize={`cardText`}
+                      priceSize={`cardPrice`}
+                      image={images}
+                      text={name}
+                      price={`${price} ₽`}
+                    />
+                  </Link>
+                </div>
+              ))
             ) : (
               <div className={styles.textDelete}>
                 Товаров данной категории нет~
