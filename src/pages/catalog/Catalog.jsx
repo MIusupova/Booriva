@@ -44,7 +44,6 @@ const [subTitle, setSubTitle] = useState([]);
         setSubTitle("пусто");
       });
     }
-
   }, [location]);
   return (
     <div className={styles.categoryProduct}>

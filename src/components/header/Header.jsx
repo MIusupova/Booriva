@@ -11,14 +11,14 @@ import styles from "./Header.module.sass";
 import SearchProduct from "../searchProduct/SearchProduct";
 
 
-const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen}) => {
+const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen, value, setValue}) => {
     const [isShow, setIsShow] = useState(false)
     const [menuId, setMenuId] = useState(0) //для сабменю
    
     return ( 
         
         <div className={styles.header}>
-            <SearchProduct setSearchOpen={setSearchOpen} searchOpen={searchOpen}/>
+            <SearchProduct  setSearchOpen={setSearchOpen} searchOpen={searchOpen} value={value} setValue={setValue}/>
             
            
             <div className={styles.block + ' wrapper'}>
@@ -27,7 +27,7 @@ const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen}) 
                     
                     <Contacts/>
                     <BoorivaLogo/>
-                    <Search setSearchOpen={setSearchOpen} />
+                    <Search setSearchOpen={setSearchOpen} searchOpen={searchOpen} value={value} setValue={setValue}/>
 
                     <div className={styles.blockthree}>
                         <Wishlist/>

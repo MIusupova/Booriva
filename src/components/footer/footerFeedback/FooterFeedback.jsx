@@ -13,9 +13,9 @@ const FooterFeedback = () => {
           <div className={styles.footerFeedbackText}>
             Нам важно знать, что ты думаешь про нас! Просто напиши мне!
           </div>
-          <div className={styles.footerFeedbackLink}>
-            <Link to="/ivan">Написать Иванке</Link>
-            <div className={styles.footerFeedbackLine}></div>
+          <div>
+            <Link className={styles.footerFeedbackLink} to="/ivan">Написать Иванке</Link>
+          <div className={styles.footerFeedbackLine}></div>
           </div>
         </div>
       </div>

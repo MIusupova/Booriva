@@ -14,16 +14,17 @@ import BoorivaGirls from "./pages/BoorivaGirls/BoorivaGirls";
 import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import Checkout from "./components/checkout/Checkout";
 import { useSelector } from "react-redux"
+import Results from "./components/results/Results";
+import MobileMenu from "./components/mobileMenu/MobileMenu";
 
 export const SelectOpen = createContext()
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [value, setValue] = useState('')
+  
  
-  
-
-  
   const cart = useSelector(state => state.cart.cart)
   const [setCart] = useState(
     localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
@@ -56,7 +57,7 @@ useEffect(() => {
         setCart={setCart}
       />
       
-        <Header setIsBasketOpen={setIsBasketOpen} searchOpen={searchOpen} setSearchOpen={setSearchOpen}/>
+        <Header setIsBasketOpen={setIsBasketOpen} searchOpen={searchOpen} setSearchOpen={setSearchOpen} value={value} setValue={setValue}/>
         <Routes>
         <Route path="/" element={<HomePage/>}/>
           <Route path="/catalog" element={<Catalog select={select} setSelect={setSelect}/>} />
@@ -66,7 +67,9 @@ useEffect(() => {
 
             <Route path="/mistake" element={<Mistake/>}/>
             <Route path="/boorivagirls" element={<BoorivaGirls />}
+            
         />
+         <Route path="/results" element={<Results/>} value={value} />
         <Route
           path="/placingOrder"
           element={
@@ -77,10 +80,12 @@ useEffect(() => {
             />
           }
         />
+       
         </Routes>
         <Instagram />
         <Footer />
       </SelectOpen.Provider>
+      <MobileMenu/>
     </div>
   );
 };
