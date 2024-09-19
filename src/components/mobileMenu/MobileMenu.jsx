@@ -4,7 +4,7 @@ import MobileMenuBasket from "../../assets/img/icons/MobileMenuBasket";
 import MobileMenuHeart from "../../assets/img/icons/MobileMenuHeart";
 import styles from "./MobileMenu.module.sass";
 
-const MobileMenu = () => {
+const MobileMenu = ({ isBasketOpen, setIsBasketOpen }) => {
     return (
         <nav className={styles.mobileMenu}>
             <div className={styles.mobileMenuItems}>
@@ -14,7 +14,7 @@ const MobileMenu = () => {
                 <div className={styles.mobileMenuItem}> <MobileMenuArrow/>
                     <span className={styles.mobileMenuItemText}>Написать</span>
                 </div>
-                <div className={styles.mobileMenuItem}> <MobileMenuBasket/>
+                <div className={styles.mobileMenuItem }isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} onClick={() => setIsBasketOpen(true)} > <MobileMenuBasket/>
                     <span className={styles.mobileMenuItemText}>Корзина</span>
                 </div>
                 <div className={styles.mobileMenuItem}> <MobileMenuHeart/>

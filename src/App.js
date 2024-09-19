@@ -93,7 +93,7 @@ const App = () => {
         <Instagram />
         <Footer />
       </SelectOpen.Provider>
-      <MobileMenu />
+      <MobileMenu isBasketOpen={isBasketOpen}/>
     </div>
   );
 };
