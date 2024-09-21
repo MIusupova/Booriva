@@ -15,6 +15,7 @@ import PlacingOrder from "./pages/placingOrder/PlacingOrder";
 import { useSelector } from "react-redux";
 import Results from "./components/results/Results";
 import MobileMenu from "./components/mobileMenu/MobileMenu";
+import MobileHeader from "./components/header/mobileHeader/MobileHeader";
 
 export const SelectOpen = createContext();
 
@@ -55,6 +56,12 @@ const App = () => {
 
         <Header
           setIsBasketOpen={setIsBasketOpen}
+          searchOpen={searchOpen}
+          setSearchOpen={setSearchOpen}
+          value={value}
+          setValue={setValue}
+        />
+        <MobileHeader
           searchOpen={searchOpen}
           setSearchOpen={setSearchOpen}
           value={value}
