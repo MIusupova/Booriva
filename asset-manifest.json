@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/booriva/static/css/main.749f444b.css",
+    "main.css": "/booriva/static/css/main.df3bbebb.css",
     "main.js": "/booriva/static/js/main.d1048cf5.js",
     "static/media/newcol.png": "/booriva/static/media/newcol.c0a7230daeb628b7c8f6.png",
     "static/media/categoryTitleSvg.png": "/booriva/static/media/categoryTitleSvg.40d64d952227cc32bcdc.png",
@@ -18,11 +18,11 @@
     "static/media/things.png": "/booriva/static/media/things.bc6aa69b17568f74e9c9.png",
     "static/media/raincoat.png": "/booriva/static/media/raincoat.7ea66f0f69aa39d47fb5.png",
     "index.html": "/booriva/index.html",
-    "main.749f444b.css.map": "/booriva/static/css/main.749f444b.css.map",
+    "main.df3bbebb.css.map": "/booriva/static/css/main.df3bbebb.css.map",
     "main.d1048cf5.js.map": "/booriva/static/js/main.d1048cf5.js.map"
   },
   "entrypoints": [
-    "static/css/main.749f444b.css",
+    "static/css/main.df3bbebb.css",
     "static/js/main.d1048cf5.js"
   ]
 }
