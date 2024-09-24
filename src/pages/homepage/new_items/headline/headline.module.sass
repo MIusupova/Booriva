@@ -1,40 +1,56 @@
 .vectorBox
     display: flex
-    gap: 17px
     position: absolute
     top: 77px
-
-@media (max-width: 480px) 
-    .vectorBox 
-        max-width: 135px
-        top: 44px
-    
-
-@media (max-width: 320px) 
-    .vectorBox 
-        max-width: 106px
-        top: 26px
-    
-
+    @media (min-width: 320px)
+        width: 78px
+        height: 13px 
+        top: 28px
+    @media (min-width: 480px)
+        font-size: 14px
+        width: 90px
+        height: 20px
+        top: 45px
+    @media (min-width: 768px)
+        width: 140px
+        height: 30px
+        top: 70px
+    @media (min-width: 1000px)
+        width: 140px
+        height: 30px
+        top: 70px
+      
+    @media (min-width: 1440px)
+        top: 70px
+        width: 140px
+        height: 30px
+        
 .newItemsBox
     max-width: 296px
     height: 114px
     display: flex
     justify-content: start
     align-items: center
-
-@media (max-width: 480px) 
-    .newItemsBox 
-        max-width: 189px
+    color: #FDA3C4
+    font-family: 'Sunday Best'
+    font-weight: 400
+    @media (min-width: 320px)
+        width: 136px
+        height: 39px     
+    @media (min-width: 480px)
+        width: 189px
         height: 69px
-    
-
-@media (max-width: 320px) 
-    .newItemsBox 
-        max-width: 136px
-        height: 49px
-    
+    @media (min-width: 768px)
+        width: 283px
+        height: 103px
+    @media (min-width: 1000px)
+        width: 283px
+        height: 103px
+    @media (min-width: 1440px)
+        width: 283px
+        height: 103px
 
 .headlineBox
     max-width: 1124px
     margin: 0 auto
+

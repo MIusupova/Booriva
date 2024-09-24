@@ -7,6 +7,8 @@ import Card from "../../../components/cards/card";
 import NewItemsButton from "../../../assets/img/icons/new_items_button";
 import styles from "./new_items.module.sass";
 
+import Vector from "../../../assets/img/icons/vector";
+
 const NewItems = () => {
   const [product, setProducts] = useState([]);
   const location = useLocation();
@@ -20,7 +22,16 @@ const NewItems = () => {
 
   return (
     <div className={styles.NewItemsBox}>
-      <Headline />
+      <div className={styles.titleNewItems}>
+        <h1 className={styles.title}>Новинки
+          <span className={styles.subTitle}>
+            Новинки
+            <Vector />
+          </span>
+        </h1>
+
+      </div>
+      
       <div className={styles.newItemsCards}>
         {product
           .map(({ id, images, name, price }) => {
