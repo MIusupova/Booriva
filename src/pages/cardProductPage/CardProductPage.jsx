@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import qs from "qs";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Thumbs } from "swiper/modules";
+import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules";
 import { getProductData } from "../../services/product";
 import { SelectOpen } from "../../App";
 import Like from "../../assets/img/icons/like";
@@ -20,6 +20,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const CardProductPage = ({ select, setSelect }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [isBlanker, setIsBlanket] = useState(window.innerWidth < 769);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
   const location = useLocation();
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -44,6 +46,28 @@ const CardProductPage = ({ select, setSelect }) => {
       navigate("/booriva/");
     }
   }, [location]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsBlanket(window.innerWidth < 769);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const addProductSelect = () => {
     if (location.search) {
@@ -75,7 +99,10 @@ const CardProductPage = ({ select, setSelect }) => {
       <main className={styles.slideBox}>
         <Swiper
           className={styles.slideBigBox}
-          modules={[Thumbs]}
+          spaceBetween={10}
+          navigation={true}
+          modules={[FreeMode, Navigation, Pagination, Thumbs]}
+          pagination={isMobile ? true : false}
           thumbs={{
             swiper:
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
@@ -91,11 +118,11 @@ const CardProductPage = ({ select, setSelect }) => {
           ))}
         </Swiper>
         <Swiper
-          modules={[Thumbs]}
+          modules={[FreeMode, Navigation, Pagination, Thumbs]}
           watchSlidesProgress
           onSwiper={setThumbsSwiper}
           slidesPerView={4}
-          direction={"vertical"}
+          direction={isBlanker ? "horizontal" : "vertical"}
           className={styles.swiperSmallBox}
         >
           {images.map((image) => (
