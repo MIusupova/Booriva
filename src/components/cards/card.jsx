@@ -20,21 +20,21 @@ const Card = ({ id, image, text, price, textSize, priceSize, cardBox }) => {
   return (
     <div className={styles[cardBox]}>
       <div className={styles.boxImg}>
-        <div to={`/booriva/cardProductPage?id=${id}`}>
+        <Link to={`/booriva/cardProductPage?id=${id}`}>
           <img src={image} alt="" className={styles.cardImg} />
-        </div>
+        </Link>
         <div className={styles.likeBox} onClick={addProductSelect}>
           <Like active={active} />
         </div>
       </div>
 
       <div className={styles.cardLine}></div>
-      <div to={`/booriva/cardProductPage?id=${id}`}>
+      <Link to={`/booriva/cardProductPage?id=${id}`}>
         <div className={styles.cardDescription}>
           <div className={styles[textSize]}>{text}</div>
           <div className={styles[priceSize]}>{price}</div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
