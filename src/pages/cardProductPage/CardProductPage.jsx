@@ -4,7 +4,6 @@ import qs from "qs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
 import { getProductData } from "../../services/product";
-import { SelectOpen } from "../../App";
 import Like from "../../assets/img/icons/like";
 import SizeXSS from "../../assets/img/icons/SizeXS";
 import SizeSM from "../../assets/img/icons/SizeSM";

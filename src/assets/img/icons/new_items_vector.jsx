@@ -1,7 +1,6 @@
-import styles from "./../../../../src/components/title/Title.module.sass";
 const Vector = () => {
   return (
-    <div className={styles.vector}>
+    <div>
       <svg
         width="65"
         height="15"
