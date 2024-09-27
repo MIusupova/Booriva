@@ -31,7 +31,7 @@ const Results = ({ value }) => {
   return (
     <div className={styles.results + " wrapper"}>
       <div className={styles.resultsTitle}>
-        <Title title="Результаты" subtitle="Найдено..." />
+        <Title title="Результаты" subTitle="Найдено..." />
         <div className={styles.categoryTitleSvg}></div>
       </div>
       <div className={styles.products}>
