@@ -69,28 +69,29 @@ input::placeholder
     display: flex
     align-items: center
     position: relative
-    right: 245px
-    width: 26px
-    height: 56px
+    margin-right: 495px
+    @media (min-width: 320px)
+        margin-right: 260px
+    @media (min-width: 480px)
+        margin-right: 430px
+    @media (min-width: 768px)
+        margin-right: 490px
+    @media (min-width: 1000px)
+        margin-right: 490px
+    @media (min-width: 1140px)
+        margin-right: 490px
+   
+    
 
 .SearchProductIcon
     width: 24px
     height: 24px
 .searchBtn
     position: relative
-    height: 24px
-    width: 24px
     
-    @media (max-width: 320px)
-        left: 300px
-    @media (max-width: 480px)
-        left: 300px
-    @media (min-width: 768px)
-        left: 240px
-    @media (min-width: 1000px)
-        left: 240px
-    @media (min-width: 1140px)
-        left: 240px
+    @media (max-width: 780px)
+        margin-left: -50px
+   
         
 
     cursor: pointer
