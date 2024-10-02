@@ -30,7 +30,7 @@ const WishListPage = () => {
   return (
     <div className={styles.wishListPage + " wrapper"}>
       <div className={styles.wishListTitle}>
-        <Title title="список желаний" subtitle="твой тайный список желаний" />
+        <Title title="список желаний" subTitle="твой тайный список желаний" />
         <div className={styles.categoryTitleSvg}></div>
       </div>
       <div className={styles.newItemsCards}>
