@@ -6,7 +6,7 @@
     top: 0
     left: 0
     right: 0
-    z-index: 10
+    z-index: 100
     @media (min-width: 1140px)
         opacity: 0
         display: none
@@ -18,6 +18,7 @@
         display: none
     
 .blocktwo
+    background: #FFF
     display: flex
     align-items: center
     justify-content: space-between
@@ -32,19 +33,30 @@
     @media (min-width: 768px)
         opacity: 0
         display: none
+    @media (max-width: 480px)
+        height: 35px
+    
    
-
 .phoneText
     color: #FDA3C4
     margin-left: 10px
     width: 121px
     font-family: Montserrat
-    font-size: 11px
+    font-size: 10px
     font-style: italic
     font-weight: 700
+    font-variant-numeric: lining-nums tabular-nums
+    @media (max-width: 480px)
+        font-size: 8px
+
 .phoneContact
     display: flex
     align-items: center
+
+
+     
+
+
 
 
     

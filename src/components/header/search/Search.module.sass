@@ -1,5 +1,4 @@
 .search
-    
     display: flex
     align-items: center
     height: 24px
@@ -42,8 +41,10 @@
 .searchIcon
     &:hover
         color: #FDA3C4
-    min-width: 20px
-    min-height: 20px
+    @media (min-width: 320px)
+        width: 16px
+        height: 16px
+    
     @media (min-width: 480px)
         width: 24px
         height: 24px
