@@ -12,6 +12,9 @@
         position: relative
     &_open
         transform: translateX(0)
+    @media (max-width: 520px)
+        width: 100%
+       
         
 .backdrop
     background-color: #000
@@ -31,12 +34,23 @@
 .basketBoxOne
     margin-right: 50px
     margin-top: 40px
+    @media (max-width: 520px)
+        margin: 40px 15px 20px 15px
+    
+
 .productsCardText
     width: 205px
+    margin-left: 15px
+    @media (max-width: 520px)
+        width: 150px
 
 .basketBox
     margin-left: 20px
     margin-bottom: 20px
+    @media (max-width: 520px)
+        margin-left: 0
+   
+
     
 .basketTitle
     color: #000
@@ -105,27 +119,51 @@
     &::-webkit-scrollbar-thumb
         background: #f880ac
         height: 40px
+        justify-content: center
+    
+   
+        
 .productsCard
     width: 155px
     height: 188px
+    @media (max-width: 480px)
+        width: 90px
+        height: 121px
+        
+    
 .productsBlock
     display: flex
     align-items: center
-    justify-content: space-between
+   
     width: 394px
     margin-bottom: 10px
+    @media (max-width: 480px)
+        width: 320px
+   
+
+    
+
+
+    
+    
+    
+        
 .productsName
     color: #000
     font-family: Montserrat
     font-size: 16px
     font-weight: 600
     margin-bottom: 8px
+    @media (max-width: 520px)
+        font-size: 14px
 .productsSize
     color: #1F1F1F
     font-family: Montserrat
     font-size: 14px
     font-weight: 400
     margin-bottom: 26px
+    @media (max-width: 520px)
+        font-size: 12px
 .productsPrice
     color: #FDA3C4
     font-variant-numeric: lining-nums tabular-nums
@@ -141,6 +179,7 @@
     display: flex
     align-items: flex-start
     justify-content: space-between
+    
 
 
     
