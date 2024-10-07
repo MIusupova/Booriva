@@ -90,7 +90,7 @@ const BasketPage = ({ isBasketOpen, setIsBasketOpen }) => {
               <span className={styles.basketTextSmall}>Cумма заказа:</span>
               <span className={styles.basketTextBig}>{allSum} ₴</span>
             </div>
-            <div className={styles.basketPriceOne}>
+            <div className={styles.basketPriceOneTwo}>
               <span className={styles.basketTextSmall}>
                 Стоимость доставки:
               </span>
