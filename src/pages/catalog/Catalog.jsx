@@ -46,7 +46,7 @@ const Catalog = () => {
   }, [location]);
   return (
     <div className={styles.categoryProduct}>
-      <div className={styles.categoryProductBlock}>
+      <div className={styles.categoryProductBlock + " wrapper"}>
         <CategoryTitle title={title} subTitle={subTitle} />
 
         <div className={styles.filterCards}>
