@@ -29,7 +29,8 @@ const Results = ({ value }) => {
   });
 
   return (
-    <div className={styles.results + " wrapper"}>
+    <div className={styles.results}>
+      <div className={styles.resultss + " wrapper"} >
       <div className={styles.resultsTitle}>
         <Title title="Результаты" subTitle="Найдено..." />
         <div className={styles.categoryTitleSvg}></div>
@@ -49,6 +50,9 @@ const Results = ({ value }) => {
           </div>
         ))}
       </div>
+      </div>
+      
+            
     </div>
   );
 };
