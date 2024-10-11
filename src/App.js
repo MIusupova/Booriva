@@ -16,12 +16,14 @@ import { useSelector } from "react-redux";
 import Results from "./components/results/Results";
 import MobileMenu from "./components/mobileMenu/MobileMenu";
 import MobileHeader from "./components/header/mobileHeader/MobileHeader";
+import MobileMenuPink from "./components/mobileMenuPink/MobileMenuPink";
 
 export const SelectOpen = createContext();
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [value, setValue] = useState("");
   const location = useLocation();
   const cart = useSelector((state) => state.cart.cart);
@@ -45,7 +47,9 @@ const App = () => {
   }, [select]);
 
   return (
-    <div className={`${isBasketOpen && "no-scroll"}`}>
+    <div className={`${isBasketOpen && "no-scroll"} ${isMobileMenuOpen && "no-scroll"}`} >
+    
+
       <SelectOpen.Provider value={{ select, setSelect }}>
         <Basket
           isBasketOpen={isBasketOpen}
@@ -67,6 +71,8 @@ const App = () => {
           value={value}
           setValue={setValue}
         />
+        <MobileMenuPink isMobileMenuOpen={isMobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}/>
         <Routes>
           <Route path="/booriva" element={<HomePage />} />
           <Route
@@ -100,7 +106,7 @@ const App = () => {
         <Instagram />
         <Footer />
       </SelectOpen.Provider>
-      <MobileMenu isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
+      <MobileMenu isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen}/>
     </div>
   );
 };
