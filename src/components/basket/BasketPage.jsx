@@ -59,14 +59,8 @@ const BasketPage = ({ isBasketOpen, setIsBasketOpen }) => {
       >
         
           <CrossButtonBasket setIsBasketOpen={setIsBasketOpen} />
+          <BasketOpen/> 
          
-          <BasketEmpty /> 
-            
-           
-              
-           
-          
-     
       </div>
     </div>
   );
