@@ -11,6 +11,7 @@ import ButtonBasketPink from "../../../assets/img/icons/ButtonBasketPink";
 import BasketBtnSmall from "../../../assets/img/icons/BasketBtnSmall";
 import { setAllProductBasket, setCart } from "../../../redux/cartSlice/cartSlice";
 import { getProductData } from "../../../services/product";
+import BasketRed from "../../../assets/img/icons/BasketRed";
 
 
 const BasketOpen = () => {
@@ -47,6 +48,13 @@ const BasketOpen = () => {
     const items = sendData(cart, 0, []);
     items.then((res) => setProducts(res));
   }, [cart]);
+
+  const [btn, setBtn] = useState(true)
+    const BtnRed = () => {
+        setBtn(!btn)
+    }
+
+    const newRed = btn ? <ButtonBasketPink/>  :  <BasketRed/>
   return (
     
         <div className={styles.basketBoxOne}>
@@ -99,8 +107,8 @@ const BasketOpen = () => {
               <span className={styles.basketTextBigPrice}>{allSum} ₴</span>
             </div>
           </div>
-          <Link to="/booriva/placingOrder" className={styles.basketBtn}>
-            <ButtonBasketPink/>
+          <Link to="/booriva/placingOrder" className={styles.basketBtn}  onClick={BtnRed}>
+          {btn ? <ButtonBasketPink/>  :  <BasketRed/>}
             <div className={styles.text}>{"Оформить заказ"}</div>
           </Link>
         </div>

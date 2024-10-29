@@ -42,6 +42,7 @@ const NewItems = () => {
       </div>
       <div className={styles.NewItemsButton}>
         <Link to={`/booriva/catalog?menuId=000`}>
+          
           <NewItemsButton />
         </Link>
       </div>

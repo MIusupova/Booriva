@@ -11,7 +11,7 @@ const BasketEmpty = () => {
         setBtn(!btn)
     }
 
-    const newRed = btn ? <BasketRed/>  : <ButtonBasketPink/>
+    const newRed = btn ? <ButtonBasketPink/> : <BasketRed/>
 
     return (
         <div className={styles.basketEmpty}>
@@ -20,7 +20,7 @@ const BasketEmpty = () => {
              <br />
             <span className={styles.basketEmptyText}>Твоя корзина пуста, но это никогда не поздно исправить:)</span>
             <Link to="/booriva" className={styles.basketBtn } onClick={BtnRed}>
-                {btn ? <BasketRed/>  : <ButtonBasketPink/>}
+                {btn ?  <ButtonBasketPink/> : <BasketRed/>}
                 <div className={styles.text}>{"За покупками"}</div>
           </Link>
             
