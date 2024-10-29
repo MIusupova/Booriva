@@ -23,6 +23,7 @@ const BasketOpen = () => {
     if (i < cart.length) {
       const data = await getProductData(cart[i]);
       products.push(data);
+
       if (i < cart.length - 1) {
         return sendData(cart, i + 1, products);
       } else {
@@ -54,10 +55,10 @@ const BasketOpen = () => {
             
             <h1 className={styles.basketTitle}>Корзина</h1>
             <div className={styles.products}>
-              {products.map((item) => (
+              {products.map((item) =>(
                 <div className={styles.productsBlock} key={item.id}>
                   <div className={styles.productsCard}>
-                    <img src={item.images[0]} alt="" /> 
+                    
                   </div>
                   <div className={styles.productsCardText}>
                     <div className={styles.basketBtnText}>

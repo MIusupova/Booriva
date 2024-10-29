@@ -1,6 +1,4 @@
 
-
-
 import CrossButtonBasket from "../../assets/img/icons/СrossButtonBasket";
 import styles from "./BasketPage.module.sass";
 import { useEffect, useState } from "react";
@@ -59,7 +57,7 @@ const BasketPage = ({ isBasketOpen, setIsBasketOpen }) => {
       >
         
           <CrossButtonBasket setIsBasketOpen={setIsBasketOpen} />
-          <BasketEmpty/> 
+          {products.length ? <BasketOpen/> : <BasketEmpty /> }
          
       </div>
     </div>

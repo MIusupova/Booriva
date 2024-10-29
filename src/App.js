@@ -21,6 +21,8 @@ import MobileMenuPink from "./components/mobileMenuPink/MobileMenuPink";
 export const SelectOpen = createContext();
 
 const App = () => {
+  
+  
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
