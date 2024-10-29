@@ -1,7 +1,11 @@
-import styles from "./../../../components/basket/BasketPage.module.sass";
+import styles from "./../../../components/basket/basketEmpty/BasketEmpty.module.sass";
+
+
+
 const ButtonBasketPink = () => {
+  
   return (
-    <svg
+    <svg 
       className={styles.buttonBasketPink}
       xmlns="http://www.w3.org/2000/svg"
       width="160"
