@@ -111,8 +111,8 @@ const Characteristics = ({ name, price, details, desc, addProductInCart }) => {
             </label>
           </div>
         </form>
-        <div className={styles.button} onClick={addProductInCart}>
-          <Button text="В корзину" />
+        <div  className={styles.button} onClick={addProductInCart} >
+          <Button text="В корзину"/>
         </div>
         <p className={styles.description}>{desc}</p>
         <div className={styles.line}>

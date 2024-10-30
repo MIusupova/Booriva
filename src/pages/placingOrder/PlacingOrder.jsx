@@ -8,6 +8,7 @@ import Checkout from "../../components/checkout/Checkout";
 import BasketPage from "../../components/basket/BasketPage";
 
 import styles from "./PlacingOrder.module.sass";
+import BasketRed from "../../assets/img/icons/BasketRed";
 
 const PlacingOrder = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -42,6 +43,14 @@ const PlacingOrder = () => {
       console.log("ЗАПОЛНИТЕ ПОЛЯ!!!");
     }
   };
+
+  const [btn, setBtn] = useState(true)
+    const BtnRed = () => {
+        setBtn(!btn)
+    }
+
+    const newRed = btn ? <ButtonBasketPink/> : <BasketRed/>
+
   return (
     <div className={styles.placingOrder}>
       <Checkout active={modalActive} setModalActive={setModalActive} />
@@ -70,8 +79,8 @@ const PlacingOrder = () => {
           setPickup={setPickup}
         />
       </div>
-      <button className={styles.basketBtn} onClick={confirmOrder}>
-        <ButtonBasketPink />
+      <button className={styles.basketBtn} onClick={() => {confirmOrder(); BtnRed() }}>
+      {btn ?  <ButtonBasketPink/> : <BasketRed/>}
         <div className={styles.text}>{"Подтвердить заказ"}</div>
       </button>
       {/* <BasketPage /> */}
