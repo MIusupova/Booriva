@@ -45,9 +45,7 @@ const PlacingOrder = () => {
   };
 
   const [btn, setBtn] = useState(true)
-    const BtnRed = () => {
-        setBtn(!btn)
-    }
+    
 
     const newRed = btn ? <ButtonBasketPink/> : <BasketRed/>
 
@@ -79,7 +77,7 @@ const PlacingOrder = () => {
           setPickup={setPickup}
         />
       </div>
-      <button className={styles.basketBtn} onClick={() => {confirmOrder(); BtnRed() }}>
+      <button className={styles.basketBtn} onClick={() => {confirmOrder() }}> {/* Можно передать еще одну функцию в онклик*/}
       {btn ?  <ButtonBasketPink/> : <BasketRed/>}
         <div className={styles.text}>{"Подтвердить заказ"}</div>
       </button>

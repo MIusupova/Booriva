@@ -7,9 +7,9 @@ import BasketRed from "../../../assets/img/icons/BasketRed";
 
 const BasketEmpty = () => {
     const [btn, setBtn] = useState(true)
-    const BtnRed = () => {
+    {/*const BtnRed = () => {
         setBtn(!btn)
-    }
+    }*/}
 
     const newRed = btn ? <ButtonBasketPink/> : <BasketRed/>
 
@@ -19,7 +19,7 @@ const BasketEmpty = () => {
             <div className={styles.basketEmptyImgg}><BasketEmptyImg/></div>
              <br />
             <span className={styles.basketEmptyText}>Твоя корзина пуста, но это никогда не поздно исправить:)</span>
-            <Link to="/booriva" className={styles.basketBtn } onClick={BtnRed}>
+            <Link to="/booriva" className={styles.basketBtn }> {/*onClick={BtnRed} реализация активной кнопки, изменение фона на красный цвет*/} 
                 {btn ?  <ButtonBasketPink/> : <BasketRed/>}
                 <div className={styles.text}>{"За покупками"}</div>
           </Link>

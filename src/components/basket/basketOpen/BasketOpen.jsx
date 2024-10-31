@@ -50,9 +50,7 @@ const BasketOpen = () => {
   }, [cart]);
 
   const [btn, setBtn] = useState(true)
-    const BtnRed = () => {
-        setBtn(!btn)
-    }
+   
 
     const newRed = btn ? <ButtonBasketPink/>  :  <BasketRed/>
   return (
@@ -107,7 +105,7 @@ const BasketOpen = () => {
               <span className={styles.basketTextBigPrice}>{allSum} ₴</span>
             </div>
           </div>
-          <Link to="/booriva/placingOrder" className={styles.basketBtn}  onClick={BtnRed}>
+          <Link to="/booriva/placingOrder" className={styles.basketBtn}>
           {btn ? <ButtonBasketPink/>  :  <BasketRed/>}
             <div className={styles.text}>{"Оформить заказ"}</div>
           </Link>
