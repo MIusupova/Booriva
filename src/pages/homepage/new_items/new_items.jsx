@@ -4,7 +4,7 @@ import { getCatalogDataNew } from "../../../services/catalog";
 import qs from "qs";
 import Headline from "./headline/headline";
 import Card from "../../../components/cards/card";
-import NewItemsButton from "../../../assets/img/icons/new_items_button";
+import Button from "../../../components/buttons/Button";
 import styles from "./new_items.module.sass";
 
 const NewItems = () => {
@@ -42,7 +42,7 @@ const NewItems = () => {
       </div>
       <div className={styles.NewItemsButton}>
         <Link to={`/booriva/catalog?menuId=000`}>
-          <NewItemsButton />
+          <Button text="СМОТРЕТЬ ВСЕ" />
         </Link>
       </div>
     </div>
