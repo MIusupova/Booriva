@@ -17,16 +17,17 @@ const Categories = () => {
   return (
     <div className={styles.categories}>
       <div className={styles.categoriesBox}>
-        <Link to={`/booriva/catalog?menuId=ab0005`}>
-          <div className={styles.categoriesImgRelative}>
+        <div className={styles.categoriesImgRelative}>
+          <Link to={`/booriva/catalog?menuId=ab0005`}>
             <img className={styles.imgBig} src={Tshirt} alt="Tshirt" />
-            <div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}>
-              <Link to={`/booriva/catalog?menuId=ab0005`}>
-                <TshirtText />
-              </Link>
-            </div>
+          </Link>
+          <div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}>
+            <Link to={`/booriva/catalog?menuId=ab0005`}>
+              <TshirtText />
+            </Link>
           </div>
-        </Link>
+        </div>
+
         <div className={styles.categoriesBoxSmall}>
           <Link to={`/booriva/catalog?menuId=003`}>
             <div className={styles.categoriesImgRelative}>
@@ -79,16 +80,17 @@ const Categories = () => {
             </div>
           </Link>
         </div>
-        <Link to={`/booriva/catalog?menuId=ab003`}>
-          <div className={styles.categoriesImgRelative}>
+
+        <div className={styles.categoriesImgRelative}>
+          <Link to={`/booriva/catalog?menuId=ab003`}>
             <img className={styles.imgBig} src={Hoodie} alt="Hoodie" />
-            <div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}>
-              <Link to={`/booriva/catalog?menuId=ab003`}>
-                <HoodieText />
-              </Link>
-            </div>
+          </Link>
+          <div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}>
+            <Link to={`/booriva/catalog?menuId=ab003`}>
+              <HoodieText />
+            </Link>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

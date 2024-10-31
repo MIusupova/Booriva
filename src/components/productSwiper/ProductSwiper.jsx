@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules";
 import { useLocation } from "react-router-dom";
+import { SelectOpen } from "../../App";
 import qs from "qs";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -28,11 +29,23 @@ const ProductSwiper = ({
   const [isActive, setisActive] = useState();
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
+  const { select, setSelect, cart, setCart } = useContext(SelectOpen);
 
-  const addProduct = () => {
-    const id = qs.parse(location.search.substring(1)).id;
-    dispatch(addWishList(id));
+  const addProductSelect = () => {
+    if (location.search) {
+      const id = qs.parse(location.search.substring(1)).id;
+      if (!select.includes(id)) {
+        setSelect([...select, id]);
+      } else {
+        setSelect(select.filter((data) => data !== id));
+      }
+    }
   };
+
+  useEffect(() => {
+    const id = qs.parse(location.search.substring(1)).id;
+    setisActive(select.some((item) => item === id));
+  }, [select]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -76,7 +89,7 @@ const ProductSwiper = ({
         modules={[FreeMode, Navigation, Pagination, Thumbs]}
         className="mySwiper2"
       >
-        <div className={styles.favor_container} onClick={addProduct}>
+        <div className={styles.favor_container} onClick={addProductSelect}>
           <FavorWhite isActive={isActive} />
         </div>
         <SwiperSlide className={styles.bigSlide}>
