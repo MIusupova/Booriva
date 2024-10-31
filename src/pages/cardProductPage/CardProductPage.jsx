@@ -36,15 +36,12 @@ const ProductPage = () => {
       navigate("/");
     }
   }, [location]);
-  //console.log(size.size);
 
   const addProductInCart = () => {
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;
       if (!cart.includes(id)) {
         dispatch(setCart([...cart, id]));
-        //dispatch(setCart([...cart, id, size.size]))  - здесь он просто в массив добавляет размер, но потом вывод в корзине надо было бы весь переписать,  и вообще это неправильно, потому что должен быть уже не массив с элементами, а массив с объектами
-        //dispatch(setCart([...cart, {id: id, size: size.size}])) - а если я так добавлю сюда, то опять мне половину логики корзины переписывать, а я себе настолько не доверяю
       }
     }
   };

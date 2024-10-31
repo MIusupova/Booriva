@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import MenuBooriva from "../../assets/img/icons/MenuBooriva";
 import MobileMenuArrow from "../../assets/img/icons/MobileMenuArrow";
 import MobileMenuBasket from "../../assets/img/icons/MobileMenuBasket";
 import MobileMenuHeart from "../../assets/img/icons/MobileMenuHeart";
 import styles from "./MobileMenu.module.sass";
-
 const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileMenuOpen }) => {
     const allProductBasket = useSelector(state => state.cart.allProductBasket)
     return (
@@ -20,9 +20,11 @@ const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileM
                     <span className={styles.mobileMenuItemText}>Корзина</span>
                     <div className={styles.allSumBasket}>{allProductBasket}</div>
                 </div>
-                <div className={styles.mobileMenuItem}> <MobileMenuHeart/>
-                    <span className={styles.mobileMenuItemText}>Wishlist</span>
-                </div>
+                <Link to="/booriva/wishlistPage" className={styles.mobileMenuItem}>
+          {" "}
+          <MobileMenuHeart />
+          <span className={styles.mobileMenuItemText}>Wishlist</span>
+        </Link>
                 
 
             </div>
@@ -32,3 +34,5 @@ const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileM
     )
 }
 export default MobileMenu
+
+ 

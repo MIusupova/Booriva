@@ -53,20 +53,21 @@ const Catalog = () => {
           <CategoryFilter />
           <div className={styles.newItemsCards}>
             {card.length > 0 ? (
-              card.map(({ id, images, name, price }) => (
-                <div className={styles.sizeCard} key={id}>
-                  <Link to={`/booriva/cardProductPage?id=${id}`}>
+              card.map(({ id, images, name, price }) => {
+                return (
+                  <div className={styles.sizeCard} key={id}>
                     <Card
+                      id={id}
                       cardBox={`cardBox`}
                       textSize={`cardText`}
                       priceSize={`cardPrice`}
-                      image={images}
+                      image={images[0]}
                       text={name}
                       price={`${price} ₽`}
                     />
-                  </Link>
-                </div>
-              ))
+                  </div>
+                );
+              })
             ) : (
               <div className={styles.textDelete}>
                 Товаров данной категории нет~

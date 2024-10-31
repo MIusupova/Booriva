@@ -1,32 +1,45 @@
 import { Link } from "react-router-dom";
 import Tshirt from "../../../assets/img/images/category-t-shirt.png";
 import TshirtText from "../../../assets/img/icons/category-t-shirt-text";
+import TshirtBackground from "../../../assets/img/icons/category-t-shirt";
 import Bottom from "../../../assets/img/images/category-bottom.png";
 import BottomText from "../../../assets/img/icons/category-bottom-text";
+import BottomBackground from "../../../assets/img/icons/category-bottom";
 import Up from "../../../assets/img/images/category-up.png";
 import UpText from "../../../assets/img/icons/category-up-text";
+import UpBackground from "../../../assets/img/icons/category-up";
 import Dress from "../../../assets/img/images/category-dress.png";
 import DressText from "../../../assets/img/icons/category-dress-text";
+import DressBackground from "../../../assets/img/icons/category-dress";
 import Costume from "../../../assets/img/images/category-costume.png";
 import CostumeText from "../../../assets/img/icons/category-costume-text";
+import CostumeBackground from "../../../assets/img/icons/category-costume";
 import Hoodie from "../../../assets/img/images/category-hoodie.png";
 import HoodieText from "../../../assets/img/icons/category-hoodie-text";
+import HoodieBackground from "../../../assets/img/icons/category-hoodie";
 import styles from "./categories.module.sass";
 
 const Categories = () => {
   return (
     <div className={styles.categories}>
       <div className={styles.categoriesBox}>
-        <Link to={`/booriva/catalog?menuId=ab0005`}>
-          <div className={styles.categoriesImgRelative}>
+        <div className={styles.categoriesImgRelative}>
+          <Link to={`/booriva/catalog?menuId=ab0005`}>
             <img className={styles.imgBig} src={Tshirt} alt="Tshirt" />
-            <div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}>
+          </Link>
+          <div className={`${styles.categoriesImgAbsolute} ${styles.Tshirt}`}>
+            <div className={styles.categoriesImgRelativeButton}>
               <Link to={`/booriva/catalog?menuId=ab0005`}>
-                <TshirtText />
+                <div className={styles.categoriesImgAbsoluteButton}>
+                  <TshirtText />
+                </div>
+
+                <TshirtBackground />
               </Link>
             </div>
           </div>
-        </Link>
+        </div>
+
         <div className={styles.categoriesBoxSmall}>
           <Link to={`/booriva/catalog?menuId=003`}>
             <div className={styles.categoriesImgRelative}>
@@ -34,9 +47,14 @@ const Categories = () => {
               <div
                 className={`${styles.categoriesImgAbsolute} ${styles.Bottom}`}
               >
-                <Link to={`/booriva/catalog?menuId=003`}>
-                  <BottomText />
-                </Link>
+                <div className={styles.categoriesImgRelativeButton}>
+                  <Link to={`/booriva/catalog?menuId=003`}>
+                    <div className={styles.categoriesImgAbsoluteButton}>
+                      <BottomText />
+                    </div>
+                    <BottomBackground />
+                  </Link>
+                </div>
               </div>
             </div>
           </Link>
@@ -44,9 +62,14 @@ const Categories = () => {
             <div className={styles.categoriesImgRelative}>
               <img className={styles.imgSmall} src={Up} alt="Up" />
               <div className={`${styles.categoriesImgAbsolute} ${styles.Up}`}>
-                <Link to={`/booriva/catalog?menuId=002`}>
-                  <UpText />
-                </Link>
+                <div className={styles.categoriesImgRelativeButton}>
+                  <Link to={`/booriva/catalog?menuId=002`}>
+                    <div className={styles.categoriesImgAbsoluteButton}>
+                      <UpText />
+                    </div>
+                    <UpBackground />
+                  </Link>
+                </div>
               </div>
             </div>
           </Link>
@@ -60,9 +83,14 @@ const Categories = () => {
               <div
                 className={`${styles.categoriesImgAbsolute} ${styles.Dress}`}
               >
-                <Link to={`/booriva/catalog?menuId=001`}>
-                  <DressText />
-                </Link>
+                <div className={styles.categoriesImgRelativeButton}>
+                  <Link to={`/booriva/catalog?menuId=001`}>
+                    <div className={styles.categoriesImgAbsoluteButton}>
+                      <DressText />
+                    </div>
+                    <DressBackground />
+                  </Link>
+                </div>
               </div>
             </div>
           </Link>
@@ -72,23 +100,34 @@ const Categories = () => {
               <div
                 className={`${styles.categoriesImgAbsolute} ${styles.Costume}`}
               >
-                <Link to={`/booriva/catalog?menuId=006`}>
-                  <CostumeText />
-                </Link>
+                <div className={styles.categoriesImgRelativeButton}>
+                  <Link to={`/booriva/catalog?menuId=006`}>
+                    <div className={styles.categoriesImgAbsoluteButton}>
+                      <CostumeText />
+                    </div>
+                    <CostumeBackground />
+                  </Link>
+                </div>
               </div>
             </div>
           </Link>
         </div>
-        <Link to={`/booriva/catalog?menuId=ab003`}>
-          <div className={styles.categoriesImgRelative}>
+
+        <div className={styles.categoriesImgRelative}>
+          <Link to={`/booriva/catalog?menuId=ab003`}>
             <img className={styles.imgBig} src={Hoodie} alt="Hoodie" />
-            <div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}>
+          </Link>
+          <div className={`${styles.categoriesImgAbsolute} ${styles.Hoodie}`}>
+            <div className={styles.categoriesImgRelativeButton}>
               <Link to={`/booriva/catalog?menuId=ab003`}>
-                <HoodieText />
+                <div className={styles.categoriesImgAbsoluteButton}>
+                  <HoodieText />
+                </div>
+                <HoodieBackground />
               </Link>
             </div>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );
