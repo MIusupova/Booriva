@@ -4,8 +4,8 @@ import { getCatalogDataNew } from "../../../services/catalog";
 import qs from "qs";
 import Headline from "./headline/headline";
 import Card from "../../../components/cards/card";
-import Button from "../../../components/buttons/Button";
 import styles from "./new_items.module.sass";
+import NewItemsButton from "../../../assets/img/icons/new_items_button";
 
 const NewItems = () => {
   const [product, setProducts] = useState([]);
@@ -41,9 +41,9 @@ const NewItems = () => {
           .slice(0, 4)}
       </div>
       <div className={styles.NewItemsButton}>
-        <Link to={`/booriva/catalog?menuId=000`}>
-          <Button text="СМОТРЕТЬ ВСЕ" />
-
+        <Link to={`/booriva/catalog?menuId=000`} className={styles.linkButton}>
+          <NewItemsButton />
+          <div className={styles.categoriesImgAbsoluteButton}>СМОТРЕТЬ ВСЕ</div>
         </Link>
       </div>
     </div>

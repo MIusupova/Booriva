@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "./characteristics.module.sass";
 
-import Button from "../../../components/buttons/Button";
+import NewItemsButton from "../../../assets/img/icons/new_items_button";
 import Line from "./line/Line";
 import { useDispatch, useSelector } from "react-redux";
 import { setSize, chooseSizes } from "../../../redux/sizeSlice/sizeSlice";
@@ -111,8 +111,11 @@ const Characteristics = ({ name, price, details, desc, addProductInCart }) => {
             </label>
           </div>
         </form>
-        <div  className={styles.button} onClick={addProductInCart} >
-          <Button text="В корзину"/>
+        <div className={styles.button} onClick={addProductInCart}>
+          <div to={`/booriva/catalog?menuId=000`} className={styles.linkButton}>
+            <NewItemsButton />
+            <div className={styles.categoriesImgAbsoluteButton}>В КОРЗИНУ</div>
+          </div>
         </div>
         <p className={styles.description}>{desc}</p>
         <div className={styles.line}>
