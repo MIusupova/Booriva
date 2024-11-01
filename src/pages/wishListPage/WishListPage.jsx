@@ -6,7 +6,11 @@ import Delivery from "../../components/delivery/Delivery";
 import Title from "../../components/title/Title";
 import styles from "./WishListPage.module.sass";
 
+
+
 const WishListPage = () => {
+  
+ 
   const [product, setProducts] = useState([]);
   const { select, setSelect } = useContext(SelectOpen);
   const setData = async (select, i, product) => {
@@ -17,11 +21,13 @@ const WishListPage = () => {
         return setData(select, i + 1, product);
       } else {
         return product;
+       
       }
     } else {
       return [];
     }
   };
+  
 
   useEffect(() => {
     const item = setData(select, 0, []);

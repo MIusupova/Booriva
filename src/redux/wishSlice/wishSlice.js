@@ -6,11 +6,14 @@ export const wishSlice = createSlice({
     wish: localStorage.getItem("wish")
       ? JSON.parse(localStorage.getItem("wish"))
       : [],
+    
+    
   },
   reducers: {
     setWish: (state, { payload }) => {
       state.wish = payload;
     },
+   
 
     addWishList: (state, { payload }) => {
       if (state.wish.includes(payload)) {
@@ -27,6 +30,6 @@ export const wishSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setWish, addWishList } = wishSlice.actions;
+export const { setWish, addWishList,setAllProductBasket} = wishSlice.actions;
 
 export default wishSlice.reducer;
