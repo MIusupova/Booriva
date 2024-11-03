@@ -64,7 +64,7 @@ const BasketOpen = () => {
               {products.map((item) =>(
                 <div className={styles.productsBlock} key={item.id}>
                   <div className={styles.productsCard}>
-                    {/* <img src={item.images[0]} alt="" />  */}
+                    <img src={item.images[0]} alt="" />  
                   </div>
                   <div className={styles.productsCardText}>
                     <div className={styles.basketBtnText}>
