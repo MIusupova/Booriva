@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Tshirt from "../../../assets/img/images/category-t-shirt.png";
 import TshirtBackground from "../../../assets/img/icons/category-t-shirt";
 import Bottom from "../../../assets/img/images/category-bottom.png";
-import BottomBackground from "../../../assets/img/icons/category-bottom";
 import Up from "../../../assets/img/images/category-up.png";
 import UpBackground from "../../../assets/img/icons/category-up";
 import Dress from "../../../assets/img/images/category-dress.png";
@@ -10,7 +9,6 @@ import DressBackground from "../../../assets/img/icons/category-dress";
 import Costume from "../../../assets/img/images/category-costume.png";
 import CostumeBackground from "../../../assets/img/icons/category-costume";
 import Hoodie from "../../../assets/img/images/category-hoodie.png";
-import HoodieBackground from "../../../assets/img/icons/category-hoodie";
 import styles from "./categories.module.sass";
 
 const Categories = () => {

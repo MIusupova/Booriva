@@ -1,6 +1,9 @@
+import styles from "./../../../pages/homepage/categories/categories.module.sass";
+
 const DressBackground = () => {
   return (
     <svg
+      className={styles.buttonBackgroundDress}
       width="164"
       height="55"
       viewBox="0 0 164 55"

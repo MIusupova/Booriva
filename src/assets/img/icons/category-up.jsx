@@ -1,6 +1,9 @@
+import styles from "./../../../pages/homepage/categories/categories.module.sass";
+
 const UpBackground = () => {
   return (
     <svg
+      className={styles.buttonBackgroundUp}
       width="133"
       height="53"
       viewBox="0 0 133 53"

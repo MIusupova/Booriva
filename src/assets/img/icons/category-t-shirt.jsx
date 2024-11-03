@@ -1,6 +1,9 @@
+import styles from "./../../../pages/homepage/categories/categories.module.sass";
+
 const TshirtBackground = () => {
   return (
     <svg
+      className={styles.buttonBackgroundTshirt}
       width="206"
       height="50"
       viewBox="0 0 206 50"
