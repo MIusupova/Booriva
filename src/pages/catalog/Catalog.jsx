@@ -10,6 +10,8 @@ import Card from "../../components/cards/card";
 
 import styles from "./Catalog.module.sass";
 import { getProductData } from "../../services/product";
+import Delivery from "../../components/delivery/Delivery";
+
 
 const Catalog = () => {
   const location = useLocation();
@@ -71,6 +73,7 @@ const Catalog = () => {
             ) : (
               <div className={styles.textDelete}>
                 Товаров данной категории нет~
+                <Delivery/>
               </div>
             )}
           </div>
