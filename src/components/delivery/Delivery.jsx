@@ -6,6 +6,7 @@ import styles from "./Delivery.module.sass";
 
 const Delivery = () => {
     return (
+        <div className={styles.deliveryBlock}>
         <div className={styles.delivery}>
             <div className={styles.deliveryCat}>
                 <WishListCat/>
@@ -29,6 +30,7 @@ const Delivery = () => {
                 </div>
             </div>
             
+        </div>
         </div>
         
     )

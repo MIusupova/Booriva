@@ -1,37 +1,70 @@
 .delivery
+    margin: 0 auto
     justify-content: space-between
     color: #1F1F1F
-    flex-wrap: wrap
-    @media (min-width: 768px) 
+    
+    @media (min-width: 480px)
         display: flex
-        height: 100px
+        flex-wrap: wrap
+   
         
+
+.deliveryBlock
+    margin-top: 60px
+    justify-content: center  
+    @media (max-width: 602px)
+        margin-top: 24px      
 .deliveryCat
     display: flex
-    width: 283px  
+    justify-content: space-between
+    width: 313px  
+    @media (max-width: 602px)
+        margin: 0 auto
+    @media (max-width: 480px)
+        width: 250px
 .deliveryText
     margin-bottom: 15px
-    text-align: center
     font-family: Montserrat
     font-size: 25px
     font-style: normal
     font-weight: 600
-    line-height: normal  
+    line-height: normal 
+    @media (max-width: 480px)
+        font-size: 16px
+
 .deliveryCatBlock
-    width: 197px
     margin-left: 30px
+    width: 200px
+    @media (max-width: 480px)
+        width: 130px
 
 
 .deliverySubtext
-    text-align: center
     font-family: Montserrat
     font-size: 16px
     font-weight: 400
     text-transform: uppercase
+    @media (max-width: 480px)
+        font-size: 12px
 .deliveryBox, .deliveryHeart
     display: flex
+    justify-content: space-between
+    @media (max-width: 602px)
+        margin: 0 auto
+        width: 313px
+    @media (max-width: 480px)
+        width: 250px
+   
 .deliveryBoxBlock, .deliveryHeartBlock
     margin-left: 30px
+    @media (max-width: 602px)
+        
+        width: 200px
+        @media (max-width: 480px)
+        width: 130px
+    
+   
+   
     
 
   
