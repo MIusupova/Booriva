@@ -7,6 +7,7 @@ import MobileMenuHeart from "../../assets/img/icons/MobileMenuHeart";
 import styles from "./MobileMenu.module.sass";
 const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileMenuOpen }) => {
     const allProductBasket = useSelector(state => state.cart.allProductBasket)
+    const allProductWishlist = useSelector(state => state.wish.allProductWishlist)
     return (
         <nav className={styles.mobileMenu}>
             <div className={styles.mobileMenuItems}>
@@ -24,6 +25,7 @@ const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileM
           {" "}
           <MobileMenuHeart />
           <span className={styles.mobileMenuItemText}>Wishlist</span>
+          <div className={styles.allSumBasket}>{allProductWishlist}</div>
         </Link>
                 
 

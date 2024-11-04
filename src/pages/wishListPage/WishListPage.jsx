@@ -5,12 +5,15 @@ import Card from "../../components/cards/card";
 import Delivery from "../../components/delivery/Delivery";
 import Title from "../../components/title/Title";
 import styles from "./WishListPage.module.sass";
+import { useDispatch, useSelector } from "react-redux";
+import { setAllProductWishlist } from "../../redux/wishSlice/wishSlice";
 
 
 
 const WishListPage = () => {
   
- 
+  const dispatch = useDispatch();
+  
   const [product, setProducts] = useState([]);
   const { select, setSelect } = useContext(SelectOpen);
   const setData = async (select, i, product) => {
@@ -21,6 +24,7 @@ const WishListPage = () => {
         return setData(select, i + 1, product);
       } else {
         return product;
+        
        
       }
     } else {
@@ -33,10 +37,18 @@ const WishListPage = () => {
     const item = setData(select, 0, []);
     item.then((res) => setProducts(res));
   }, [select]);
+
+  useEffect(() => {
+    let productsAllSum = 0;
+    for (let i = 0; i < product.length; i++) {
+      productsAllSum += Number(product[i].price);
+    }
+    dispatch(setAllProductWishlist(product.length));
+  }, [product]);
   return (
     <div className={styles.wishListPage + " wrapper"}>
       <div className={styles.wishListTitle}>
-        <Title title="список желаний" subtitle="твой тайный список желаний" />
+        <Title title="список желаний" subTitle="твой тайный список желаний" />
         <div className={styles.categoryTitleSvg}></div>
       </div>
       <div className={styles.newItemsCards}>
