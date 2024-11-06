@@ -5,15 +5,21 @@ import styles from "./Wishlist.module.sass";
 import { useSelector } from "react-redux";
 
 
-const Wishlist = () => {
+const Wishlist = ({addProductInWish}) => {
   const allProductWishlist = useSelector(state => state.wish.allProductWishlist)
   
   
   return (
-    <Link to="/booriva/wishlistPage" className={styles.wishlist} >
+    <div className={styles.wishlist} onClick={addProductInWish}>
+      <Link to="/booriva/wishlistPage"  >
       <WishlistIcon />
-      <div className={styles.allSumBasket}>{allProductWishlist}</div>
+      
     </Link>
+    <div className={styles.allSumBasket}>{allProductWishlist}</div>
+    
+
+    </div>
+    
   );
 };
 export default Wishlist;

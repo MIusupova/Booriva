@@ -9,11 +9,19 @@ import SubMenu from "./menu/subMenu/SubMenu";
 import SearchIcon from "../../assets/img/icons/SearchIcon";
 import styles from "./Header.module.sass";
 import SearchProduct from "../searchProduct/SearchProduct";
+import { useDispatch, useSelector } from "react-redux";
+
+
 
 
 const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen, value, setValue}) => {
+    
+  
+ 
+  const dispatch = useDispatch();
     const [isShow, setIsShow] = useState(false)
     const [menuId, setMenuId] = useState(0) //для сабменю
+    
    
     return ( 
         
@@ -30,7 +38,7 @@ const Header = ({setIsBasketOpen, allProductBasket, searchOpen, setSearchOpen, v
                     <Search setSearchOpen={setSearchOpen} searchOpen={searchOpen} value={value} setValue={setValue}/>
 
                     <div className={styles.blockthree}>
-                        <Wishlist/>
+                        <Wishlist />
                         <Basket setIsBasketOpen={setIsBasketOpen} allProductBasket={allProductBasket}/>
                     </div>
                     

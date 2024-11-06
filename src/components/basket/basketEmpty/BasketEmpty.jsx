@@ -18,7 +18,8 @@ const BasketEmpty = () => {
             <h1 className={styles.basketEmptyTitle}>Корзина</h1>
             <div className={styles.basketEmptyImgg}><BasketEmptyImg/></div>
              <br />
-            <span className={styles.basketEmptyText}>Твоя корзина пуста, но это никогда не поздно исправить:)</span>
+             <span className={styles.basketEmptyTextTwo}><span className={styles.basketEmptyText}>Твоя корзина пуста, но это никогда не поздно исправить:)</span></span>
+            
             <Link to="/booriva" className={styles.basketBtn }> {/*onClick={BtnRed} реализация активной кнопки, изменение фона на красный цвет*/} 
                 {btn ?  <ButtonBasketPink/> : <BasketRed/>}
                 <div className={styles.text}>{"За покупками"}</div>

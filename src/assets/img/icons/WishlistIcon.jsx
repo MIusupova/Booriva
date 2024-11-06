@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 import styles from "./../../../components/header/Header.module.sass";
 const WishlistIcon = () => {
+  
   return (
   
       <svg 
@@ -17,6 +19,7 @@ const WishlistIcon = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+    
       </svg>
    
   );
