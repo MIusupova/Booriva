@@ -106,7 +106,7 @@ const BasketOpen = () => {
             </div>
           </div>
           <Link to="/booriva/placingOrder" className={styles.basketBtn}>
-          {btn ? <ButtonBasketPink/>  :  <BasketRed/>}
+          <ButtonBasketPink/>
             <div className={styles.text}>{"Оформить заказ"}</div>
           </Link>
         </div>
