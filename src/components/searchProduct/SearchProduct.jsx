@@ -14,6 +14,7 @@ const SearchProduct = ({ setSearchOpen, searchOpen, setValue, value }) => {
   return (
     <div
       className={styles.searcdiv + " " + (searchOpen && styles.searcdiv_open)}
+      onClick={() => setSearchOpen(false)}
     >
       <input
         placeholder="Поиск товаров"

@@ -48,6 +48,8 @@ const App = () => {
     localStorage.setItem("select", JSON.stringify(select));
   }, [select]);
 
+  
+
   return (
     <div className={`${isBasketOpen && "no-scroll"} ${isMobileMenuOpen && "no-scroll"}`} >
     
