@@ -24,8 +24,6 @@ const WishListPage = () => {
         return setData(select, i + 1, product);
       } else {
         return product;
-        
-       
       }
     } else {
       return [];

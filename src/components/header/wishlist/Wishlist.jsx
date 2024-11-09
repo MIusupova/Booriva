@@ -9,6 +9,7 @@ const Wishlist = ({addProductInWish}) => {
   const allProductWishlist = useSelector(state => state.wish.allProductWishlist)
   
   
+  
   return (
     <div className={styles.wishlist} onClick={addProductInWish}>
       <Link to="/booriva/wishlistPage"  >
