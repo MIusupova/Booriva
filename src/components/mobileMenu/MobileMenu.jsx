@@ -5,13 +5,16 @@ import MobileMenuArrow from "../../assets/img/icons/MobileMenuArrow";
 import MobileMenuBasket from "../../assets/img/icons/MobileMenuBasket";
 import MobileMenuHeart from "../../assets/img/icons/MobileMenuHeart";
 import styles from "./MobileMenu.module.sass";
+
 const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileMenuOpen }) => {
+   
     const allProductBasket = useSelector(state => state.cart.allProductBasket)
     const allProductWishlist = useSelector(state => state.wish.allProductWishlist)
     return (
         <nav className={styles.mobileMenu}>
             <div className={styles.mobileMenuItems}>
-                <div className={styles.mobileMenuItem} isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onClick={() => setMobileMenuOpen(true)}> <MenuBooriva/>
+                <div className={styles.mobileMenuItem} isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onClick={() => setMobileMenuOpen(true)}> 
+                <MenuBooriva className={styles.menuBooriva} />
                     <span className={styles.mobileMenuItemText}>Меню</span>
                 </div>
                 <div className={styles.mobileMenuItem}> <MobileMenuArrow/>
