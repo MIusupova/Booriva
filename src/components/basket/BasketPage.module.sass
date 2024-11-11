@@ -137,11 +137,18 @@
     margin-top: 6px
 
 .basketBtn
+    
     display: flex
     justify-content: center
     position: relative
 .basketBtn:active svg path
   fill: #F40000
+  
+.basketBtn
+    @media (max-width: 520px)
+        margin-top: 20px
+
+
         
 .products
     height: calc( 100vh - 420px )
