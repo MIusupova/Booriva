@@ -20,7 +20,9 @@ const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileM
                 <div className={styles.mobileMenuItem}> <MobileMenuArrow/>
                     <span className={styles.mobileMenuItemText}>Написать</span>
                 </div>
-                <div className={styles.mobileMenuItem} isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} onClick={()=> setIsBasketOpen(true)}> <MobileMenuBasket/>
+                <div className={styles.mobileMenuItem} isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} 
+                    onClick={()=> setIsBasketOpen(!isBasketOpen)}> 
+                    <MobileMenuBasket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
                     <span className={styles.mobileMenuItemText}>Корзина</span>
                     <div className={styles.allSumBasket}>{allProductBasket}</div>
                 </div>
