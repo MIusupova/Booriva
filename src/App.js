@@ -51,7 +51,7 @@ const App = () => {
   
 
   return (
-    <div className={`${isBasketOpen && "no-scroll"} ${isMobileMenuOpen && "no-scroll"}`} >
+    <div className={`${isBasketOpen && "no-scroll"} ${isMobileMenuOpen && "no-scroll"}`}  >
     
 
       <SelectOpen.Provider value={{ select, setSelect }}>

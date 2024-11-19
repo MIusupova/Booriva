@@ -11,7 +11,7 @@ const MobileMenuPink = ({ isMobileMenuOpen,
             getMenuItems().then((res) => setMenu(res));
   }, []);
     return (
-      <div className={styles.mobileMenuPink  + " " + (isMobileMenuOpen && styles.mobileMenuPink_open)}>
+      <div className={styles.mobileMenuPink  + " " + (isMobileMenuOpen && styles.mobileMenuPink_open)} >
         <CrossButtonBasketPink setMobileMenuOpen={setMobileMenuOpen}/>
         <div className={styles.mobileMenuBlock} >
         <div className={styles.mobileMenuText}>Меню</div>

@@ -13,8 +13,9 @@ const MobileMenu = ({isBasketOpen, setIsBasketOpen, isMobileMenuOpen, setMobileM
     return (
         <nav className={styles.mobileMenu}>
             <div className={styles.mobileMenuItems}>
-                <div className={styles.mobileMenuItem} isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onClick={() => setMobileMenuOpen(true)}> 
-                <MenuBooriva className={styles.menuBooriva} />
+                <div className={styles.mobileMenuItem} isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} 
+                onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}> 
+                <MenuBooriva  className={styles.menuBooriva}  setIsBasketOpen={setIsBasketOpen} isBasketOpen={isBasketOpen}/>
                     <span className={styles.mobileMenuItemText}>Меню</span>
                 </div>
                 <div className={styles.mobileMenuItem}> <MobileMenuArrow/>
